@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doménica Arias — darqdis.com · Próximamente</title>
+<meta name="description" content="Doménica Arias — Arquitecta, retail designer y fundadora de ArquiLab. Sitio en construcción. Suscríbete para ser la primera en saberlo.">
+<meta property="og:title" content="Doménica Arias · darqdis.com — Próximamente">
+<meta property="og:description" content="Arquitecta, retail designer y educadora entre Quito y Barcelona. Algo nuevo está llegando.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+:root {
+  --cream:     #F5F1EA;
+  --cream-2:   #EAE4D9;
+  --espresso:  #2A2620;
+  --espresso-2:#1E1B17;
+  --ink:       #2A2620;
+  --ink-soft:  #6B6359;
+  --olive:     #6E6A4D;
+  --blue:      #A8B4B3;
+  --line:      rgba(42,38,32,0.12);
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'Archivo', system-ui, sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; height: 100%; }
+
+body {
+  font-family: var(--sans);
+  background: var(--espresso-2);
+  color: var(--ink);
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ============================================================
+   GRAIN
+   ============================================================ */
+.grain {
+  position: fixed; inset: 0; z-index: 60;
+  pointer-events: none; opacity: 0.035; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   SHEET
+   ============================================================ */
+.sheet {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  box-shadow: 0 0 140px rgba(0,0,0,0.55);
+  position: relative;
+}
+
+/* ============================================================
+   LEFT — imagen + overlay
+   ============================================================ */
+.cs-left {
+  position: relative;
+  background: var(--espresso);
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.cs-left__bg {
+  position: absolute; inset: 0;
+  background: var(--espresso);
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(245,241,234,0.03) 0, rgba(245,241,234,0.03) 1px,
+      transparent 1px, transparent 14px);
+}
+
+.cs-left__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg,
+    rgba(42,38,32,0.3) 0%,
+    rgba(42,38,32,0.7) 100%);
+}
+
+/* placeholder visual — pon aquí tu mejor foto */
+.cs-left__ph {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem;
+}
+.cs-left__ph-label {
+  font-family: var(--sans); font-size: 0.65rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(245,241,234,0.35);
+  border: 1px dashed rgba(245,241,234,0.2);
+  padding: 0.6rem 1.2rem;
+}
+
+.cs-left__content {
+  position: relative; z-index: 2;
+  padding: clamp(2rem, 5vw, 4rem);
+  height: 100%;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+}
+
+.cs-logo {
+  font-family: var(--sans); font-size: 0.7rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(245,241,234,0.6);
+  text-decoration: none;
+}
+.cs-logo span { color: rgba(245,241,234,0.3); }
+
+.cs-left__tagline {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 400; line-height: 1.05;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+}
+.cs-left__tagline em {
+  font-style: italic; font-weight: 400;
+  color: rgba(245,241,234,0.7);
+}
+
+.cs-left__sub {
+  font-family: var(--sans); font-size: 0.85rem;
+  color: rgba(245,241,234,0.55); line-height: 1.7;
+  max-width: 36ch; margin-top: 1.2rem;
+}
+
+.cs-left__creds {
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.cs-left__cred {
+  font-family: var(--sans); font-size: 0.68rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(245,241,234,0.4);
+  display: flex; align-items: center; gap: 0.7rem;
+}
+.cs-left__cred::before {
+  content: ''; width: 18px; height: 1px;
+  background: rgba(245,241,234,0.3); flex-shrink: 0;
+}
+
+/* ============================================================
+   RIGHT — contenido de venta sutil
+   ============================================================ */
+.cs-right {
+  padding: clamp(2rem, 5vw, 4.5rem) clamp(2rem, 5vw, 4rem);
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+  background: var(--cream);
+}
+
+.cs-status {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--sans); font-size: 0.65rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.cs-status__dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--olive);
+  box-shadow: 0 0 0 0 rgba(110,106,77,0.5);
+  animation: pulse 2.4s infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(110,106,77,0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(110,106,77,0); }
+  100% { box-shadow: 0 0 0 0 rgba(110,106,77,0); }
+}
+
+/* newsletter form */
+.cs-newsletter { display: flex; flex-direction: column; gap: 0.5rem; }
+.cs-newsletter__label {
+  font-family: var(--sans); font-size: 0.65rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 0.5rem;
+}
+.cs-newsletter__title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 500; line-height: 1.15;
+  color: var(--ink); margin-bottom: 0.8rem;
+}
+.cs-newsletter__title em { font-style: italic; font-weight: 400; }
+.cs-newsletter__sub {
+  font-size: 0.85rem; color: var(--ink-soft);
+  line-height: 1.7; margin-bottom: 1.5rem; max-width: 40ch;
+}
+.cs-form {
+  display: flex; flex-direction: column; gap: 0.8rem;
+}
+.cs-form__row { display: flex; gap: 0; }
+.cs-input {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-right: none;
+  padding: 0.9rem 1.1rem;
+  font-family: var(--sans); font-size: 0.85rem;
+  color: var(--ink); font-weight: 300;
+  outline: none;
+  transition: border-color 0.4s var(--ease);
+  min-width: 0;
+}
+.cs-input::placeholder { color: rgba(42,38,32,0.3); }
+.cs-input:focus { border-color: var(--ink); }
+.cs-btn {
+  font-family: var(--sans); font-size: 0.68rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  background: var(--ink); color: var(--cream);
+  border: 1px solid var(--ink); padding: 0 1.4rem;
+  cursor: pointer; white-space: nowrap;
+  transition: all 0.4s var(--ease);
+}
+.cs-btn:hover { background: var(--espresso-2); border-color: var(--espresso-2); }
+.cs-form__legal {
+  font-size: 0.68rem; color: rgba(42,38,32,0.38);
+  letter-spacing: 0.04em;
+}
+
+/* el producto sutil — ArquiLab */
+.cs-product {
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  text-decoration: none; color: inherit;
+  transition: border-color 0.4s var(--ease), background 0.4s var(--ease);
+  position: relative; overflow: hidden;
+}
+.cs-product:hover { border-color: var(--ink); background: rgba(42,38,32,0.03); }
+.cs-product__num {
+  font-family: var(--serif); font-size: 2.2rem;
+  font-weight: 400; line-height: 1; color: rgba(42,38,32,0.12);
+  flex-shrink: 0;
+}
+.cs-product__body { flex: 1; }
+.cs-product__tag {
+  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--olive); margin-bottom: 0.4rem;
+  display: block;
+}
+.cs-product__name {
+  font-family: var(--serif); font-size: 1.15rem;
+  font-weight: 500; line-height: 1.2;
+  color: var(--ink); margin-bottom: 0.5rem;
+}
+.cs-product__desc {
+  font-size: 0.8rem; color: var(--ink-soft);
+  line-height: 1.6; margin-bottom: 0.9rem;
+}
+.cs-product__cta {
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); display: flex; align-items: center; gap: 0.5rem;
+  transition: gap 0.4s var(--ease);
+}
+.cs-product:hover .cs-product__cta { gap: 0.9rem; }
+
+/* socials footer */
+.cs-socials {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 0;
+  border-top: 1px solid var(--line); padding-top: 1.5rem;
+}
+.cs-social {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--sans); font-size: 0.65rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  transition: color 0.3s var(--ease), background 0.3s var(--ease);
+  border-right: 1px solid var(--line);
+}
+.cs-social:last-child { border-right: none; }
+.cs-social:hover { color: var(--ink); background: rgba(42,38,32,0.04); }
+.cs-social svg { display: block; }
+
+/* ============================================================
+   ARQUILAB — sección persuasiva
+   ============================================================ */
+.cs-arquilab {
+  border: 1px solid var(--line);
+  padding: 1.6rem;
+  display: flex; flex-direction: column; gap: 1rem;
+  background: rgba(42,38,32,0.02);
+  animation: fadeUp 0.9s var(--ease) 0.5s both;
+}
+.cs-arquilab__head { display: flex; flex-direction: column; gap: 0.3rem; }
+.cs-arquilab__title {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 500; line-height: 1.15; color: var(--ink);
+}
+.cs-arquilab__title em { font-style: italic; font-weight: 400; }
+.cs-arquilab__hook {
+  font-size: 0.875rem; color: var(--ink);
+  line-height: 1.65; font-style: italic;
+  border-left: 2px solid var(--olive);
+  padding-left: 0.9rem;
+}
+.cs-arquilab__body {
+  font-size: 0.82rem; color: var(--ink-soft);
+  line-height: 1.7;
+}
+.cs-arquilab__body strong { color: var(--ink); font-weight: 500; }
+.cs-arquilab__pills {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.cs-pill {
+  font-family: var(--sans); font-size: 0.62rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-soft); border: 1px solid var(--line);
+  padding: 0.35rem 0.7rem;
+}
+.cs-arquilab__testimonial {
+  background: var(--cream-2);
+  padding: 1rem 1.1rem;
+  border-radius: 0;
+}
+.cs-testimonial__quote {
+  font-family: var(--serif); font-size: 0.9rem;
+  font-style: italic; color: var(--ink);
+  line-height: 1.5; margin-bottom: 0.4rem;
+}
+.cs-testimonial__author {
+  font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.cs-arquilab__ctas { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.cs-arquilab__cta {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  font-family: var(--sans); font-size: 0.72rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--cream); background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 1rem 1.6rem;
+  text-decoration: none; align-self: flex-start;
+  transition: all 0.4s var(--ease);
+}
+.cs-arquilab__cta:hover {
+  background: var(--espresso-2);
+  border-color: var(--espresso-2);
+  gap: 1.1rem;
+}
+.cs-arquilab__cta--ghost {
+  background: transparent; color: var(--ink);
+}
+.cs-arquilab__cta--ghost:hover {
+  background: var(--ink); color: var(--cream);
+}
+
+/* quitar la animación duplicada del producto anterior */
+.cs-product { animation: fadeUp 0.9s var(--ease) 0.5s both; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.cs-logo        { animation: fadeUp 0.9s var(--ease) 0.1s both; }
+.cs-left__tagline { animation: fadeUp 1s var(--ease) 0.25s both; }
+.cs-left__creds { animation: fadeUp 0.9s var(--ease) 0.4s both; }
+.cs-status      { animation: fadeUp 0.8s var(--ease) 0.2s both; }
+.cs-newsletter  { animation: fadeUp 0.9s var(--ease) 0.35s both; }
+.cs-product     { animation: fadeUp 0.9s var(--ease) 0.5s both; }
+.cs-socials     { animation: fadeUp 0.8s var(--ease) 0.65s both; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body { align-items: flex-start; }
+  .sheet {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .cs-left { min-height: 55vw; }
+  .cs-left__tagline { font-size: 2.4rem; }
+  .cs-left__sub { display: none; }
+  .cs-right { padding: 2rem 1.5rem 3rem; }
+  .cs-form__row { flex-direction: column; }
+  .cs-input { border-right: 1px solid var(--line); border-bottom: none; }
+  .cs-btn { padding: 0.9rem; }
+  .cs-socials { gap: 0; }
+  .cs-social { font-size: 0.6rem; padding: 0.5rem 0.7rem; }
+}
+
+</style>
+</head>
+
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="sheet">
+
+  <!-- ======== LEFT ======== -->
+  <div class="cs-left">
+    <div class="cs-left__bg" aria-hidden="true"></div>
+    <div class="cs-left__overlay" aria-hidden="true"></div>
+
+    <!-- Placeholder imagen — reemplaza por tu mejor foto de proyecto -->
+    <div class="cs-left__ph" aria-hidden="true">
+      <span class="cs-left__ph-label">foto de proyecto · portrait</span>
+    </div>
+
+    <div class="cs-left__content">
+      <a href="/" class="cs-logo">doménica<span>.</span>arqdis</a>
+
+      <div>
+        <h1 class="cs-left__tagline">
+          Hello<br><em>Arquis</em>,<br>se viene<br>algo nuevo.
+        </h1>
+        <p class="cs-left__sub">
+          Retail design, interiorismo y herramientas digitales — entre Quito y Barcelona.
+          <br>Architect, retail designer &amp; educator — UIO / BCN.
+        </p>
+      </div>
+
+      <div class="cs-left__creds">
+        <span class="cs-left__cred">Arquitecta · Retail Designer</span>
+        <span class="cs-left__cred">Maestría Elisava · Barcelona</span>
+        <span class="cs-left__cred">Fundadora de ArquiLab</span>
+        <span class="cs-left__cred">@domenica.arqdis · 40K+</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== RIGHT ======== -->
+  <div class="cs-right">
+
+    <div>
+      <span class="cs-status">
+        <span class="cs-status__dot" aria-hidden="true"></span>
+        Sitio en construcción · Launching soon
+      </span>
+    </div>
+
+    <!-- Captura de email -->
+    <div class="cs-newsletter">
+      <span class="cs-newsletter__label">Hello Arquis · Newsletter</span>
+      <h2 class="cs-newsletter__title">
+        Hello Arqui —<br>algo <em>grande</em><br>está llegando.
+      </h2>
+      <p class="cs-newsletter__sub">
+        Deja tu email y te cuento antes que nadie. Tips de arquitectura, SketchUp, IA y todo lo que estoy preparando para ti.
+      </p>
+      <form class="cs-form" onsubmit="handleSubmit(event)">
+        <div class="cs-form__row">
+          <input
+            type="email"
+            required
+            placeholder="tu@email.com"
+            class="cs-input"
+            id="emailInput"
+            aria-label="Tu email"
+          />
+          <button type="submit" class="cs-btn">Avisar →</button>
+        </div>
+        <p class="cs-form__legal" id="formMsg">Sin spam · Cancela cuando quieras.</p>
+      </form>
+    </div>
+
+    <!-- ArquiLab — sección de introducción -->
+    <div class="cs-arquilab">
+      <div class="cs-arquilab__head">
+        <span class="cs-product__tag">Disponible ahora · Hotmart</span>
+        <h3 class="cs-arquilab__title">ArquiLab — <em>Layout Pro</em></h3>
+      </div>
+
+      <p class="cs-arquilab__hook">
+        ¿Cuántas horas pierdes cada semana actualizando planos en Photoshop o Canva — herramientas que no fueron diseñadas para arquitectura?
+      </p>
+
+      <p class="cs-arquilab__body">
+        ArquiLab te enseña a dominar <strong>SketchUp + Layout</strong> para crear presentaciones de proyecto que se actualizan solas, se ven profesionales y convencen a clientes desde la primera propuesta. Sin Photoshop. Sin AutoCAD. Sin Canva.
+      </p>
+
+      <div class="cs-arquilab__pills">
+        <span class="cs-pill">4 módulos</span>
+        <span class="cs-pill">Acceso de por vida</span>
+        <span class="cs-pill">Comunidad incluida</span>
+        <span class="cs-pill">SketchUp + Layout</span>
+      </div>
+
+      <div class="cs-arquilab__testimonial">
+        <p class="cs-testimonial__quote">"Cambió completamente cómo presento mis proyectos. Los clientes ahora aprueban a la primera."</p>
+        <p class="cs-testimonial__author">— Alumna ArquiLab</p>
+      </div>
+
+      <div class="cs-arquilab__ctas">
+        <a class="cs-arquilab__cta" href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener">
+          Quiero inscribirme
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+            <path d="M1 5h12M8 1l5 4-5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a class="cs-arquilab__cta cs-arquilab__cta--ghost" href="arquilab.html">
+          ¿Qué es ArquiLab?
+        </a>
+      </div>
+    </div>
+
+    <!-- Social links -->
+    <nav class="cs-socials" aria-label="Redes sociales">
+      <a class="cs-social" href="https://instagram.com/domenica.arqdis" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a class="cs-social" href="https://www.tiktok.com/@domenica.arqdis" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M19.5 8.2a6.7 6.7 0 0 1-4-1.3v8.5a5.6 5.6 0 1 1-5.6-5.6c.3 0 .5 0 .8.1v2.7c-.3-.1-.5-.1-.8-.1a2.9 2.9 0 1 0 2.9 2.9V2.5h2.7a4 4 0 0 0 4 4Z"/></svg>
+        TikTok
+      </a>
+      <a class="cs-social" href="https://youtube.com/@domenica.arqdis" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M22 7.5a2.8 2.8 0 0 0-2-2C18.2 5 12 5 12 5s-6.2 0-8 .5a2.8 2.8 0 0 0-2 2C1.5 9.3 1.5 12 1.5 12s0 2.7.5 4.5a2.8 2.8 0 0 0 2 2c1.8.5 8 .5 8 .5s6.2 0 8-.5a2.8 2.8 0 0 0 2-2c.5-1.8.5-4.5.5-4.5s0-2.7-.5-4.5ZM10 15.3V8.7L15.7 12 10 15.3Z"/></svg>
+        YouTube
+      </a>
+      <a class="cs-social" href="https://open.spotify.com/show/4md2Bjltyhj0sUq6wG39fB" target="_blank" rel="noopener" aria-label="Podcast Hello Arquis">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.5c3.5-1 7.5-.7 10.5 1M8 13c2.8-.8 6-.5 8.5 1M9 16.2c2.2-.6 4.6-.3 6.5.8"/></svg>
+        Podcast
+      </a>
+      <a class="cs-social" href="https://www.linkedin.com/in/dom%C3%A9nica-arias-tutillo-3b9b981ab/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M4.5 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3 9h3v12H3V9Zm5.5 0H11v1.7h.1A2.8 2.8 0 0 1 13.6 9c2.7 0 3.2 1.8 3.2 4.1V21h-3v-5.3c0-1.3 0-2.9-1.8-2.9-1.8 0-2 1.4-2 2.8V21h-3V9Z"/></svg>
+        LinkedIn
+      </a>
+    </nav>
+
+  </div>
+</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  var email = document.getElementById('emailInput').value;
+  var msg = document.getElementById('formMsg');
+  // Aquí conectas tu proveedor de email (Mailchimp, ConvertKit, Beehiiv)
+  // Por ahora guardamos en localStorage como demo
+  try {
+    var leads = JSON.parse(localStorage.getItem('cs_leads') || '[]');
+    leads.push({ email: email, date: new Date().toISOString() });
+    localStorage.setItem('cs_leads', JSON.stringify(leads));
+  } catch(err) {}
+  document.getElementById('emailInput').value = '';
+  msg.textContent = '✓ Hello Arqui — te aviso cuando esté listo.';
+  msg.style.color = '#6E6A4D';
+}
+</script>
+
+</body>
+</html>
