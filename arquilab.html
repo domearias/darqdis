@@ -1033,7 +1033,31 @@ body {
     <p><a href="/">← Volver a darqdis.com</a></p>
   </footer>
 
+  <!-- ============ MOBILE STICKY CTA ============ -->
+  <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="al-sticky-cta">Inscríbete ahora →</a>
+
 </div>
+
+<style>
+.al-sticky-cta {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  text-align: center;
+  padding: 1rem;
+  font-family: var(--sans, system-ui);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: #FAFAF7;
+  background: #111009;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+}
+@media (max-width: 720px) {
+  .al-sticky-cta { display: block; }
+  body { padding-bottom: 3.6rem; }
+}
+</style>
 
 <script>
 // FAQ accordion
