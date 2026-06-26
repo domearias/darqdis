@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArquiLab — El curso de Layout para arquitectos · Doménica Arias</title>
+<meta name="description" content="ArquiLab es el curso de Layout Pro que te enseña a crear presentaciones arquitectónicas profesionales con SketchUp + Layout. Sin Photoshop, sin Canva. Por Doménica Arias.">
+<meta property="og:title" content="ArquiLab — Layout Pro para arquitectos">
+<meta property="og:description" content="Aprende a presentar tus proyectos como un estudio europeo. Solo SketchUp + Layout. Curso por Doménica Arias.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+:root {
+  --cream:     #FAFAF7;
+  --cream-2:   #F0EDE6;
+  --sand:      #C9BFAE;
+  --espresso:  #1A1714;
+  --espresso-2:#111009;
+  --ink:       #111009;
+  --ink-soft:  #3D3830;
+  --olive:     #6E6A4D;
+  --blue:      #A8B4B3;
+  --oxblood:   #5C2E26;
+  --accent:    #6E6A4D;
+  --line:      rgba(42,38,32,0.12);
+  --line-2:    rgba(42,38,32,0.06);
+  --serif:     'Playfair Display', Georgia, serif;
+  --sans:      'Archivo', system-ui, sans-serif;
+  --ease:      cubic-bezier(0.22, 1, 0.36, 1);
+  --inset:     clamp(22px, 5vw, 80px);
+  --bandY:     clamp(4rem, 8vw, 6.5rem);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sheet {
+  width: 100%; background: var(--cream);
+  position: relative; overflow: hidden;
+}
+
+.grain {
+  position: absolute; inset: 0; z-index: 60; pointer-events: none;
+  opacity: 0.035; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.al-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,250,247,0.92);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  padding: 0.9rem var(--inset);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.al-nav__brand {
+  font-family: var(--sans); font-size: 0.7rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+}
+.al-nav__brand span { color: var(--ink-soft); }
+.al-nav__cta {
+  font-family: var(--sans); font-size: 0.7rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  background: var(--ink); color: var(--cream);
+  border: 1px solid var(--ink);
+  padding: 0.7rem 1.2rem; text-decoration: none;
+  transition: all 0.3s var(--ease);
+}
+.al-nav__cta:hover { background: transparent; color: var(--ink); }
+
+/* ============================================================
+   HERO — "Ustedes lo pidieron"
+   ============================================================ */
+.al-hero {
+  padding: clamp(3rem, 6vw, 5rem) var(--inset) clamp(2.5rem, 5vw, 4rem);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem); align-items: center;
+}
+.al-hero__kicker {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--sans); font-size: 0.68rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.5rem;
+}
+.al-hero__kicker::before {
+  content: ''; width: 24px; height: 1px; background: var(--accent);
+}
+.al-hero__title {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  font-weight: 500; line-height: 0.98;
+  color: var(--ink); letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.al-hero__title em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+.al-hero__sub {
+  font-size: 1.05rem; color: var(--ink); line-height: 1.65;
+  margin-bottom: 2rem; max-width: 48ch;
+}
+.al-hero__sub strong { font-weight: 500; }
+.al-hero__ctas { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+.al-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--sans); font-size: 0.72rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 1.05rem 1.8rem; text-decoration: none;
+  transition: all 0.4s var(--ease); cursor: pointer; border: 1px solid var(--ink);
+}
+.al-btn--solid { background: var(--ink); color: var(--cream); }
+.al-btn--solid:hover { background: var(--espresso-2); gap: 0.9rem; }
+.al-btn--ghost { background: transparent; color: var(--ink); }
+.al-btn--ghost:hover { background: var(--ink); color: var(--cream); gap: 0.9rem; }
+.al-btn svg { transition: transform 0.4s var(--ease); }
+
+.al-hero__visual {
+  position: relative; aspect-ratio: 4 / 5; overflow: hidden;
+  background: var(--cream-2);
+}
+.al-hero__ph {
+  position: absolute; inset: 0;
+  background: var(--cream-2);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(42,38,32,0.05) 0, rgba(42,38,32,0.05) 1px, transparent 1px, transparent 22px),
+    repeating-linear-gradient(90deg, rgba(42,38,32,0.05) 0, rgba(42,38,32,0.05) 1px, transparent 1px, transparent 22px);
+  display: flex; align-items: center; justify-content: center;
+}
+.al-hero__ph-label {
+  font-family: var(--sans); font-size: 0.65rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-soft); background: var(--cream);
+  padding: 0.6rem 1.2rem; border: 1px dashed var(--line);
+}
+
+/* ============================================================
+   PETICIÓN — "Ustedes me lo pidieron"
+   ============================================================ */
+.al-request {
+  padding: var(--bandY) var(--inset);
+  background: var(--cream-2);
+  position: relative;
+}
+.al-request__head { text-align: center; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.al-request__kicker {
+  font-family: var(--sans); font-size: 0.7rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.2rem;
+  display: inline-block;
+}
+.al-request__title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 500; line-height: 1.05;
+  color: var(--ink); letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+.al-request__title em { font-style: italic; font-weight: 400; }
+.al-request__sub {
+  font-size: 1.05rem; color: var(--ink-soft);
+  max-width: 56ch; margin: 0 auto;
+}
+
+.al-messages {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.8rem);
+  margin-top: 2rem;
+}
+.al-msg {
+  background: var(--cream); padding: 1.5rem 1.6rem;
+  border: 1px solid var(--line); position: relative;
+  font-family: var(--sans); font-size: 0.9rem;
+  color: var(--ink); line-height: 1.6;
+}
+.al-msg__head {
+  display: flex; align-items: center; gap: 0.7rem;
+  margin-bottom: 0.9rem; padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line-2);
+}
+.al-msg__avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--olive); color: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 0.85rem;
+  font-weight: 500; flex-shrink: 0;
+}
+.al-msg__name {
+  font-family: var(--sans); font-size: 0.72rem;
+  letter-spacing: 0.06em; color: var(--ink-soft);
+  text-transform: uppercase;
+}
+.al-msg__text { font-style: italic; }
+.al-msg__text::before { content: '"'; font-family: var(--serif); font-size: 2rem; color: var(--accent); float: left; line-height: 1; margin-right: 0.3rem; margin-top: -0.2rem; }
+
+/* ============================================================
+   PROBLEMA — el dolor real
+   ============================================================ */
+.al-problem {
+  padding: var(--bandY) var(--inset);
+  background: var(--espresso);
+  color: var(--cream);
+  text-align: center;
+}
+.al-problem__title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 400; line-height: 1.08;
+  letter-spacing: -0.01em;
+  max-width: 22ch; margin: 0 auto 1.5rem;
+}
+.al-problem__title em { font-style: italic; color: rgba(250,250,247,0.6); }
+.al-problem__list {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; margin-top: 3rem;
+}
+.al-problem__item {
+  text-align: left; padding-top: 1.2rem;
+  border-top: 1px solid rgba(250,250,247,0.18);
+}
+.al-problem__num {
+  font-family: var(--serif); font-size: 1.6rem;
+  color: var(--accent); display: block; margin-bottom: 0.5rem;
+}
+.al-problem__text {
+  font-family: var(--sans); font-size: 0.88rem;
+  color: rgba(250,250,247,0.75); line-height: 1.55;
+}
+
+/* ============================================================
+   SOLUCIÓN — ArquiLab presentado
+   ============================================================ */
+.al-solution {
+  padding: var(--bandY) var(--inset);
+  background: var(--cream);
+}
+.al-solution__head {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: end; margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.al-solution__title {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 500; line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.al-solution__title em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+.al-solution__lead {
+  font-size: 1rem; color: var(--ink-soft); line-height: 1.7;
+  max-width: 50ch;
+}
+
+.al-modules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.al-module {
+  border: 1px solid var(--line); padding: 1.8rem 1.6rem;
+  transition: all 0.4s var(--ease);
+}
+.al-module:hover { border-color: var(--ink); background: rgba(42,38,32,0.025); }
+.al-module__num {
+  font-family: var(--serif); font-size: 0.75rem;
+  letter-spacing: 0.18em; color: var(--accent);
+  margin-bottom: 1rem; display: block;
+}
+.al-module__title {
+  font-family: var(--serif); font-size: 1.45rem;
+  font-weight: 500; color: var(--ink); margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+.al-module__desc {
+  font-family: var(--sans); font-size: 0.88rem;
+  color: var(--ink-soft); line-height: 1.7;
+}
+
+/* ============================================================
+   RESULTS / TRANSFORM
+   ============================================================ */
+.al-results {
+  padding: var(--bandY) var(--inset);
+  background: var(--cream-2);
+}
+.al-results__head { text-align: center; margin-bottom: 3rem; }
+.al-results__title {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 500; line-height: 1.05;
+}
+.al-results__title em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+.al-compare {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; max-width: 1000px; margin: 0 auto;
+}
+.al-compare__col { padding: 2rem; }
+.al-compare__col--before {
+  background: var(--cream); border: 1px solid var(--line);
+}
+.al-compare__col--after {
+  background: var(--ink); color: var(--cream);
+}
+.al-compare__label {
+  font-family: var(--sans); font-size: 0.65rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  margin-bottom: 1rem; opacity: 0.7;
+}
+.al-compare__title {
+  font-family: var(--serif); font-size: 1.6rem;
+  font-weight: 500; line-height: 1.2; margin-bottom: 1.2rem;
+}
+.al-compare__list { list-style: none; padding: 0; }
+.al-compare__list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line-2);
+  font-size: 0.92rem; line-height: 1.5;
+  padding-left: 1.5rem; position: relative;
+}
+.al-compare__col--after .al-compare__list li {
+  border-bottom-color: rgba(250,250,247,0.12);
+}
+.al-compare__list li::before {
+  position: absolute; left: 0; top: 0.6rem;
+}
+.al-compare__col--before .al-compare__list li::before {
+  content: '×'; color: var(--ink-soft); font-size: 1.2rem; line-height: 1; font-weight: 300;
+}
+.al-compare__col--after .al-compare__list li::before {
+  content: '✓'; color: var(--accent); font-size: 0.9rem; font-weight: 500;
+}
+
+/* ============================================================
+   TESTIMONIOS REALES
+   ============================================================ */
+.al-testimonials {
+  padding: var(--bandY) var(--inset);
+  background: var(--cream);
+}
+.al-testimonials__head { text-align: center; margin-bottom: 3rem; }
+.al-testimonials__title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 500; line-height: 1.1; margin-bottom: 0.8rem;
+}
+.al-testimonials__title em { font-style: italic; font-weight: 400; }
+.al-testimonials__sub {
+  font-size: 0.95rem; color: var(--ink-soft);
+  max-width: 50ch; margin: 0 auto;
+}
+.al-quotes {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem; max-width: 1000px; margin: 0 auto;
+}
+.al-quote {
+  border-left: 2px solid var(--accent);
+  padding: 1.3rem 1.5rem;
+  background: var(--cream-2);
+}
+.al-quote__text {
+  font-family: var(--serif); font-size: 1.05rem;
+  font-style: italic; color: var(--ink);
+  line-height: 1.55; margin-bottom: 0.9rem;
+}
+.al-quote__author {
+  font-family: var(--sans); font-size: 0.7rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   ABOUT — Doménica
+   ============================================================ */
+.al-about {
+  padding: var(--bandY) var(--inset);
+  background: var(--cream-2);
+  display: grid; grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 4vw, 5rem); align-items: center;
+}
+.al-about__photo {
+  aspect-ratio: 4/5;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.al-about__photo-label {
+  font-family: var(--sans); font-size: 0.65rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-soft); border: 1px dashed var(--line);
+  padding: 0.6rem 1.2rem;
+}
+.al-about__kicker {
+  font-family: var(--sans); font-size: 0.7rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.2rem;
+}
+.al-about__title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500; line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.al-about__title em { font-style: italic; }
+.al-about__body p {
+  font-size: 0.98rem; color: var(--ink); line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.al-about__body p:last-child { color: var(--ink-soft); font-style: italic; }
+.al-about__creds {
+  margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.al-cred {
+  font-family: var(--sans); font-size: 0.62rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); border: 1px solid var(--line);
+  padding: 0.4rem 0.8rem;
+}
+
+/* ============================================================
+   OFERTA FINAL — CTA grande
+   ============================================================ */
+.al-offer {
+  padding: var(--bandY) var(--inset);
+  background: var(--espresso);
+  color: var(--cream);
+  text-align: center;
+  position: relative;
+}
+.al-offer__kicker {
+  font-family: var(--sans); font-size: 0.68rem;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.5rem;
+  display: inline-block;
+}
+.al-offer__title {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  font-weight: 500; line-height: 1.05;
+  max-width: 18ch; margin: 0 auto 1.5rem;
+  letter-spacing: -0.01em;
+}
+.al-offer__title em { font-style: italic; color: rgba(250,250,247,0.6); }
+.al-offer__sub {
+  font-size: 1rem; color: rgba(250,250,247,0.72);
+  max-width: 50ch; margin: 0 auto 2.5rem; line-height: 1.7;
+}
+.al-offer__includes {
+  background: rgba(250,250,247,0.04);
+  border: 1px solid rgba(250,250,247,0.12);
+  padding: 2rem; margin: 0 auto 2.5rem;
+  max-width: 600px; text-align: left;
+}
+.al-offer__includes-title {
+  font-family: var(--sans); font-size: 0.7rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.2rem;
+  text-align: center;
+}
+.al-offer__list { list-style: none; padding: 0; }
+.al-offer__list li {
+  padding: 0.7rem 0; padding-left: 1.6rem;
+  border-bottom: 1px solid rgba(250,250,247,0.08);
+  font-size: 0.92rem; line-height: 1.5;
+  color: rgba(250,250,247,0.85);
+  position: relative;
+}
+.al-offer__list li:last-child { border-bottom: none; }
+.al-offer__list li::before {
+  content: '✓'; color: var(--accent); font-size: 0.85rem;
+  position: absolute; left: 0; top: 0.85rem; font-weight: 500;
+}
+.al-offer__list li strong { color: var(--cream); font-weight: 500; }
+
+.al-offer__cta {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  font-family: var(--sans); font-size: 0.78rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  background: var(--accent); color: var(--cream);
+  border: 1px solid var(--accent);
+  padding: 1.3rem 2.5rem;
+  text-decoration: none;
+  transition: all 0.4s var(--ease);
+}
+.al-offer__cta:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); gap: 1rem; }
+.al-offer__legal {
+  font-family: var(--sans); font-size: 0.72rem;
+  color: rgba(250,250,247,0.4); letter-spacing: 0.06em;
+  margin-top: 1.5rem;
+}
+
+/* pricing block */
+.al-offer__pricing {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; max-width: 700px; margin: 0 auto 2.5rem;
+  text-align: left;
+}
+.al-offer__price-box {
+  background: rgba(250,250,247,0.06);
+  border: 1px solid rgba(250,250,247,0.12);
+  padding: 2rem; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+}
+.al-offer__price-label {
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(250,250,247,0.5); margin-bottom: 0.6rem;
+}
+.al-offer__price {
+  font-family: var(--serif); font-size: 3.2rem;
+  font-weight: 500; color: var(--cream); line-height: 1; margin-bottom: 0.5rem;
+}
+.al-offer__currency { font-size: 1.2rem; font-weight: 300; color: rgba(250,250,247,0.5); }
+.al-offer__price-sub {
+  font-size: 0.72rem; color: rgba(250,250,247,0.45);
+  letter-spacing: 0.08em;
+}
+.al-offer__discount {
+  background: rgba(110,106,77,0.15);
+  border: 1px solid rgba(110,106,77,0.3);
+  padding: 2rem;
+}
+.al-offer__discount-label {
+  font-family: var(--serif); font-size: 1.15rem;
+  font-weight: 500; font-style: italic; color: var(--cream);
+  margin-bottom: 0.8rem;
+}
+.al-offer__discount-text {
+  font-size: 0.88rem; color: rgba(250,250,247,0.75);
+  line-height: 1.6; margin-bottom: 1rem;
+}
+.al-offer__discount-text strong { color: var(--cream); font-weight: 500; }
+.al-offer__code {
+  display: inline-block;
+  background: rgba(250,250,247,0.1); border: 1px solid rgba(250,250,247,0.25);
+  padding: 0.25rem 0.6rem; font-family: monospace;
+  letter-spacing: 0.15em; font-size: 0.95rem; color: var(--cream);
+}
+.al-offer__discount-final {
+  font-family: var(--serif); font-size: 1.4rem;
+  font-weight: 500; color: var(--accent); margin-bottom: 0.6rem;
+}
+.al-offer__discount-final strong { color: var(--cream); }
+.al-offer__discount-warn {
+  font-size: 0.72rem; color: rgba(250,250,247,0.45);
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .al-offer__pricing { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.al-faq { padding: var(--bandY) var(--inset); background: var(--cream); }
+.al-faq__head { text-align: center; margin-bottom: 3rem; }
+.al-faq__title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+}
+.al-faq__title em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+.al-faq__list { max-width: 800px; margin: 0 auto; }
+.al-faq__item {
+  border-bottom: 1px solid var(--line);
+  padding: 1.4rem 0;
+}
+.al-faq__q {
+  font-family: var(--serif); font-size: 1.15rem;
+  font-weight: 500; color: var(--ink);
+  margin-bottom: 0.6rem; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem;
+}
+.al-faq__q::after {
+  content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--accent);
+  transition: transform 0.3s var(--ease); flex-shrink: 0;
+}
+.al-faq__item.open .al-faq__q::after { transform: rotate(45deg); }
+.al-faq__a {
+  font-family: var(--sans); font-size: 0.92rem;
+  color: var(--ink-soft); line-height: 1.7;
+  max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease);
+}
+.al-faq__item.open .al-faq__a { max-height: 500px; padding-top: 0.5rem; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.al-footer {
+  padding: 3rem var(--inset);
+  background: var(--cream);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.al-footer p {
+  font-family: var(--sans); font-size: 0.72rem;
+  letter-spacing: 0.1em; color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+}
+.al-footer a { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 980px) {
+  .al-hero { grid-template-columns: 1fr; }
+  .al-hero__visual { max-width: 460px; margin: 0 auto; width: 100%; }
+  .al-solution__head { grid-template-columns: 1fr; }
+  .al-modules { grid-template-columns: 1fr; }
+  .al-messages { grid-template-columns: 1fr; }
+  .al-problem__list { grid-template-columns: repeat(2, 1fr); }
+  .al-compare { grid-template-columns: 1fr; }
+  .al-quotes { grid-template-columns: 1fr; }
+  .al-about { grid-template-columns: 1fr; }
+  .al-about__photo { max-width: 380px; margin: 0 auto; width: 100%; }
+  .al-nav__brand { font-size: 0.62rem; }
+  .al-nav__cta { font-size: 0.62rem; padding: 0.6rem 0.9rem; }
+}
+@media (max-width: 560px) {
+  .al-problem__list { grid-template-columns: 1fr; }
+  .al-hero__title { font-size: 2.6rem; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.al-hero__kicker, .al-hero__title, .al-hero__sub, .al-hero__ctas, .al-hero__visual {
+  animation: fadeUp 1s var(--ease) both;
+}
+.al-hero__kicker { animation-delay: 0.05s; }
+.al-hero__title { animation-delay: 0.15s; }
+.al-hero__sub { animation-delay: 0.3s; }
+.al-hero__ctas { animation-delay: 0.45s; }
+.al-hero__visual { animation-delay: 0.2s; }
+
+</style>
+</head>
+
+<body>
+
+<div class="sheet">
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="al-nav">
+    <a href="/" class="al-nav__brand">doménica<span>.arqdis</span></a>
+    <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="al-nav__cta">Inscríbete →</a>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="al-hero">
+    <div>
+      <span class="al-hero__kicker">ArquiLab · Layout Pro</span>
+      <h1 class="al-hero__title">Mientras tú sigues<br>dibujando líneas<br>en AutoCAD,<br><em>tus clientes<br>ya se fueron.</em></h1>
+      <p class="al-hero__sub">
+        Sigues perdiendo horas en programas antiguos y herramientas que no fueron hechas para arquitectura. Tus presentaciones se ven como las de la U. Y el cliente que podría haberte contratado eligió a quien sí sabe presentar. <strong>Eso se acaba hoy.</strong>
+      </p>
+      <div class="al-hero__ctas">
+        <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="al-btn al-btn--solid">
+          Quiero inscribirme
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l5 4-5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#que-es" class="al-btn al-btn--ghost">
+          ¿Qué es ArquiLab?
+        </a>
+      </div>
+    </div>
+    <div class="al-hero__visual">
+      <div class="al-hero__ph">
+        <span class="al-hero__ph-label">presentación Layout · 4:5</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PETICIÓN — Ustedes lo pidieron ============ -->
+  <section class="al-request">
+    <div class="al-request__head">
+      <span class="al-request__kicker">— Cómo nació ArquiLab</span>
+      <h2 class="al-request__title">Ustedes <em>lo pidieron</em>.</h2>
+      <p class="al-request__sub">
+        Durante meses recibí cientos de mensajes de arquitectas y arquitectos pidiéndome que les enseñara Layout. Aquí algunos de ellos.
+      </p>
+    </div>
+
+    <div class="al-messages">
+      <div class="al-msg">
+        <div class="al-msg__head">
+          <div class="al-msg__avatar">A</div>
+          <span class="al-msg__name">@arqui.seguidora</span>
+        </div>
+        <p class="al-msg__text">Layout es una herramienta excelente, lo aprendí a usar y literal era el único que presentaba láminas bonitas en la U. Eres una capa, sigue adelante.</p>
+      </div>
+      <div class="al-msg">
+        <div class="al-msg__head">
+          <div class="al-msg__avatar">S</div>
+          <span class="al-msg__name">@seguidora.arqdis</span>
+        </div>
+        <p class="al-msg__text">La misma presentación de la comunidad de WhatsApp le mostré a las chicas de la ofi, y dijeron que quieren que les enseñe a usar Layout. Dome, todo lo que nos compartiste es contenido de muchísimo valor. Sos una genia!</p>
+      </div>
+      <div class="al-msg">
+        <div class="al-msg__head">
+          <div class="al-msg__avatar">D</div>
+          <span class="al-msg__name">@domenica.comunidad</span>
+        </div>
+        <p class="al-msg__text">Incluso para nosotros como arquis este tipo de planos puede resultar confuso y no hay una lectura clara. Gracias por compartirnos lo que has aprendido Dome.</p>
+      </div>
+      <div class="al-msg">
+        <div class="al-msg__head">
+          <div class="al-msg__avatar">M</div>
+          <span class="al-msg__name">@mi.arqui</span>
+        </div>
+        <p class="al-msg__text">Me parece súper perfecto, muchas gracias de antemano. Me gustaría aprender de ti, es como otro plus. Me encantaría también estar en tu curso de Layout.</p>
+      </div>
+      <div class="al-msg">
+        <div class="al-msg__head">
+          <div class="al-msg__avatar">C</div>
+          <span class="al-msg__name">@comunidad.arqdis</span>
+        </div>
+        <p class="al-msg__text">Apenas te sigo hace poquito — muchas gracias por todas tus recomendaciones. Tal vez tú no te das cuenta, pero hay personas a las cuales todos tus recursos nos son súper útiles.</p>
+      </div>
+      <div class="al-msg">
+        <div class="al-msg__head">
+          <div class="al-msg__avatar">H</div>
+          <span class="al-msg__name">@hello.arqui</span>
+        </div>
+        <p class="al-msg__text">Hola Dome, ¿con qué programa haces esas láminas? También diseño muebles de melamina pero pongo las medidas en SketchUp y listo. Me gustaría hacerlo más profesional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEMA ============ -->
+  <section class="al-problem" id="que-es">
+    <span class="al-hero__kicker" style="color:rgba(250,250,247,0.5);">— El problema real</span>
+    <h2 class="al-problem__title">Tus proyectos son brillantes.<br>Pero tus láminas <em>no te están vendiendo</em>.</h2>
+    <p style="font-size:1.05rem; color:rgba(250,250,247,0.7); max-width:54ch; margin:0 auto; line-height:1.7;">
+      Sé honesta contigo misma — ¿cuántas veces te ha pasado esto?
+    </p>
+    <div class="al-problem__list">
+      <div class="al-problem__item">
+        <span class="al-problem__num">01</span>
+        <p class="al-problem__text">Cambias una medida y tienes que actualizar 12 láminas a mano en Photoshop o Canva.</p>
+      </div>
+      <div class="al-problem__item">
+        <span class="al-problem__num">02</span>
+        <p class="al-problem__text">Tus planos se ven planos. Sin jerarquía. Sin identidad visual propia.</p>
+      </div>
+      <div class="al-problem__item">
+        <span class="al-problem__num">03</span>
+        <p class="al-problem__text">El cliente no entiende tu propuesta — y termina pidiéndote cambios que duelen.</p>
+      </div>
+      <div class="al-problem__item">
+        <span class="al-problem__num">04</span>
+        <p class="al-problem__text">Pierdes horas en herramientas que nunca fueron diseñadas para arquitectura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUCIÓN ============ -->
+  <section class="al-solution">
+    <div class="al-solution__head">
+      <h2 class="al-solution__title">ArquiLab —<br>el curso que ojalá<br>hubiera tenido <em>en la U</em>.</h2>
+      <p class="al-solution__lead">
+        4 módulos que te llevan de cero a presentaciones nivel estudio profesional. Sin trucos. Sin atajos confusos. Solo el flujo de trabajo real que uso yo en proyectos reales.
+      </p>
+    </div>
+
+    <div class="al-modules">
+      <div class="al-module">
+        <span class="al-module__num">Módulo 01</span>
+        <h3 class="al-module__title">Fundamentos de Layout</h3>
+        <p class="al-module__desc">Setup completo, vínculo con SketchUp, escalas, líneas de cota, estilos. Construyes la base sobre la que todo lo demás va a funcionar.</p>
+      </div>
+      <div class="al-module">
+        <span class="al-module__num">Módulo 02</span>
+        <h3 class="al-module__title">SketchUp 3D avanzado</h3>
+        <p class="al-module__desc">Cómo preparar el modelo para que Layout lo entienda perfecto. Escenas, capas, etiquetas, estilos visuales. La parte que cambia todo.</p>
+      </div>
+      <div class="al-module">
+        <span class="al-module__num">Módulo 03</span>
+        <h3 class="al-module__title">Planos estéticos y técnicos</h3>
+        <p class="al-module__desc">Cómo lograr ese look editorial que ves en estudios europeos. Tipografía, paleta, jerarquía visual, scrapbooks reutilizables.</p>
+      </div>
+      <div class="al-module">
+        <span class="al-module__num">Módulo 04</span>
+        <h3 class="al-module__title">Passion Project — proyecto final</h3>
+        <p class="al-module__desc">Aplicas todo en un proyecto completo. Sales con una presentación lista para portafolio — la que te va a abrir puertas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EJEMPLO BASE — Mockups del curso ============ -->
+  <section style="padding: var(--bandY) var(--inset); background: var(--cream-2);">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <span style="font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);">— Esto es lo que vas a crear</span>
+      <h2 style="font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 500; line-height: 1.1; margin-top: 0.8rem;">
+        Así se ven los proyectos del <em style="font-style:italic; font-weight:400; color:var(--ink-soft);">ArquiLab</em>.
+      </h2>
+      <p style="font-size: 0.95rem; color: var(--ink-soft); max-width: 50ch; margin: 0.8rem auto 0;">
+        Presentaciones profesionales, planos técnicos con identidad visual — todo hecho en SketchUp + Layout. Sin Photoshop. Sin Canva.
+      </p>
+    </div>
+
+    <!-- ✏️ Para actualizar: reemplaza los src con rutas de tu carpeta /images/ en GitHub -->
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem;">
+      <div style="aspect-ratio: 3/4; overflow:hidden;">
+        <img src="00.png" alt="ArquiLab resultado — portada Passion Project" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div style="aspect-ratio: 3/4; overflow:hidden;">
+        <img src="01.png" alt="ArquiLab resultado — nosotros y presentación" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div style="aspect-ratio: 3/4; overflow:hidden;">
+        <img src="02.png" alt="ArquiLab resultado — circulación y axonometría" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div style="aspect-ratio: 3/4; overflow:hidden;">
+        <img src="03.png" alt="ArquiLab resultado — concepto y planta" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div style="aspect-ratio: 3/4; overflow:hidden;">
+        <img src="04.png" alt="ArquiLab resultado — espacio y planos técnicos" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+    </div>
+
+    <p style="text-align: center; font-size: 0.75rem; color: var(--ink-soft); margin-top: 1.5rem; font-style: italic;">
+      Láminas creadas 100% en SketchUp + Layout — el mismo flujo que aprendes en ArquiLab.
+    </p>
+  </section>
+
+  <!-- ============ RESULTS / TRANSFORM ============ -->
+  <section class="al-results">
+    <div class="al-results__head">
+      <h2 class="al-results__title">Antes de ArquiLab.<br><em>Después de ArquiLab.</em></h2>
+    </div>
+    <div class="al-compare">
+      <div class="al-compare__col al-compare__col--before">
+        <p class="al-compare__label">— Antes</p>
+        <h3 class="al-compare__title">Photoshop, Canva, AutoCAD y la frustración de siempre.</h3>
+        <ul class="al-compare__list">
+          <li>Pierdes horas actualizando láminas cuando cambia algo</li>
+          <li>Tus presentaciones se ven amateur al lado de las del estudio top</li>
+          <li>El cliente no entiende y pide cambios que no debían ser</li>
+          <li>Saltas entre 4 programas para terminar una sola lámina</li>
+          <li>Tu portafolio no transmite tu nivel real de proyecto</li>
+        </ul>
+      </div>
+      <div class="al-compare__col al-compare__col--after">
+        <p class="al-compare__label">— Después</p>
+        <h3 class="al-compare__title">SketchUp + Layout. Y un flujo que se actualiza solo.</h3>
+        <ul class="al-compare__list">
+          <li>Cambias el modelo 3D una vez y todas las láminas se actualizan</li>
+          <li>Tus láminas tienen identidad visual propia — reconocibles</li>
+          <li>El cliente entiende, aprueba y paga lo que pides</li>
+          <li>Un solo flujo, dos programas, máximo profesional</li>
+          <li>Tu portafolio te abre puertas que antes no se abrían</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STUDENT SHOWCASE ============ -->
+  <section class="al-showcase" style="padding: var(--bandY) var(--inset); background: var(--espresso); color: var(--cream);">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <span class="al-hero__kicker" style="color: rgba(250,250,247,0.5);">— Resultados reales de alumnas ArquiLab</span>
+      <h2 style="font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 500; line-height: 1.1; margin-top: 0.8rem;">
+        Así presentan <em style="font-style:italic; font-weight:400; color:rgba(250,250,247,0.6);">después de ArquiLab</em>.
+      </h2>
+      <p style="font-size: 1rem; color: rgba(250,250,247,0.6); max-width: 50ch; margin: 1rem auto 0;">
+        Estos son Passion Projects reales de alumnas que terminaron el curso. Sus presentaciones hablan por sí solas.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+      <div style="border: 1px solid rgba(250,250,247,0.12); padding: 1.6rem;">
+        <div style="aspect-ratio: 16/10; overflow:hidden; margin-bottom: 1.2rem;">
+          <img src="MOCKUP_GABY.png" alt="Cocina Pacífico — Arq. Gabriela Calvera — ArquiLab" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <h3 style="font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.4rem;">Cocina Pacífico</h3>
+        <p style="font-size: 0.82rem; color: rgba(250,250,247,0.6); margin-bottom: 0.6rem;">Diseño interior residencial + retail gastronómico. Planos técnicos, moodboard, renders y planos de ejecución — todo en Layout.</p>
+        <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">Arq. Gabriela Calvera · @gabriela.calvera</p>
+      </div>
+
+      <div style="border: 1px solid rgba(250,250,247,0.12); padding: 1.6rem;">
+        <div style="aspect-ratio: 16/10; overflow:hidden; margin-bottom: 1.2rem;">
+          <img src="MOCKUP_NAYELI.png" alt="NM Design Studio — Arq. Nagely Miño — ArquiLab" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <h3 style="font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.4rem;">NM Design Studio</h3>
+        <p style="font-size: 0.82rem; color: rgba(250,250,247,0.6); margin-bottom: 0.6rem;">Passion Project completo: concepto, moodboard, plano técnico, materialidad, axonometría, renders y presupuesto. Nivel estudio profesional.</p>
+        <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">Arq. Nagely Miño · NM Design Studio</p>
+      </div>
+    </div>
+
+    <p style="text-align: center; font-size: 0.82rem; color: rgba(250,250,247,0.45); margin-top: 2rem; font-style: italic;">
+      + Carelis Granizo · Katherine Pasquel · Sofía Tapia · Valeria Ceballos · Jannet Flores · Fernanda Sánchez · Anahí Gallardo — y contando.
+    </p>
+  </section>
+
+  <!-- ============ TESTIMONIOS ============ -->
+  <section class="al-testimonials">
+    <div class="al-testimonials__head">
+      <h2 class="al-testimonials__title">Lo que dice <em>la comunidad</em>.</h2>
+      <p class="al-testimonials__sub">Mensajes reales que recibí de arquitectos y estudiantes — antes de que ArquiLab existiera.</p>
+    </div>
+    <div class="al-quotes">
+      <div class="al-quote">
+        <p class="al-quote__text">"Layout es una herramienta excelente, lo aprendí a usar y literal era el único que presentaba láminas bonitas en la U. Eres una capa, sigue adelante."</p>
+        <p class="al-quote__author">— Mensaje real recibido · comunidad @domenica.arqdis</p>
+      </div>
+      <div class="al-quote">
+        <p class="al-quote__text">"La misma presentación de la comunidad de WhatsApp le mostré a las chicas de la ofi, y dijeron que quieren que les enseñe a usar Layout. Dome, todo lo que nos compartiste es contenido de muchísimo valor. Sos una genia!"</p>
+        <p class="al-quote__author">— Mensaje real recibido · comunidad @domenica.arqdis</p>
+      </div>
+      <div class="al-quote">
+        <p class="al-quote__text">"Apenas te sigo hace poquito — muchas gracias por todas tus recomendaciones. Tal vez tú no te das cuenta, pero hay personas a las cuales todos tus recursos nos son súper útiles."</p>
+        <p class="al-quote__author">— Mensaje real recibido · comunidad @domenica.arqdis</p>
+      </div>
+      <div class="al-quote">
+        <p class="al-quote__text">"Hola Dome, ¿con qué programa haces esas láminas? También diseño muebles de melamina pero pongo las medidas en SketchUp y listo, jaja. Me gustaría hacerlo más profesional."</p>
+        <p class="al-quote__author">— Mensaje real recibido · comunidad @domenica.arqdis</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT DOMÉNICA ============ -->
+  <section class="al-about">
+    <div class="al-about__photo">
+      <span class="al-about__photo-label">foto Doménica · 4:5</span>
+    </div>
+    <div>
+      <span class="al-about__kicker">— Quién te va a enseñar</span>
+      <h2 class="al-about__title">Soy Doménica.<br>Arquitecta entre <em>Quito y Barcelona</em>.</h2>
+      <div class="al-about__body">
+        <p>Maestría en Elisava (Barcelona) con beca completa. Trabajé en estudios de retail design en España. Llevo años usando SketchUp + Layout como el corazón de mi flujo de trabajo profesional.</p>
+        <p>Empecé a compartir lo que aprendía en Instagram y de pronto eran 40,000 personas pidiéndome el mismo curso una y otra vez. Así nació ArquiLab.</p>
+        <p>No te voy a vender humo. Te voy a enseñar el flujo de trabajo real que uso yo en proyectos reales.</p>
+      </div>
+      <div class="al-about__creds">
+        <span class="al-cred">Elisava Barcelona</span>
+        <span class="al-cred">Retail Designer</span>
+        <span class="al-cred">@domenica.arqdis · 40K+</span>
+        <span class="al-cred">UIO / BCN</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OFERTA FINAL ============ -->
+  <section class="al-offer">
+    <span class="al-offer__kicker">— Última oportunidad</span>
+    <h2 class="al-offer__title">Tu próximo proyecto<br>merece <em>verse así</em>.</h2>
+    <p class="al-offer__sub">
+      ArquiLab no es solo un curso. Es la diferencia entre seguir presentando como en la universidad y empezar a presentar como un estudio profesional.
+    </p>
+
+    <div class="al-offer__includes">
+      <p class="al-offer__includes-title">— Qué incluye tu inscripción</p>
+      <ul class="al-offer__list">
+        <li><strong>4 módulos completos</strong> — Fundamentos, SketchUp avanzado, Planos profesionales, Passion Project</li>
+        <li><strong>Acceso de por vida</strong> — Estudia a tu ritmo, vuelve cuando quieras</li>
+        <li><strong>Plantillas y scrapbooks descargables</strong> — Empieza con base, no desde cero</li>
+        <li><strong>Actualizaciones permanentes</strong> — Cuando añado contenido, lo tienes gratis</li>
+        <li><strong>Comunidad de arquis</strong> — Próximamente para miembros ArquiLab</li>
+        <li><strong>Pago seguro vía Hotmart</strong> — Garantía de 7 días sin preguntas</li>
+      </ul>
+    </div>
+
+    <!-- PRICING FOMO -->
+    <div class="al-offer__pricing">
+      <div class="al-offer__price-box">
+        <p class="al-offer__price-label">Precio del curso</p>
+        <p class="al-offer__price">$180 <span class="al-offer__currency">USD</span></p>
+        <p class="al-offer__price-sub">Pago único · acceso de por vida</p>
+      </div>
+      <div class="al-offer__discount">
+        <p class="al-offer__discount-label">Pero si estás aquí es por algo.</p>
+        <p class="al-offer__discount-text">Usa el código <strong class="al-offer__code">HELLOARQUI</strong> en el checkout y obtén un <strong>10% de descuento</strong> — exclusivo para quienes llegaron hasta aquí.</p>
+        <p class="al-offer__discount-final">Tu precio final: <strong>$162 USD</strong></p>
+        <p class="al-offer__discount-warn">⏳ Este código puede expirar en cualquier momento.</p>
+      </div>
+    </div>
+
+    <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="al-offer__cta">
+      Sí, quiero inscribirme ahora
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <p class="al-offer__legal">Pago único · Acceso de por vida · Garantía Hotmart</p>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="al-faq">
+    <div class="al-faq__head">
+      <h2 class="al-faq__title">Preguntas <em>frecuentes</em></h2>
+    </div>
+    <div class="al-faq__list">
+      <div class="al-faq__item">
+        <h3 class="al-faq__q">¿Necesito experiencia previa con SketchUp o Layout?</h3>
+        <div class="al-faq__a">Se recomienda tener una noción básica de SketchUp — pero no es un requisito bloqueante. He tenido estudiantes que empezaron sin saber nada y terminaron el curso con presentaciones de nivel profesional. Lo que importa es las ganas de aprender y tiempo para practicar.</div>
+      </div>
+      <div class="al-faq__item">
+        <h3 class="al-faq__q">¿Cuánto tiempo me toma completarlo?</h3>
+        <div class="al-faq__a">El ritmo lo pones tú. La mayoría termina los 4 módulos en 3–4 semanas estudiando 2–3 horas por semana. Como tienes acceso de por vida, no hay presión.</div>
+      </div>
+      <div class="al-faq__item">
+        <h3 class="al-faq__q">¿Funciona si soy estudiante de arquitectura?</h3>
+        <div class="al-faq__a">Especialmente si eres estudiante. ArquiLab te da años de ventaja sobre tus compañeros — el día que tu portafolio se vea como el de un estudio europeo, las puertas se abren solas. Muchos de mis alumnos consiguieron su primer trabajo gracias a cómo presentaban sus proyectos después del curso.</div>
+      </div>
+      <div class="al-faq__item">
+        <h3 class="al-faq__q">¿Y si ya soy arquitecto/a en ejercicio profesional?</h3>
+        <div class="al-faq__a">ArquiLab es especialmente potente para quienes trabajan en diseño de interiores y espacios comerciales. Si ya tienes proyectos reales con clientes, este flujo te va a ahorrar horas por proyecto y tus propuestas van a cerrar mucho más rápido. Igualmente vale para arquitectura residencial y cualquier proyecto que necesite una presentación que convenza.</div>
+      </div>
+      <div class="al-faq__item">
+        <h3 class="al-faq__q">¿Hay garantía de devolución?</h3>
+        <div class="al-faq__a">Sí. Hotmart te da 7 días de garantía sin preguntas. Si entras al curso y no es lo que esperabas, devolución completa.</div>
+      </div>
+      <div class="al-faq__item">
+        <h3 class="al-faq__q">¿En qué idioma están las clases?</h3>
+        <div class="al-faq__a">Todo en español, con un acento ecuatoriano clarito. Materiales descargables también en español.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="al-footer">
+    <p>© 2026 Doménica Arias · ArquiLab Layout Pro</p>
+    <p><a href="/">← Volver a darqdis.com</a></p>
+  </footer>
+
+</div>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.al-faq__item').forEach(item => {
+  item.querySelector('.al-faq__q').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.al-faq__item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
