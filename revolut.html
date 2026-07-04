@@ -820,6 +820,29 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       var ph = document.querySelector('.video__frame .video__ph');
       if (ph) ph.style.display = 'none';
     });
+
+    /* GA4 video engagement (native <video>, not auto-tracked by Enhanced Measurement) */
+    var firedStart = false;
+    var firedProgress = {};
+    v.addEventListener('play', function () {
+      if (!firedStart) {
+        firedStart = true;
+        if (window.gtag) gtag('event', 'video_start', { event_category: 'revolut_application_video' });
+      }
+    });
+    v.addEventListener('timeupdate', function () {
+      if (!v.duration) return;
+      var pct = Math.floor((v.currentTime / v.duration) * 100);
+      [25, 50, 75, 90].forEach(function (mark) {
+        if (pct >= mark && !firedProgress[mark]) {
+          firedProgress[mark] = true;
+          if (window.gtag) gtag('event', 'video_progress', { event_category: 'revolut_application_video', percent: mark });
+        }
+      });
+    });
+    v.addEventListener('ended', function () {
+      if (window.gtag) gtag('event', 'video_complete', { event_category: 'revolut_application_video' });
+    });
   }
 })();
 </script>
