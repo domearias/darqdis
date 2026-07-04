@@ -1,6 +1,0 @@
-# Clean URL for the Revolut application page
-/revolut            /revolut.html   200
-
-# Subdomain lands directly on the Revolut page (active once revolut.darqdis.com
-# is added as a domain alias in Netlify + DNS points here). Inert until then.
-https://revolut.darqdis.com/   /revolut.html   200!
