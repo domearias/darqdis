@@ -240,7 +240,7 @@ body {
   background: #0d0d0f; border: 1px solid rgba(250,250,247,0.14);
   box-shadow: 0 30px 80px rgba(0,0,0,0.5);
 }
-.video__frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video__frame video, .video__frame iframe { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; }
 .video__frame .video__ph {
   position: absolute; inset: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 0.8rem; text-align: center;
@@ -487,15 +487,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <a href="#contact" class="btn btn--lilac-solid">Let's talk <span class="arrow">→</span></a>
     </div>
     <div class="video__frame reveal" data-d="1">
-      <!-- Vertical 9:16 application video. Drop the file in this folder as revolut-application.mp4
-           (optionally add a poster frame: poster="revolut-poster.jpg"). -->
-      <video controls preload="metadata" playsinline>
-        <source src="revolut-application.mp4" type="video/mp4">
-      </video>
-      <div class="video__ph">
-        <b>Application video</b>
-        Vertical · 9:16<br>revolut-application.mp4
-      </div>
+      <iframe src="https://www.youtube.com/embed/LRbuHz-iWQc" title="Doménica Arias — application video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -812,37 +804,6 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
 
-  /* Hide the video placeholder once the real file loads */
-  var v = document.querySelector('.video__frame video');
-  if (v) {
-    v.addEventListener('loadeddata', function () {
-      var ph = document.querySelector('.video__frame .video__ph');
-      if (ph) ph.style.display = 'none';
-    });
-
-    /* GA4 video engagement (native <video>, not auto-tracked by Enhanced Measurement) */
-    var firedStart = false;
-    var firedProgress = {};
-    v.addEventListener('play', function () {
-      if (!firedStart) {
-        firedStart = true;
-        if (window.gtag) gtag('event', 'video_start', { event_category: 'revolut_application_video' });
-      }
-    });
-    v.addEventListener('timeupdate', function () {
-      if (!v.duration) return;
-      var pct = Math.floor((v.currentTime / v.duration) * 100);
-      [25, 50, 75, 90].forEach(function (mark) {
-        if (pct >= mark && !firedProgress[mark]) {
-          firedProgress[mark] = true;
-          if (window.gtag) gtag('event', 'video_progress', { event_category: 'revolut_application_video', percent: mark });
-        }
-      });
-    });
-    v.addEventListener('ended', function () {
-      if (window.gtag) gtag('event', 'video_complete', { event_category: 'revolut_application_video' });
-    });
-  }
 })();
 </script>
 </body>

@@ -67,15 +67,14 @@ Las tarjetas usan `onerror` → si falta el archivo, muestran placeholder (no se
 
 ---
 
+## Video de aplicación
+Resuelto — la sección `#video` embebe el YouTube Short
+`https://youtube.com/shorts/LRbuHz-iWQc` vía `<iframe>`, no un `<video>` local.
+Las vistas se miden solas con GA4 Enhanced Measurement (video embebido).
+
 ## PENDIENTE
 
-### 1. Video de aplicación (vertical 9:16)
-- Sección `#video` ya montada, esperando el archivo.
-- **Acción:** subir el video a la raíz del repo con el nombre exacto **`revolut-application.mp4`**,
-  luego commit + push. Mientras no exista, se ve un placeholder.
-- (Opcional) portada: guardar `revolut-poster.jpg` y añadir `poster="revolut-poster.jpg"` al `<video>`.
-
-### 2. Subdominio `revolut.darqdis.com`
+### Subdominio `revolut.darqdis.com`
 Descartado — nos quedamos con `darqdis.com/revolut` como URL final para la aplicación.
 
 ---
