@@ -6,14 +6,15 @@ Notas para retomar el trabajo de la página de Revolut desde cualquier dispositi
 ---
 
 ## Qué es
-`revolut/index.html` = página CV + portfolio de **Doménica Arias** para aplicar al rol
+`revolut.html` = página CV + portfolio de **Doménica Arias** para aplicar al rol
 **Spatial & Interior Designer en Revolut**. Vive en el mismo repo que el resto
 del sitio darqdis.com pero es independiente: `noindex` y **sin enlace** desde el
 menú de la home.
 
 ## Dónde verla (live)
-- **https://darqdis.com/revolut** (URL real, carpeta `revolut/index.html`)
-- `revolut.html` en la raíz es solo un redirect al de arriba (compatibilidad con enlaces viejos).
+- **https://darqdis.com/revolut** — GitHub Pages resuelve URLs sin extensión
+  directo a `revolut.html`, no hace falta redirect ni carpeta.
+- también https://darqdis.com/revolut.html (mismo archivo).
 
 ---
 
@@ -30,7 +31,7 @@ de móvil ↔ PC, para no crear conflictos en git.
 
 ## Diseño (Revolut × darqdis)
 Base editorial crema + Playfair de darqdis, con la marca Revolut encima.
-- **Paleta** (variables CSS en el `<style>` de `revolut/index.html`):
+- **Paleta** (variables CSS en el `<style>` de `revolut.html`):
   - Lila `#CACCFB` (bloques firma) · Mid Purple `#A7AAF8` · Accent Purple `#9539F2`
   - Deep Blue `#1326FD` (acento: chip nav, links, hovers, divisor CV)
   - Black `#161618` (tarjetas/secciones) · Lime `#BFFF37` (un solo pop en el footer)
@@ -82,5 +83,5 @@ Descartado — nos quedamos con `darqdis.com/revolut` como URL final para la apl
 ## Cómo retomar desde el móvil
 1. Abre **`claude.ai/code`** en el navegador del móvil, inicia sesión.
 2. Elige el repo **`domearias/darqdis`** (archivos en la raíz).
-3. Di algo como: *"seguimos con la página de Revolut (revolut/index.html) — lee REVOLUT_NOTES.md"*.
+3. Di algo como: *"seguimos con la página de Revolut (revolut.html) — lee REVOLUT_NOTES.md"*.
 4. Pide los cambios; se commitean y hacen push → GitHub Pages publica solo.
