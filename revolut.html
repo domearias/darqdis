@@ -257,6 +257,7 @@ body {
 .pitch__note { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; padding-top: 0.3rem; position: sticky; top: 6rem; }
 .pitch__marker { font-size: 1.4rem; color: var(--purple-deep); line-height: 1; }
 .pitch__label { font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); writing-mode: vertical-rl; transform: rotate(180deg); }
+.pitch__headline { font-family: var(--display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase; color: var(--ink); margin-bottom: 1.4rem; }
 .pitch__body .lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.5rem, 3vw, 2.1rem); color: var(--ink); line-height: 1.35; margin-bottom: 1.6rem; }
 .pitch__body p { font-size: 1.08rem; max-width: 60ch; margin-bottom: 1.3rem; line-height: 1.8; color: var(--ink-soft); }
 .pitch__body p b { color: var(--ink); font-weight: 600; }
@@ -460,9 +461,9 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
     </div>
     <div class="heroGrid__panel">
       <p class="heroGrid__eyebrow">Spatial &amp; Interior Designer · Application</p>
-      <h1 class="heroGrid__title">Spatial &amp;<br>Interior Design</h1>
+      <h1 class="heroGrid__title">Architect &amp;<br>Interior Designer</h1>
       <p class="heroGrid__lead">that makes a brand feel like a place.</p>
-      <p class="heroGrid__body">Architect and interior designer between Barcelona and Quito. I turn brand into space, and I'd like to do it for Revolut.</p>
+      <p class="heroGrid__body">I turn concepts into spacial experiences, and I'd like to do it for Revolut.</p>
       <div class="heroGrid__cta">
         <a href="#contact" class="btn btn--solid">Get in touch <span class="arrow">→</span></a>
         <a href="#video" class="btn btn--outline">Watch my video <span class="arrow">▶</span></a>
@@ -481,9 +482,9 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
   <div class="video__grid">
     <div class="reveal">
       <p class="video__eyebrow">A minute with me</p>
-      <h2 class="video__title">Why I want<br>to join Revolut</h2>
+      <h2 class="video__title">Why we are the<br>perfect match</h2>
       <p class="video__lead">Not a cover letter: a short, honest hello.</p>
-      <p class="video__note">I recorded a short application video. It's the fastest way to get a sense of how I think about space, brand and the way people move through a place.</p>
+      <p class="video__note">I recorded this short video so you can see not only my experience designing spaces from the very first concept to the final delivery, but to get to know my hidden skills.</p>
       <a href="#contact" class="btn btn--lilac-solid">Let's talk <span class="arrow">→</span></a>
     </div>
     <div class="video__frame reveal" data-d="1">
@@ -500,9 +501,10 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <p class="pitch__label">01 · Why Revolut</p>
     </div>
     <div class="pitch__body reveal" data-d="1">
-      <p class="lead">Revolut builds products people trust with their money. Physical space should earn that same trust the moment someone walks in.</p>
-      <p>I'm an architect and interior designer who has spent the last years making commercial spaces communicate a brand: in retail, hospitality and, as a project manager, across full architectural builds. I care about the details users never name but always feel: how a room is entered, where the eye lands, how a material ages.</p>
-      <p><b>That's the craft I want to bring to Revolut's offices and physical presence</b>: spaces that feel as considered, fast and human as the app itself.</p>
+      <h2 class="pitch__headline">Revolut builds products people trust with their money.</h2>
+      <p class="lead">Physical space should earn that same trust the moment someone walks in.</p>
+      <p>I'm an architect and interior designer who has spent the last years making commercial spaces communicate a brand: in retail, hospitality and, as a project manager, across full architectural builds. I care about the details users never name but always feel: how a room is entered, where the eye lands, how a material ages, how the space becomes instagrammeable.</p>
+      <p><b>That's the craft I want to bring to Revolut's offices and physical presence</b>: spaces that feel as amazing as the app itself.</p>
     </div>
   </div>
 </section>
@@ -514,7 +516,6 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <p class="kicker">02 · Selected Work</p>
       <h2 class="cv__title" style="color:var(--ink);">Spaces that sell</h2>
     </div>
-    <p class="work__intro">A short cut of the portfolio. Full case studies on request.</p>
   </div>
 
   <div class="work__list">
@@ -542,8 +543,8 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <div class="work-card">
         <span class="work-card__num">02</span>
         <h3 class="work-card__name">Sisters Kitchen</h3>
-        <p class="work-card__lead">A kitchen designed as a space that sells.</p>
-        <p class="work-card__desc">Concept, space planning, materials and FF&amp;E for a gastronomic experience where the room does the marketing: every surface working for the brand.</p>
+        <p class="work-card__lead">Soul-warming comfort food.</p>
+        <p class="work-card__desc">Natural materials, organic forms, and gold accents translate Sisters Kitchen's farm-to-table philosophy into a space you can feel, warm, intentional, and as honest as the food.</p>
         <div class="work-card__foot">
           <span class="work-card__tags">Retail · F&amp;B · 2025</span>
           <a href="/proyecto?p=sisters-kitchen" class="btn btn--lilac">View <span class="arrow">→</span></a>
@@ -560,8 +561,8 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <div class="work-card">
         <span class="work-card__num">03</span>
         <h3 class="work-card__name">Piza</h3>
-        <p class="work-card__lead">Spatial identity: every material reinforcing the brand.</p>
-        <p class="work-card__desc">Interior design, detailing and on-site coordination. A material palette chosen so the space reads as the brand before a single word is spoken.</p>
+        <p class="work-card__lead">Author sourdough pizzas in a fast-casual setting.</p>
+        <p class="work-card__desc">A mirrored back wall doubles the sense of space, the brand's graphic patterns create Instagrammable moments, and the raw industrial bones were amplified, not hidden, to set the tone for a casual night out.</p>
         <div class="work-card__foot">
           <span class="work-card__tags">Retail · F&amp;B · 2024</span>
           <a href="/proyecto?p=piza" class="btn btn--lilac">View <span class="arrow">→</span></a>
@@ -578,8 +579,8 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <div class="work-card">
         <span class="work-card__num">04</span>
         <h3 class="work-card__name">Holy Cow</h3>
-        <p class="work-card__lead">Retail as experience: brand, space, customer in sync.</p>
-        <p class="work-card__desc">Spatial identity and lighting for a retail concept where the environment is the product. Brand integration from the threshold to the smallest detail.</p>
+        <p class="work-card__lead">The creative ice creams.</p>
+        <p class="work-card__desc">Holy Cow's interior is built around the brand's signature orange, colorful terrazzo tables, playful window graphics, and a rainbow curtain fill the space with energy. A round mirror arch doubles as a photo moment, and scattered greenery keeps it fresh. Every detail is designed to make a gelato visit feel like an event.</p>
         <div class="work-card__foot">
           <span class="work-card__tags">Retail · Concept · 2024</span>
           <a href="/proyecto?p=holy-cow" class="btn btn--lilac">View <span class="arrow">→</span></a>
