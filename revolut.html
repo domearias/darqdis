@@ -12,10 +12,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doménica Arias · Spatial &amp; Interior Designer</title>
-<meta name="description" content="Doménica Arias, Spatial &amp; Interior Designer between Barcelona and Quito. Portfolio, CV and application video prepared for the Spatial & Interior Designer role at Revolut.">
-<meta property="og:title" content="Doménica Arias · Spatial & Interior Designer">
-<meta property="og:description" content="Retail, F&B and spatial design. Portfolio, CV and application video prepared for Revolut.">
+<title>Doménica Arias — Spatial &amp; Interior Designer | Portfolio for Revolut</title>
+<meta name="description" content="Spatial and interior designer with 6+ years translating brand identity into physical environments. Retail, hospitality, event, and immersive experience design.">
+<meta property="og:title" content="Doménica Arias — Spatial & Interior Designer | Portfolio for Revolut">
+<meta property="og:description" content="Spatial and interior designer with 6+ years translating brand identity into physical environments. Retail, hospitality, event and immersive experience design.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -331,10 +331,15 @@ body {
 .cv-entry__role { font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 2.6vw, 1.9rem); line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase; }
 .cv-entry__org { font-family: var(--display); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--purple-deep); margin: 0.6rem 0 0.9rem; }
 .cv-entry__desc { font-size: 0.98rem; color: var(--ink-soft); max-width: 62ch; line-height: 1.7; }
-.cv-skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 clamp(2rem, 5vw, 4rem); }
-.cv-skill { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: baseline; padding: 0.95rem 0; border-top: 1px solid var(--line); }
-.cv-skill b { font-family: var(--display); font-weight: 600; font-size: 1.02rem; }
-.cv-skill span { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--ink-soft); text-align: right; max-width: 26ch; }
+.cv-skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.6rem, 4vw, 3rem); align-items: start; }
+.cv-col__head { font-family: var(--display); font-weight: 600; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); padding-bottom: 0.85rem; border-bottom: 1px solid var(--line); }
+.cv-col ul { list-style: none; }
+.cv-col li { font-family: var(--sans); font-weight: 400; font-size: 0.9rem; line-height: 1.4; color: var(--ink-soft); padding: 0.7rem 0; border-top: 1px solid var(--line-2); }
+.cv-col li:first-child { border-top: none; }
+.cv-meta { grid-column: 1 / -1; margin-top: 0.4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 2rem; }
+.cv-meta p { font-family: var(--sans); font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
+.cv-meta b { font-family: var(--display); font-weight: 600; font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); display: block; margin-bottom: 0.35rem; }
+.cv-years-callout { font-family: var(--display); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.05em; color: var(--blue); margin-top: 1rem; }
 .cv__rule { height: 3px; width: 72px; background: var(--blue); margin-top: 2.4rem; border-radius: 100px; }
 
 /* ============================================================
@@ -426,7 +431,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
   .footer__grid { grid-template-columns: 1fr; }
   .cv-entry { grid-template-columns: 1fr; gap: 0.5rem; }
   .cv-skills { grid-template-columns: 1fr; }
-  .cv-skill span { max-width: none; }
+  .cv-meta { grid-template-columns: 1fr; }
   .manifesto__sub { justify-self: start; }
 }
 </style>
@@ -502,9 +507,10 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
     </div>
     <div class="pitch__body reveal" data-d="1">
       <h2 class="pitch__headline">Revolut builds products people trust with their money.</h2>
-      <p class="lead">Physical space should earn that same trust the moment someone walks in.</p>
-      <p>I'm an architect and interior designer who has spent the last years making commercial spaces communicate a brand: in retail, hospitality and, as a project manager, across full architectural builds. I care about the details users never name but always feel: how a room is entered, where the eye lands, how a material ages, how the space becomes Instagrammable.</p>
-      <p><b>That's the craft I want to bring to Revolut's offices and physical presence</b>: spaces that feel as amazing as the app itself.</p>
+      <p class="lead">I'm a spatial and interior designer with 6+ years of experience translating brand identity into physical environments.</p>
+      <p>My work spans retail, hospitality, and residential — from concept development and spatial storytelling through materials specification, lighting design, 3D visualisation, and full construction documentation. I own projects end-to-end, from idea through execution and delivery.</p>
+      <p>Currently designing luxury interiors at LUV Studio in Barcelona, I also lead darqdis — an architecture education platform with 50K+ followers where I teach spatial design and AI-assisted workflows to Spanish-speaking architects.</p>
+      <p><b>I believe the most powerful brand experiences happen when digital-first companies invest in physical spaces that feel as intentional, elevated, and immersive as their products.</b> That's what I want to help Revolut build.</p>
     </div>
   </div>
 </section>
@@ -544,9 +550,11 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
         <span class="work-card__num">02</span>
         <h3 class="work-card__name">Sisters Kitchen</h3>
         <p class="work-card__lead">Soul-warming comfort food.</p>
-        <p class="work-card__desc">Natural materials, organic forms, and gold accents translate Sisters Kitchen's farm-to-table philosophy into a space you can feel, warm, intentional, and as honest as the food.</p>
+        <p class="work-card__desc">A full-scope retail spatial design project that translated a brand born in a pandemic dark kitchen into an immersive hospitality environment. Starting from concept development, I designed the complete spatial customer journey — from storefront threshold to dining experience — delivering a 90-page design manual covering brand analysis, spatial planning, custom furniture design (fluted bar with gold detailing, organic micro-cement patio bench), materials specification, lighting design, MEP coordination, and construction documentation.</p>
+        <p class="work-card__desc">The design connects guests to the brand's core identity: comfort food that hugs the soul. Natural materials and organic forms create a warm environment, while gold accents add sophistication to the earthy palette. Every spatial decision reinforces the brand's philosophy of honest, intentional food.</p>
+        <p class="work-card__desc"><b>Role:</b> Creative direction · Concept development · Spatial planning · Custom furniture design · Materials specification · Lighting design · 3D visualisation · Full construction documentation · MEP coordination · Site supervision<br><b>Tools:</b> SketchUp · Layout · Enscape · V-Ray · AutoCAD · Photoshop</p>
         <div class="work-card__foot">
-          <span class="work-card__tags">Retail · F&amp;B · 2025</span>
+          <span class="work-card__tags">Retail Spatial Design · Brand-to-Environment Translation · Full Project Ownership</span>
           <a href="https://drive.google.com/file/d/1WhFubVh9VZnrOrJvLfrrOtbQeZ3VNBZr/view" target="_blank" rel="noopener" class="btn btn--lilac">View <span class="arrow">→</span></a>
         </div>
       </div>
@@ -562,9 +570,10 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
         <span class="work-card__num">03</span>
         <h3 class="work-card__name">Piza</h3>
         <p class="work-card__lead">Author sourdough pizzas in a fast-casual setting.</p>
-        <p class="work-card__desc">A mirrored back wall doubles the sense of space, the brand's graphic patterns create Instagrammable moments, and the raw industrial bones were amplified, not hidden, to set the tone for a casual night out.</p>
+        <p class="work-card__desc">An artisan pizzeria where the spatial customer journey begins with the ritual of the open oven — the heart of the space, visible from every angle. The design translates the brand's craft-first identity into a physical environment through raw industrial materials softened with warm lighting design and natural textures. Every spatial decision supports the brand narrative: watching dough become pizza is the experience framework that organises the entire floor plan.</p>
+        <p class="work-card__desc"><b>Role:</b> Concept development · Spatial planning · Materials specification · Lighting design · 3D visualisation · Construction documentation<br><b>Tools:</b> SketchUp · Layout · Enscape · AutoCAD · Photoshop</p>
         <div class="work-card__foot">
-          <span class="work-card__tags">Retail · F&amp;B · 2024</span>
+          <span class="work-card__tags">Retail Design · Immersive Brand Experience · Spatial Storytelling</span>
           <a href="https://drive.google.com/file/d/1Z9fVx98A47BAC89VtuxJyFawfIhatEde/view" target="_blank" rel="noopener" class="btn btn--lilac">View <span class="arrow">→</span></a>
         </div>
       </div>
@@ -580,9 +589,10 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
         <span class="work-card__num">04</span>
         <h3 class="work-card__name">Holy Cow</h3>
         <p class="work-card__lead">The creative ice creams.</p>
-        <p class="work-card__desc">Holy Cow's interior is built around the brand's signature orange, colorful terrazzo tables, playful window graphics, and a rainbow curtain fill the space with energy. A round mirror arch doubles as a photo moment, and scattered greenery keeps it fresh. Every detail is designed to make a gelato visit feel like an event.</p>
+        <p class="work-card__desc">An ice cream concept store where the product IS the spatial palette. The design translates Holy Cow's playful brand identity into a physical environment where colour, texture, and materiality mirror the ingredient-driven menu. Customers described it as “the most creative and curious spot in all of Quito” — proof that brand-to-environment translation creates memorable, immersive experiences that customers talk about unprompted.</p>
+        <p class="work-card__desc"><b>Role:</b> Concept development · Spatial planning · Materials specification · Brand-to-environment translation · 3D visualisation<br><b>Tools:</b> SketchUp · Layout · Enscape · Photoshop</p>
         <div class="work-card__foot">
-          <span class="work-card__tags">Retail · Concept · 2024</span>
+          <span class="work-card__tags">Concept Store Design · Brand Translation · Pop-Up Potential</span>
           <a href="https://drive.google.com/file/d/1Wb9NFElfDPxZhrnMua08ZR2Hry1WjIg6/view" target="_blank" rel="noopener" class="btn btn--lilac">View <span class="arrow">→</span></a>
         </div>
       </div>
@@ -609,6 +619,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
     <div>
       <p class="kicker">03 · Curriculum</p>
       <h2 class="cv__title">Experience, education <em>&amp; skills</em></h2>
+      <p class="cv-years-callout">6+ years in spatial &amp; interior design · Retail · Hospitality · Residential · Brand Environments</p>
     </div>
   </div>
 
@@ -621,7 +632,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <div>
         <h3 class="cv-entry__role">3D Concept Developer</h3>
         <p class="cv-entry__org">LUV Studio · Visual Concept Developer</p>
-        <p class="cv-entry__desc">Design at a luxury interior studio in Spain: concept development, space planning, materials and FF&amp;E for high-end residential and commercial projects. Technical documentation, 3D visualisation, and AI research to improve design processes.</p>
+        <p class="cv-entry__desc">Concept development, spatial planning and 3D visualisation for luxury residential and commercial interiors — translating client brand identity into elevated physical environments through materials specification, lighting design and custom furniture detailing. Deliver high-impact visuals in SketchUp, Enscape, V-Ray and AutoCAD, from initial concept through construction documentation, collaborating cross-functionally with architects, contractors and suppliers in a fast-paced studio.</p>
       </div>
     </div>
 
@@ -630,7 +641,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <div>
         <h3 class="cv-entry__role">Project Manager</h3>
         <p class="cv-entry__org">Bauden Architects · 2D &amp; 3D modeling, budgeting and construction</p>
-        <p class="cv-entry__desc">Led architectural projects from planning to handover: coordinating design teams, contractors, timelines and budgets. The delivery discipline behind good spatial design: keeping scope, cost and quality aligned across multiple sites at once.</p>
+        <p class="cv-entry__desc">Directed full-scope retail and hospitality projects from concept development through execution and delivery — coordinating design teams, contractors, timelines and budgets. Owned projects end-to-end, keeping brand identity, spatial planning, materials specification and construction documentation aligned across multiple sites at once.</p>
       </div>
     </div>
 
@@ -639,7 +650,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <div>
         <h3 class="cv-entry__role">Architect · Retail &amp; Commercial</h3>
         <p class="cv-entry__org">Marina Group · 2D &amp; 3D modeling, concept development and construction</p>
-        <p class="cv-entry__desc">Led interior and retail projects end to end: from brief and concept to construction drawings and on-site follow-up. Balanced brand, budget and timeline across multiple commercial spaces simultaneously.</p>
+        <p class="cv-entry__desc">Led retail and commercial interior projects end-to-end — from brief and concept development to 3D visualisation, construction drawings and on-site delivery. Translated each brand's identity into cohesive physical environments while balancing brand, budget and timeline across multiple spaces, designing spatial customer journeys and immersive retail experiences with SketchUp, AutoCAD, V-Ray and Revit.</p>
       </div>
     </div>
 
@@ -648,7 +659,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <div>
         <h3 class="cv-entry__role">Junior Architect</h3>
         <p class="cv-entry__org">OMAH Creative Design · 2D Drafter &amp; 3D modeler</p>
-        <p class="cv-entry__desc">Interior and spatial design for hospitality and retail clients. Concept, moodboards, technical drawings and renders: building the fluency in presentation that now defines how I work.</p>
+        <p class="cv-entry__desc">Interior and spatial design for hospitality and retail clients — supporting concept development, spatial planning, moodboards, technical drawings and 3D visualisation. Built early fluency in materials specification, lighting and the presentation craft that now defines how I work.</p>
       </div>
     </div>
   </div>
@@ -662,7 +673,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
       <div>
         <h3 class="cv-entry__role">Master in Advanced Design Management, Strategy and Entrepreneurship</h3>
         <p class="cv-entry__org">ELISAVA · Barcelona School of Design &amp; Engineering</p>
-        <p class="cv-entry__desc">Scholarship Winner — MA in Advanced Design Management, Strategy &amp; Entrepreneurship: trained to lead design-driven innovation in complex environments, from identifying opportunities to implementing solutions that are efficient, versatile, and responsible.</p>
+        <p class="cv-entry__desc">Scholarship Winner. Bridging design practice with business strategy, service design and brand experience — training that informs how I approach spatial design not just as aesthetics, but as strategic brand-to-environment translation.</p>
       </div>
     </div>
 
@@ -678,18 +689,39 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
 
   <!-- Skills -->
   <div class="cv__block reveal">
-    <p class="cv__label">Skills · mapped to the role</p>
+    <p class="cv__label">Capabilities · mapped to the role</p>
     <div class="cv-skills">
-      <div class="cv-skill"><b>Space planning</b><span>Layouts that flow: retail, F&amp;B, workplace</span></div>
-      <div class="cv-skill"><b>Concept &amp; brand</b><span>Translating brand into physical space</span></div>
-      <div class="cv-skill"><b>3D visualisation</b><span>SketchUp · Layout · V-Ray · D5 · Enscape</span></div>
-      <div class="cv-skill"><b>Technical drawings</b><span>AutoCAD · construction documentation</span></div>
-      <div class="cv-skill"><b>FF&amp;E &amp; materials</b><span>Specification, sourcing, detailing</span></div>
-      <div class="cv-skill"><b>Project management</b><span>Scope, budget, timeline across sites</span></div>
-      <div class="cv-skill"><b>Visual &amp; layout</b><span>Adobe Suite · Canva · Figma · Claude Design</span></div>
-      <div class="cv-skill"><b>Site coordination</b><span>Concept to delivery, with contractors</span></div>
-      <div class="cv-skill"><b>Languages</b><span>Spanish (native) · English (professional)</span></div>
-      <div class="cv-skill"><b>Based in</b><span>Barcelona, Spain</span></div>
+      <div class="cv-col">
+        <p class="cv-col__head">Spatial Design</p>
+        <ul>
+          <li>Spatial Planning &amp; Customer Journeys</li>
+          <li>Retail &amp; Hospitality Design</li>
+          <li>Event, Pop-Up &amp; Activation Design</li>
+          <li>Brand-to-Environment Translation</li>
+        </ul>
+      </div>
+      <div class="cv-col">
+        <p class="cv-col__head">Technical Execution</p>
+        <ul>
+          <li>3D Visualisation (SketchUp, Enscape, V-Ray)</li>
+          <li>Materials Specification &amp; Lighting Design</li>
+          <li>Custom Furniture Design &amp; Detailing</li>
+          <li>Construction Documentation &amp; MEP</li>
+        </ul>
+      </div>
+      <div class="cv-col">
+        <p class="cv-col__head">Strategic Thinking</p>
+        <ul>
+          <li>Concept Development &amp; Storytelling</li>
+          <li>Experience Frameworks</li>
+          <li>Cross-Functional Collaboration</li>
+          <li>End-to-End Project Ownership</li>
+        </ul>
+      </div>
+      <div class="cv-meta">
+        <p><b>Software</b>SketchUp · Layout · Enscape · V-Ray · AutoCAD · Revit · Photoshop · Illustrator</p>
+        <p><b>Languages</b>Spanish (Native) · English (Professional / C1)</p>
+      </div>
     </div>
     <div class="cv__rule" aria-hidden="true"></div>
   </div>
@@ -701,7 +733,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
     <div class="reveal">
       <p class="kicker">04 · Contact</p>
       <h2 class="contact__title">Let's <em>talk</em>.</h2>
-      <p class="contact__lead">Happy to walk you through the full portfolio and how I'd approach spatial design at Revolut.</p>
+      <p class="contact__lead">Revolut's next chapter is physical — and I want to help design it. From concept stores to events, pop-ups to office environments, I bring 6+ years of translating brand identity into spatial experiences that feel elevated, intentional, and ahead of the curve.</p>
     </div>
     <div class="contact__list reveal" data-d="1">
       <a class="contact__row" href="mailto:domearias1306@gmail.com">
@@ -726,7 +758,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer" id="footer" data-screen-label="Footer">
-  <h2 class="footer__cta reveal">Let's build <em>space</em></h2>
+  <h2 class="footer__cta reveal">Let's build something worth <em>walking into</em></h2>
   <div class="footer__grid">
     <div class="footer__col">
       <h4>Role · Application</h4>
