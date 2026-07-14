@@ -7,19 +7,27 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-GLL4M44JNR');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doménica Arias — Arquitecta · SketchUp + Layout · Retail Design</title>
-<meta name="description" content="Doménica Arias — Arquitecta, retail designer e interiorista entre Quito y Barcelona. Especialista en SketchUp + Layout. Fundadora de ArquiLab. @domenica.arqdis">
-<meta property="og:title" content="Doménica Arias — Arquitecta · Retail Design · Educadora">
-<meta property="og:description" content="Arquitecta ecuatoriana en Barcelona. Retail design, interiorismo y formación digital para arquitectos. SketchUp + Layout + IA.">
+<title>Biblioteca 3D — Modelos gratis para SketchUp · darqdis.com</title>
+<meta name="description" content="Muebles y componentes 3D modelados por Doménica Arias, listos para tu proyecto en SketchUp. Descarga libre, sin registro. Nuevo modelo cada semana.">
+<meta property="og:title" content="Biblioteca 3D — Modelos gratis para SketchUp · darqdis">
+<meta property="og:description" content="Muebles y componentes modelados por mí, listos para tu proyecto en SketchUp. Sin registro, sin correo.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
+/* ============================================================
+   NOTA PARA CLAUDE CODE
+   Este bloque <style> es una COPIA LITERAL del de index.html
+   (mismo sistema: Playfair Display + Archivo, mismas variables).
+   Si el repo ya tiene un CSS compartido, borra todo hasta el
+   separador "BIBLIOTECA 3D" y enlaza la hoja del sitio.
+   La sección BIBLIOTECA 3D del final es lo único nuevo.
+   ============================================================ */
+
 /* ============================================================
    DOMENICA ARIAS — Portfolio v2
    "Eclectic Editorial Luxury"
@@ -988,6 +996,96 @@ body {
   .lead-magnet__form .btn { width: 100%; justify-content: center; }
 }
 
+
+/* ============================================================
+   BIBLIOTECA 3D  (/biblioteca)
+   ============================================================ */
+.bib-hero { padding: clamp(4.5rem, 9vw, 7.5rem) var(--inset) 0; }
+.bib-hero__title { font-family: var(--serif); font-weight: 500; font-size: clamp(2.8rem, 8vw, 6rem); line-height: 0.96; margin: 1rem 0 1.6rem; }
+.bib-hero__title em { font-style: italic; font-weight: 400; }
+.bib-hero__sub { font-size: 1.05rem; color: var(--ink-soft); max-width: 48ch; line-height: 1.75; }
+.bib-hero__sub .lang-sub { font-family: var(--serif); font-style: italic; font-size: 0.95rem; margin-top: 0.6rem; }
+.bib-meta { display: flex; flex-wrap: wrap; gap: clamp(2rem, 6vw, 5rem); margin-top: clamp(2.5rem, 5vw, 3.6rem); padding: 2rem 0; border-top: 1px solid var(--line); }
+.bib-meta__n { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; color: var(--ink); margin-bottom: 0.5rem; }
+
+/* Filtros */
+.bib-filtros { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: clamp(2rem, 4vw, 3rem) var(--inset) clamp(1.6rem, 3vw, 2.4rem); }
+.bib-filtro {
+  font-family: var(--sans); font-weight: 400; font-size: 0.66rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); background: transparent;
+  border: 1px solid var(--line); padding: 0.6rem 1.05rem;
+  cursor: pointer; transition: all 0.4s var(--ease);
+}
+.bib-filtro:hover { border-color: var(--ink); color: var(--ink); }
+.bib-filtro[aria-pressed="true"] { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+/* Grid — retícula de hairlines, igual que .proj-grid */
+.bib-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line);
+  margin: 0 var(--inset) var(--bandY);
+}
+.bib-card { background: var(--cream); display: flex; flex-direction: column; transition: background 0.5s var(--ease); }
+.bib-card:hover { background: var(--cream-2); }
+.bib-card__media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; display: block; background: var(--sand); }
+.bib-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.1s var(--ease); }
+.bib-card:hover .bib-card__media img { transform: scale(1.04); }
+.bib-card__body { padding: clamp(1.3rem, 2vw, 1.8rem); display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.bib-card__kicker { font-family: var(--sans); font-weight: 500; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
+.bib-card__kicker b { font-weight: 500; color: var(--olive); }
+.bib-card__title { font-family: var(--serif); font-weight: 500; font-size: clamp(1.3rem, 2.1vw, 1.7rem); line-height: 1.08; color: var(--ink); }
+.bib-card__tip { font-family: var(--sans); font-weight: 300; font-size: 0.84rem; line-height: 1.65; color: var(--ink-soft); }
+.bib-card__cta {
+  margin-top: auto; padding-top: 1.3rem; border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 0.8rem;
+  font-family: var(--sans); font-weight: 500; font-size: 0.66rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  transition: color 0.4s var(--ease);
+}
+.bib-card__cta .arrow { transition: transform 0.4s var(--ease); }
+.bib-card__cta:hover { color: var(--olive); }
+.bib-card__cta:hover .arrow { transform: translateX(5px); }
+
+/* Banda ArquiLab — cada 6 cards */
+.bib-banda {
+  grid-column: 1 / -1;
+  background: var(--espresso); color: var(--cream);
+  padding: clamp(2.4rem, 5vw, 4rem);
+  display: grid; grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(1.5rem, 4vw, 3rem); align-items: center;
+}
+.bib-banda .kicker { color: var(--blue); }
+.bib-banda__title { font-family: var(--serif); font-weight: 500; font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.06; margin-top: 0.9rem; }
+.bib-banda__title em { font-style: italic; font-weight: 400; color: rgba(245,241,234,0.6); }
+.bib-banda__body { font-family: var(--sans); font-weight: 300; font-size: 0.95rem; line-height: 1.7; color: rgba(245,241,234,0.72); max-width: 42ch; }
+.btn--oxblood { background: var(--oxblood); border-color: var(--oxblood); color: var(--cream); }
+.btn--oxblood:hover { background: transparent; border-color: var(--cream); color: var(--cream); }
+.bib-banda .btn--oxblood { justify-self: end; }
+
+/* Cierre */
+.bib-cierre { background: var(--cream-2); padding: var(--bandY) var(--inset); }
+.bib-cierre__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.bib-cierre__title { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.02; margin-top: 1rem; }
+.bib-cierre__title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.bib-cierre__body p { font-size: 1rem; color: var(--ink-soft); max-width: 46ch; margin-bottom: 1.4rem; }
+.bib-cierre__body .en { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--ink-soft); border-left: 2px solid var(--sand); padding-left: 1.1rem; margin-bottom: 2rem; line-height: 1.5; }
+
+.bib-empty { grid-column: 1 / -1; background: var(--cream); padding: clamp(3rem, 6vw, 5rem); text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--ink-soft); }
+
+@media (max-width: 1024px) {
+  .bib-grid { grid-template-columns: repeat(2, 1fr); }
+  .bib-banda { grid-template-columns: 1fr; }
+  .bib-banda .btn--oxblood { justify-self: start; }
+  .bib-cierre__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .bib-grid { grid-template-columns: 1fr; }
+  .bib-meta { gap: 2rem; }
+}
+
 </style>
 </head>
 <body>
@@ -996,16 +1094,15 @@ body {
 
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav">
-  <a href="#hero" class="nav__brand" aria-label="Doménica Arias — inicio">doménica<span class="dot">.</span>arqdis</a>
+  <a href="/" class="nav__brand" aria-label="Doménica Arias — inicio">doménica<span class="dot">.</span>arqdis</a>
   <ul class="nav__links" id="navLinks">
-    <li><a href="#portfolio">Proyectos</a></li>
-    <li><a href="/biblioteca">Biblioteca</a></li>
-    <li><a href="#arquilab">El problema</a></li>
-    <li><a href="#courses">ArquiLab</a></li>
-    <li><a href="#footer">Contacto</a></li>
+    <li><a href="/#portfolio">Proyectos</a></li>
+    <li><a href="/biblioteca" class="active">Biblioteca</a></li>
+    <li><a href="/#courses">ArquiLab</a></li>
+    <li><a href="/#footer">Contacto</a></li>
   </ul>
   <div class="nav__right">
-    <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="btn btn--solid-dark nav-cta">Inscríbete <span class="arrow">→</span></a>
+    <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="btn btn--solid-dark nav-cta">Inscríbete <span class="arrow">&rarr;</span></a>
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -1013,207 +1110,66 @@ body {
 </nav>
 
 <!-- ============ HERO ============ -->
-<header class="hero" id="hero" data-screen-label="Hero">
-  <div class="hero__treatment heroA is-active" data-hero="0">
-    <div class="heroA__media">
-
-      <!-- Texto gigante de fondo -->
-      <div class="heroA__wordmark" aria-hidden="true">
-        <span>doménica</span>
-        <span>arias</span>
-      </div>
-
-      <!-- Foto encima del texto con blend mode -->
-      <div class="heroA__portrait">
-        <img src="portrait.png" alt="Doménica Arias — Arquitecta · darqdis.com">
-      </div>
-
-      <!-- Overlay con info -->
-      <div class="heroA__overlay">
-        <div class="heroA__overlay-top">
-          <span class="heroA__handle">@domenica.arqdis</span>
-          <span class="heroA__date">UIO / BCN · 2026</span>
-        </div>
-        <div class="heroA__overlay-bottom">
-          <h1 class="heroA__name">Diseño arquitectura<br>y espacios.<br><em>Enseño a presentarlos.</em></h1>
-          <div class="heroA__right">
-            <p class="heroA__sub">
-              Arquitecta · Interiorista · Educadora
-              <span class="lang-sub">Architect · Interior Designer · Educator</span>
-            </p>
-            <div class="heroA__cta">
-              <a href="#arquilab" class="btn btn--solid-dark">Aprende a presentar como pro <span class="arrow">→</span></a>
-              <a href="#portfolio" class="btn btn--outline-dark">Ver mi trabajo <span class="arrow">→</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+<header class="bib-hero reveal">
+  <p class="kicker">Recursos — Biblioteca 3D</p>
+  <h1 class="bib-hero__title">Muebles listos.<br><em>Proyecto en marcha.</em></h1>
+  <p class="bib-hero__sub">
+    Componentes modelados por mí, optimizados y listos para soltar en tu escena de SketchUp. Sin registro, sin correo, sin trampa.
+    <span class="lang-sub">Free SketchUp components, modelled in-house. No sign-up.</span>
+  </p>
+  <div class="bib-meta">
+    <div>
+      <span class="bib-meta__n"><!-- COUNT:START -->0<!-- COUNT:END --></span>
+      <span class="kicker">Modelos disponibles</span>
+    </div>
+    <div>
+      <span class="bib-meta__n">0</span>
+      <span class="kicker">Registros ni correos</span>
+    </div>
+    <div>
+      <span class="bib-meta__n">100%</span>
+      <span class="kicker">Modelados por mí</span>
     </div>
   </div>
 </header>
 
-<!-- ============ 01 — PORTFOLIO ============ -->
-<section class="projects" id="portfolio" data-screen-label="Portafolio">
-  <div class="band-head reveal">
+<!-- ============ FILTROS ============ -->
+<nav class="bib-filtros" id="bibFiltros" aria-label="Filtrar por categoría">
+  <button class="bib-filtro" data-f="todos" aria-pressed="true">Todos</button>
+  <button class="bib-filtro" data-f="asientos" aria-pressed="false">Asientos</button>
+  <button class="bib-filtro" data-f="mesas" aria-pressed="false">Mesas</button>
+  <button class="bib-filtro" data-f="almacenaje" aria-pressed="false">Almacenaje</button>
+  <button class="bib-filtro" data-f="iluminacion" aria-pressed="false">Iluminación</button>
+  <button class="bib-filtro" data-f="cocina" aria-pressed="false">Cocina</button>
+  <button class="bib-filtro" data-f="baño" aria-pressed="false">Baño</button>
+  <button class="bib-filtro" data-f="exterior" aria-pressed="false">Exterior</button>
+  <button class="bib-filtro" data-f="decoracion" aria-pressed="false">Decoración</button>
+</nav>
+
+<!-- ============ GRID ============ -->
+<section class="bib-grid" id="bibGrid">
+<!-- GRID:START -->
+      <p class="bib-empty">Los primeros modelos llegan esta semana.</p>
+<!-- GRID:END -->
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="bib-cierre">
+  <div class="bib-cierre__grid reveal">
     <div>
-      <p class="kicker">01 — Portafolio</p>
-      <h2 class="projects__title" style="margin-top:0.8rem;">Obra seleccionada
-        <span class="lang-sub">Selected architecture &amp; spatial work</span>
-      </h2>
+      <p class="kicker">ArquiLab</p>
+      <h2 class="bib-cierre__title">El modelo ya lo tienes.<br><em>Falta el plano.</em></h2>
     </div>
-    <p class="projects__intro">Retail y F&amp;B. Pasa el cursor sobre cada proyecto.</p>
-  </div>
-
-  <div class="proj-grid">
-
-    <a class='proj-card reveal' data-d='1' href='/proyecto?p=sisters-kitchen'>
-      <div class="proj-card__media">
-        <div class="ph"><span class="ph__tag">sisters kitchen · 4:5</span></div>
-        <div class="proj-card__overlay"><p>Cocina y experiencia gastronómica diseñada como un espacio que vende.
-          <span class="lang-sub">A kitchen and dining experience designed as a space that sells.</span></p></div>
-      </div>
-      <div class="proj-card__foot"><h3 class="proj-card__name">Sisters Kitchen</h3><span class="proj-card__year">2025</span></div>
-      <p class="proj-card__type">Retail · F&amp;B</p>
-    </a>
-
-    <a class='proj-card reveal' data-d='2' href='/proyecto?p=piza'>
-      <div class="proj-card__media">
-        <div class="ph ph--olive"><span class="ph__tag">piza · 4:5</span></div>
-        <div class="proj-card__overlay"><p>Identidad espacial donde cada material refuerza la marca.
-          <span class="lang-sub">Spatial identity — every material reinforcing the brand.</span></p></div>
-      </div>
-      <div class="proj-card__foot"><h3 class="proj-card__name">Piza</h3><span class="proj-card__year">2024</span></div>
-      <p class="proj-card__type">Retail · F&amp;B</p>
-    </a>
-
-    <a class='proj-card reveal' data-d='3' href='/proyecto?p=holy-cow'>
-      <div class="proj-card__media">
-        <div class="ph ph--blue"><span class="ph__tag">holy cow · 4:5</span></div>
-        <div class="proj-card__overlay"><p>Retail diseñado como una experiencia: marca, espacio y cliente en sintonía.
-          <span class="lang-sub">Retail as experience — brand, space and customer in sync.</span></p></div>
-      </div>
-      <div class="proj-card__foot"><h3 class="proj-card__name">Holy Cow</h3><span class="proj-card__year">2024</span></div>
-      <p class="proj-card__type">Retail · Concept</p>
-    </a>
-
-  </div>
-
-  <div class="portfolio-bio reveal" data-d="4">
-    <p class="portfolio-bio__text">Arquitecta ecuatoriana. Becada en Elisava Barcelona. Trabajo en un estudio de lujo en España y llevo proyectos propios en Quito.</p>
-    <div class="portfolio-bio__row">
-      <span class="pulse"><i></i>Aceptando 2 proyectos</span>
-      <a href="mailto:hola@darqdis.com" class="portfolio-bio__link">hola@darqdis.com</a>
-      <a href="https://www.linkedin.com/in/dom%C3%A9nica-arias-tutillo-3b9b981ab/" target="_blank" rel="noopener" class="portfolio-bio__link">LinkedIn ↗</a>
+    <div class="bib-cierre__body">
+      <p>Descargar te resuelve el paso 1. El paso 2 —acotar, documentar, entregar— es el que decide si tu proyecto se construye o se queda en un render bonito.</p>
+      <p class="en">That is Layout. And that is what I teach.</p>
+      <a class="btn btn--oxblood" href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener">Aprender Layout <span class="arrow">&rarr;</span></a>
     </div>
-  </div>
-</section>
-
-<!-- ============ PUENTE ============ -->
-<section class="bridge" id="bridge">
-  <div class="bridge__grid">
-    <div class="bridge__photo reveal">
-      <img src="retrato_lateral.png" alt="Doménica Arias" style="width:100%;height:100%;object-fit:cover;object-position:top center;">
-    </div>
-    <div class="bridge__text reveal" data-d="1">
-      <p class="bridge__quote">Un espacio debería <em>vender solo</em>.</p>
-      <p class="bridge__sub">Diseño retail que comunica la marca. Enseño a presentarlo.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 02 — EL PROBLEMA ============ -->
-<section class="philosophy" id="arquilab">
-  <div class="philosophy__grid">
-    <div class="philosophy__note reveal">
-      <span class="philosophy__note-marker">✦</span>
-      <p class="philosophy__note-label">02 — El problema</p>
-    </div>
-    <div class="philosophy__body reveal" data-d="1">
-      <p class="en">Hello Arqui — si estás aquí, ya sabes que tus proyectos merecen verse mejor.</p>
-      <p>Llevas tiempo sintiendo que el trabajo que haces no siempre se refleja en cómo lo presentas. Eso es exactamente lo que cambio en ArquiLab.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ RESULTADOS ARQUILAB ============ -->
-<section style="padding: var(--bandY) var(--inset); background: var(--espresso); color: var(--cream);">
-  <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:clamp(2rem,4vw,3.5rem); flex-wrap:wrap; gap:1rem;">
-    <div>
-      <p style="font-family:var(--sans);font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(245,241,234,0.5);margin-bottom:0.8rem;">— Resultados reales</p>
-      <h2 style="font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:500;line-height:1.05;">Así presentan <em style="font-style:italic;font-weight:400;color:rgba(245,241,234,0.6);">después de ArquiLab</em>.</h2>
-    </div>
-    <a class='btn btn--light' href='https://pay.hotmart.com/L102711072Y?off=q5ahpkm3' target="_blank" rel="noopener" style='flex-shrink:0;'>Quiero presentar así <span class="arrow">→</span></a>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-    <div style="border:1px solid rgba(245,241,234,0.12);padding:1.6rem;">
-      <div style="aspect-ratio:16/10;overflow:hidden;margin-bottom:1.2rem;">
-        <img src="MOCKUP_GABY.png" alt="Cocina Pacífico — Arq. Gabriela Calvera" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
-      <h3 style="font-family:var(--serif);font-size:1.3rem;font-weight:500;margin-bottom:0.4rem;">Cocina Pacífico</h3>
-      <p style="font-size:0.82rem;color:rgba(245,241,234,0.6);margin-bottom:0.6rem;">Diseño interior + retail gastronómico. Planos técnicos, moodboard y renders — todo en Layout.</p>
-      <p style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--olive);">Arq. Gabriela Calvera · @gabriela.calvera</p>
-    </div>
-    <div style="border:1px solid rgba(245,241,234,0.12);padding:1.6rem;">
-      <div style="aspect-ratio:16/10;overflow:hidden;margin-bottom:1.2rem;">
-        <img src="MOCKUP_NAYELI.png" alt="NM Design Studio — Arq. Nagely Miño" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
-      <h3 style="font-family:var(--serif);font-size:1.3rem;font-weight:500;margin-bottom:0.4rem;">NM Design Studio</h3>
-      <p style="font-size:0.82rem;color:rgba(245,241,234,0.6);margin-bottom:0.6rem;">Passion Project completo: concepto, moodboard, planos, axonometría y renders. Nivel estudio profesional.</p>
-      <p style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--olive);">Arq. Nagely Miño · NM Design Studio</p>
-    </div>
-  </div>
-
-  <p style="text-align:center;font-size:0.82rem;color:rgba(245,241,234,0.4);margin-top:2rem;font-style:italic;">
-    + Katherine Pasquel · Sofía Tapia · Valeria Ceballos · Jannet Flores · Carelis Granizo · Fernanda Sánchez · Anahí Gallardo
-  </p>
-</section>
-
-<!-- ============ 03 — CURSO ============ -->
-<section class="courses" id="courses" data-screen-label="Cursos">
-  <div class="band-head reveal">
-    <div>
-      <p class="kicker">03 — Formación</p>
-      <h2 class="about__title" style="margin:0.8rem 0 0;">Aprende Layout.<br><em>Presenta diferente.</em></h2>
-    </div>
-  </div>
-
-  <div class="course-main reveal">
-    <span class="course-main__tag">Curso completo · Disponible ahora</span>
-    <h3 class="course-main__title">ArquiLab — Layout Pro</h3>
-    <p class="course-main__desc">SketchUp + Layout para presentaciones que cierran proyectos. 4 módulos, plantillas y acceso de por vida.</p>
-    <div class="course-main__row">
-      <span class="course-main__price">$180 USD</span>
-      <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="btn btn--light">Inscríbete ahora <span class="arrow">→</span></a>
-    </div>
-  </div>
-
-  <div class="course-alt">
-    <div class="course-alt__item reveal" data-d="1">
-      <p><b>Layout Básico</b> — mini training de 3 módulos para empezar desde cero. <a href="https://wa.link/xswrm6" target="_blank" rel="noopener">Escríbeme →</a></p>
-    </div>
-    <div class="course-alt__item reveal" data-d="2">
-      <p><b>Clase privada de Layout</b> — sesión 1 a 1 de una hora. <a href="https://wa.me/34653237082?text=Hello%20Arqui%20me%20interesa%20una%20clase%20privada%20de%201h%20de%20layout" target="_blank" rel="noopener">Me interesa →</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LEAD MAGNET ============ -->
-<section class="lead-magnet" id="lead-magnet">
-  <div class="lead-magnet__inner reveal">
-    <p class="kicker" style="color:rgba(250,250,247,0.6);">Recurso gratuito</p>
-    <h2 class="lead-magnet__title">Plugins esenciales<br>para <em>SketchUp</em>.</h2>
-    <p class="lead-magnet__sub">La lista de plugins que uso en todos mis proyectos — directo a tu email, sin costo.</p>
-    <form class="lead-magnet__form" name="lead-magnet" method="POST" action="https://formspree.io/f/xdaryjrq">
-      <input type="email" name="email" required placeholder="tu@email.com" aria-label="Email" class="newsletter__input" />
-      <button type="submit" class="btn btn--light">Descargar gratis <span class="arrow">→</span></button>
-    </form>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer class="footer" id="footer" data-screen-label="Contacto">
+<footer class="footer" id="footer">
   <h2 class="footer__cta reveal">Trabajemos <em>juntos</em></h2>
   <div class="footer__grid">
     <div class="footer__col">
@@ -1227,109 +1183,73 @@ body {
     </div>
     <div class="footer__col">
       <h4>Sígueme · Follow</h4>
-      <a href="https://instagram.com/domenica.arqdis" target="_blank" rel="noopener">Instagram ↗</a>
-      <a href="https://www.tiktok.com/@domenica.arqdis" target="_blank" rel="noopener">TikTok ↗</a>
-      <a href="https://youtube.com/@domenica.arqdis" target="_blank" rel="noopener">YouTube ↗</a>
-      <a href="https://open.spotify.com/show/4md2Bjltyhj0sUq6wG39fB" target="_blank" rel="noopener">Spotify ↗</a>
-      <a href="https://www.linkedin.com/in/dom%C3%A9nica-arias-tutillo-3b9b981ab/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://instagram.com/domenica.arqdis" target="_blank" rel="noopener">Instagram &#8599;</a>
+      <a href="https://www.tiktok.com/@domenica.arqdis" target="_blank" rel="noopener">TikTok &#8599;</a>
+      <a href="https://youtube.com/@domenica.arqdis" target="_blank" rel="noopener">YouTube &#8599;</a>
+      <a href="https://open.spotify.com/show/4md2Bjltyhj0sUq6wG39fB" target="_blank" rel="noopener">Spotify &#8599;</a>
+      <a href="https://www.linkedin.com/in/dom%C3%A9nica-arias-tutillo-3b9b981ab/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
     </div>
     <div class="footer__col">
       <h4>ArquiLab</h4>
-      <a href="/arquilab">Sobre ArquiLab</a>
-      <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener">Inscríbete →</a>
+      <a href="/#courses">Sobre ArquiLab</a>
+      <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener">Inscríbete &rarr;</a>
     </div>
   </div>
   <div class="footer__base">
-    <span>© 2026 Doménica Arias · darqdis.com</span>
+    <span>&copy; 2026 Doménica Arias · darqdis.com</span>
     <span>Arquitecta · Retail Designer · Educadora — UIO / BCN</span>
   </div>
 </footer>
 
-<!-- ============ HERO SWITCHER ============ -->
-
 </div><!-- /.sheet -->
 <script>
-/* ============================================================
-   DOMENICA ARIAS — interactions (vanilla JS)
-   ============================================================ */
 (function () {
   'use strict';
 
-  /* ---- Nav: scrolled state ---- */
+  /* ---- Nav: scrolled + menú móvil (igual que index.html) ---- */
   var nav = document.getElementById('nav');
-  function onScroll() {
-    if (window.scrollY > 40) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
 
-  /* ---- Mobile menu ---- */
   var toggle = document.getElementById('navToggle');
   var navLinks = document.getElementById('navLinks');
-  function closeMenu() {
-    nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
   toggle.addEventListener('click', function () {
     var open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
   navLinks.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') closeMenu();
-  });
-
-  /* ---- Active section highlight ---- */
-  var sectionIds = ['hero', 'portfolio', 'arquilab', 'courses', 'footer'];
-  var linkMap = {};
-  document.querySelectorAll('.nav__links a').forEach(function (a) {
-    var id = a.getAttribute('href').replace('#', '');
-    linkMap[id] = a;
-  });
-  var spy = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (en.isIntersecting) {
-        Object.keys(linkMap).forEach(function (k) { linkMap[k].classList.remove('active'); });
-        var link = linkMap[en.target.id];
-        if (link) link.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-  sectionIds.forEach(function (id) {
-    var el = document.getElementById(id);
-    if (el) spy.observe(el);
+    if (e.target.tagName === 'A') {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
   });
 
   /* ---- Scroll reveal ---- */
   var revealObs = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
-      if (en.isIntersecting) {
-        en.target.classList.add('in');
-        revealObs.unobserve(en.target);
-      }
+      if (en.isIntersecting) { en.target.classList.add('in'); revealObs.unobserve(en.target); }
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
 
-  /* ---- Hero treatment switcher (persisted) ---- */
-  var KEY = 'dome_hero';
-  var treatments = document.querySelectorAll('.hero__treatment');
-  var buttons = document.querySelectorAll('#heroSwitch button');
-  function setHero(i) {
-    i = Math.max(0, Math.min(treatments.length - 1, i | 0));
-    treatments.forEach(function (t, idx) { t.classList.toggle('is-active', idx === i); });
-    buttons.forEach(function (b) { b.classList.toggle('active', parseInt(b.dataset.i, 10) === i); });
-    try { localStorage.setItem(KEY, String(i)); } catch (e) {}
-  }
-  buttons.forEach(function (b) {
-    b.addEventListener('click', function () { setHero(parseInt(b.dataset.i, 10)); });
+  /* ---- Filtros ---- */
+  var grid = document.getElementById('bibGrid');
+  document.getElementById('bibFiltros').addEventListener('click', function (e) {
+    var b = e.target.closest('.bib-filtro');
+    if (!b) return;
+    document.querySelectorAll('.bib-filtro').forEach(function (x) {
+      x.setAttribute('aria-pressed', String(x === b));
+    });
+    var f = b.dataset.f;
+    grid.querySelectorAll('.bib-card').forEach(function (c) {
+      c.style.display = (f === 'todos' || c.dataset.cat === f) ? '' : 'none';
+    });
+    grid.querySelectorAll('.bib-banda').forEach(function (x) {
+      x.style.display = (f === 'todos') ? '' : 'none';
+    });
   });
-  var saved = 0;
-  try { saved = parseInt(localStorage.getItem(KEY) || '0', 10) || 0; } catch (e) {}
-  setHero(saved);
-
 })();
-
 </script>
 </body>
 </html>
