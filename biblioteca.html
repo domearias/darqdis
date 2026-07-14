@@ -12,9 +12,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biblioteca 3D — Modelos gratis para SketchUp · darqdis.com</title>
-<meta name="description" content="Muebles y componentes 3D modelados por Doménica Arias, listos para tu proyecto en SketchUp. Descarga libre, sin registro. Nuevo modelo cada semana.">
+<meta name="description" content="Un buscador de muebles y piezas 3D para SketchUp: curados por Doménica Arias y subidos a 3D Warehouse para descarga fácil, con crédito a su fuente. Gratis, sin registro.">
 <meta property="og:title" content="Biblioteca 3D — Modelos gratis para SketchUp · darqdis">
-<meta property="og:description" content="Muebles y componentes modelados por mí, listos para tu proyecto en SketchUp. Sin registro, sin correo.">
+<meta property="og:description" content="Un buscador de muebles y piezas para SketchUp. Los reúno, los subo para descarga fácil y digo de dónde vienen. Gratis, para compartir.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1037,6 +1037,9 @@ body {
 .bib-card__kicker b { font-weight: 500; color: var(--olive); }
 .bib-card__title { font-family: var(--serif); font-weight: 500; font-size: clamp(1.3rem, 2.1vw, 1.7rem); line-height: 1.08; color: var(--ink); }
 .bib-card__tip { font-family: var(--sans); font-weight: 300; font-size: 0.84rem; line-height: 1.65; color: var(--ink-soft); }
+.bib-card__fuente { font-family: var(--sans); font-weight: 400; font-size: 0.68rem; letter-spacing: 0.04em; color: var(--ink-soft); }
+.bib-card__fuente a { color: var(--olive); text-decoration: underline; text-underline-offset: 2px; }
+.bib-card__fuente a:hover { color: var(--ink); }
 .bib-card__cta {
   margin-top: auto; padding-top: 1.3rem; border-top: 1px solid var(--line);
   display: flex; align-items: center; justify-content: space-between; gap: 0.8rem;
@@ -1114,12 +1117,12 @@ body {
   <p class="kicker">Recursos — Biblioteca 3D</p>
   <h1 class="bib-hero__title">Muebles listos.<br><em>Proyecto en marcha.</em></h1>
   <p class="bib-hero__sub">
-    Componentes modelados por mí, optimizados y listos para soltar en tu escena de SketchUp. Sin registro, sin correo, sin trampa.
-    <span class="lang-sub">Free SketchUp components, modelled in-house. No sign-up.</span>
+    Un buscador de muebles y piezas para SketchUp: los reúno, los subo a mi 3D Warehouse para que los descargues sin dar mil vueltas, y te digo de dónde vienen. Gratis y para compartir — sin registro, sin correo.
+    <span class="lang-sub">A finder for SketchUp furniture — collected, re-hosted for easy download, credited to the source.</span>
   </p>
   <div class="bib-meta">
     <div>
-      <span class="bib-meta__n"><!-- COUNT:START -->0<!-- COUNT:END --></span>
+      <span class="bib-meta__n"><!-- COUNT:START -->1<!-- COUNT:END --></span>
       <span class="kicker">Modelos disponibles</span>
     </div>
     <div>
@@ -1128,7 +1131,7 @@ body {
     </div>
     <div>
       <span class="bib-meta__n">100%</span>
-      <span class="kicker">Modelados por mí</span>
+      <span class="kicker">Gratis · con su fuente</span>
     </div>
   </div>
 </header>
@@ -1149,7 +1152,20 @@ body {
 <!-- ============ GRID ============ -->
 <section class="bib-grid" id="bibGrid">
 <!-- GRID:START -->
-      <p class="bib-empty">Los primeros modelos llegan esta semana.</p>
+      <article class="bib-card reveal" data-cat="iluminacion">
+        <a class="bib-card__media" href="https://3dwarehouse.sketchup.com/model/7de5a605-dabe-41bb-92de-213e7620c601/PACE-PENDANT" target="_blank" rel="noopener" aria-label="Descargar Pace Pendant en 3D Warehouse">
+          <img src="/img/biblioteca/pace-pendant.png" alt="Pace Pendant — modelo 3D para SketchUp" loading="lazy">
+        </a>
+        <div class="bib-card__body">
+          <span class="bib-card__kicker">#001 &middot; <b>iluminacion</b></span>
+          <h3 class="bib-card__title">Pace Pendant</h3>
+          <span class="bib-card__fuente">Fuente &middot; <a href="https://a-n-d.com/PACE-PENDANT" target="_blank" rel="noopener nofollow">A-N-D</a></span>
+          <p class="bib-card__tip">Ritmo y repetición: la luz cruza sus capas de vidrio y se vuelve degradado. Ligera, sinuosa y apilable.</p>
+          <a class="bib-card__cta" href="https://3dwarehouse.sketchup.com/model/7de5a605-dabe-41bb-92de-213e7620c601/PACE-PENDANT" target="_blank" rel="noopener">
+            <span>Descargar en 3D&nbsp;Warehouse</span> <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+      </article>
 <!-- GRID:END -->
 </section>
 

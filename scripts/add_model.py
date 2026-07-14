@@ -8,13 +8,17 @@ así que las bandas ArquiLab siempre caen cada 6 cards sin desalinearse.
 
 Uso:
   python scripts/add_model.py \
-    --nombre "Sofá modular bouclé" \
+    --nombre "Lámpara Follow Me" \
     --url "https://3dwarehouse.sketchup.com/model/xxxx" \
-    --imagen "img/biblioteca/sofa-boucle.jpg" \
-    --categoria asientos \
-    --tip "Guárdalo como componente antes de copiarlo."
+    --imagen "img/biblioteca/follow-me.jpg" \
+    --categoria iluminacion \
+    --fuente "Marset" \
+    --fuente-url "https://www.marset.com/..." \
+    --tip "Bájale la resolución de la malla antes de copiarla por la escena."
 
 Opciones:
+  --fuente URL   marca/fuente original del modelo (obligatorio). Es el crédito.
+  --fuente-url   enlace a la fuente original (opcional).
   --root DIR     raíz del sitio (default: .)
   --rebuild      no añade nada, solo regenera el HTML desde el JSON
 """
@@ -46,14 +50,21 @@ def card_html(m: dict) -> str:
     img = html.escape(m["imagen"])
     url = html.escape(m["url"])
     tip = html.escape(m.get("tip", ""))
+    fuente = html.escape(m.get("fuente", ""))
+    fuente_url = html.escape(m.get("fuente_url", ""))
     tip_block = f'\n          <p class="bib-card__tip">{tip}</p>' if tip else ""
+    if fuente:
+        credito = f'<a href="{fuente_url}" target="_blank" rel="noopener nofollow">{fuente}</a>' if fuente_url else fuente
+        fuente_block = f'\n          <span class="bib-card__fuente">Fuente &middot; {credito}</span>'
+    else:
+        fuente_block = ""
     return f"""      <article class="bib-card reveal" data-cat="{cat}">
         <a class="bib-card__media" href="{url}" target="_blank" rel="noopener" aria-label="Descargar {nombre} en 3D Warehouse">
           <img src="{img}" alt="{nombre} — modelo 3D para SketchUp" loading="lazy">
         </a>
         <div class="bib-card__body">
           <span class="bib-card__kicker">#{n} &middot; <b>{cat}</b></span>
-          <h3 class="bib-card__title">{nombre}</h3>{tip_block}
+          <h3 class="bib-card__title">{nombre}</h3>{fuente_block}{tip_block}
           <a class="bib-card__cta" href="{url}" target="_blank" rel="noopener">
             <span>Descargar en 3D&nbsp;Warehouse</span> <span class="arrow">&rarr;</span>
           </a>
@@ -100,6 +111,8 @@ def main() -> None:
     p.add_argument("--url")
     p.add_argument("--imagen")
     p.add_argument("--categoria", choices=CATEGORIAS)
+    p.add_argument("--fuente")
+    p.add_argument("--fuente-url", default="", dest="fuente_url")
     p.add_argument("--tip", default="")
     p.add_argument("--root", default=".")
     p.add_argument("--rebuild", action="store_true")
@@ -118,7 +131,7 @@ def main() -> None:
     modelos = json.loads(data_f.read_text("utf-8")) if data_f.exists() else []
 
     if not a.rebuild:
-        faltan = [f for f in ("nombre", "url", "imagen", "categoria") if not getattr(a, f)]
+        faltan = [f for f in ("nombre", "url", "imagen", "categoria", "fuente") if not getattr(a, f)]
         if faltan:
             sys.exit(f"ERROR: faltan argumentos: {', '.join('--' + f for f in faltan)}")
 
@@ -132,6 +145,8 @@ def main() -> None:
             "url": a.url,
             "imagen": a.imagen,
             "categoria": a.categoria,
+            "fuente": a.fuente,
+            "fuente_url": a.fuente_url,
             "tip": a.tip,
         })
         data_f.write_text(json.dumps(modelos, ensure_ascii=False, indent=2), "utf-8")
