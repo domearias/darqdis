@@ -715,6 +715,48 @@ body {
 .al-master__cta:hover { background: var(--ink); color: var(--bone); }
 .al-master__play { font-size: 0.62rem; }
 
+/* Embajadora ArquiLab */
+.al-amb {
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid rgba(247,244,238,0.22);
+  background: rgba(247,244,238,0.04);
+  padding: clamp(1.6rem, 3vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+.al-amb__media { aspect-ratio: 16 / 11; overflow: hidden; }
+.al-amb__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.al-amb__badge {
+  display: inline-block; font-family: var(--sans); font-size: 0.66rem;
+  font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--espresso); background: var(--bone);
+  padding: 0.45rem 0.9rem; margin-bottom: 1rem;
+}
+.al-amb__name { font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.05; margin-bottom: 0.5rem; }
+.al-amb__project { font-size: 0.88rem; color: rgba(247,244,238,0.65); line-height: 1.6; margin-bottom: 0.9rem; }
+.al-amb__note { font-size: 0.92rem; color: rgba(247,244,238,0.8); line-height: 1.65; margin-bottom: 1.3rem; max-width: 48ch; }
+.al-amb__actions { display: flex; flex-wrap: wrap; gap: 0.8rem 1.6rem; margin-bottom: 1.4rem; }
+.al-amb__link {
+  font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.12em;
+  text-transform: uppercase; text-decoration: none; color: var(--bone);
+  border-bottom: 1px solid rgba(247,244,238,0.4); padding-bottom: 0.25rem;
+  transition: border-color 0.4s var(--ease);
+}
+.al-amb__link:hover { border-color: var(--bone); }
+.al-amb__cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--sans); font-weight: 500; font-size: 0.74rem;
+  letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+  color: var(--bone); background: var(--oxblood);
+  border: 1px solid var(--oxblood); padding: 1rem 1.8rem;
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.al-amb__cta:hover { background: var(--bone); color: var(--ink); border-color: var(--bone); }
+.al-amb__legal { font-size: 0.7rem; color: rgba(247,244,238,0.45); letter-spacing: 0.06em; margin-top: 0.7rem; }
+.al-amb__legal b { color: rgba(247,244,238,0.75); font-weight: 500; letter-spacing: 0.1em; }
+@media (max-width: 860px) { .al-amb { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 
@@ -1010,16 +1052,26 @@ body {
       </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-      <div style="border: 1px solid rgba(247,244,238,0.12); padding: 1.6rem;">
-        <div style="aspect-ratio: 16/10; overflow:hidden; margin-bottom: 1.2rem;">
-          <img src="MOCKUP_GABY.png" alt="Cocina Pacífico — Arq. Gabriela Calvera — ArquiLab" style="width:100%;height:100%;object-fit:cover;display:block;">
-        </div>
-        <h3 style="font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.4rem;">Cocina Pacífico</h3>
-        <p style="font-size: 0.82rem; color: rgba(247,244,238,0.6); margin-bottom: 0.6rem;">Diseño interior residencial + retail gastronómico. Planos técnicos, moodboard, renders y planos de ejecución — todo en Layout.</p>
-        <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">Arq. Gabriela Calvera · @gabriela.calvera</p>
+    <!-- ── Embajadora ArquiLab ── -->
+    <div class="al-amb">
+      <div class="al-amb__media">
+        <img src="MOCKUP_GABY.png" alt="Cocina Pacífico — Passion Project de la Arq. Gabriela Calvera, hecho en Layout">
       </div>
+      <div class="al-amb__body">
+        <span class="al-amb__badge">★ ArquiLab Ambassador</span>
+        <h3 class="al-amb__name">Arq. Gabriela Calvera</h3>
+        <p class="al-amb__project">Cocina Pacífico — diseño interior + retail gastronómico. Planos técnicos, moodboard, renders y planos de ejecución. Todo en Layout.</p>
+        <p class="al-amb__note">¿Dudas de si esto es real? Mira su proyecto completo, página por página. Y si quieres saber cómo fue estudiar en ArquiLab, encuentra su página y sus proyectos en Instagram — pregúntale lo que quieras.</p>
+        <div class="al-amb__actions">
+          <a href="https://drive.google.com/file/d/1BzwWLFsGThelwfVi9QvoANHvtUXBWf3E/view" target="_blank" rel="noopener" class="al-amb__link">Ver su proyecto completo (PDF) ↗</a>
+          <a href="https://www.instagram.com/gabriela.calvera.arq/" target="_blank" rel="noopener" class="al-amb__link">@gabriela.calvera.arq ↗</a>
+        </div>
+        <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3&coupon=GABYARQUILAB" target="_blank" rel="noopener" class="al-amb__cta">Inscríbete con su código — 10% off <span aria-hidden="true">→</span></a>
+        <p class="al-amb__legal">Código <b>GABYARQUILAB</b> aplicado al checkout · 10% de descuento</p>
+      </div>
+    </div>
 
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
       <div style="border: 1px solid rgba(247,244,238,0.12); padding: 1.6rem;">
         <div style="aspect-ratio: 16/10; overflow:hidden; margin-bottom: 1.2rem;">
           <img src="MOCKUP_NAYELI.png" alt="NM Design Studio — Arq. Nagely Miño — ArquiLab" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -1027,6 +1079,11 @@ body {
         <h3 style="font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.4rem;">NM Design Studio</h3>
         <p style="font-size: 0.82rem; color: rgba(247,244,238,0.6); margin-bottom: 0.6rem;">Passion Project completo: concepto, moodboard, plano técnico, materialidad, axonometría, renders y presupuesto. Nivel estudio profesional.</p>
         <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">Arq. Nagely Miño · NM Design Studio</p>
+      </div>
+
+      <div style="border: 1px solid rgba(247,244,238,0.12); padding: 1.6rem; display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 1.25rem; line-height: 1.45; color: rgba(247,244,238,0.85); max-width: 30ch; margin: 0 auto 1rem;">"Tu Passion Project puede ser el siguiente en esta pared."</p>
+        <p style="font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,238,0.5);">— Doménica</p>
       </div>
     </div>
 
