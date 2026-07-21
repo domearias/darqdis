@@ -652,6 +652,21 @@ body {
 .al-hero__ctas { animation-delay: 0.45s; }
 .al-hero__visual { animation-delay: 0.2s; }
 
+/* ============ METODOLOGÍA 3D ============ */
+.al-method { background: var(--beige); padding: var(--bandY) var(--inset); }
+.al-method__head { text-align: center; max-width: 60ch; margin: 0 auto clamp(2.5rem, 5vw, 4rem); }
+.al-method__title { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.02; color: var(--ink); margin: 1rem 0; }
+.al-method__title em { font-style: italic; color: var(--olive); }
+.al-method__sub { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.7; }
+.al-method__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 2.2rem); max-width: 1040px; margin: 0 auto; }
+.al-method__step { background: rgba(250, 250, 247, 0.7); border: 1px solid var(--line); padding: clamp(1.6rem, 2.5vw, 2.2rem); }
+.al-method__num { font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em; color: var(--olive); }
+.al-method__step-title { font-family: var(--serif); font-weight: 500; font-size: 1.7rem; color: var(--ink); margin: 0.6rem 0 0.9rem; }
+.al-method__step p { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.65; }
+.al-method__step p em { font-style: italic; color: var(--ink); font-weight: 500; }
+.al-method__foot { text-align: center; font-family: var(--serif); font-style: italic; font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--ink-soft); max-width: 52ch; margin: clamp(2.5rem, 5vw, 4rem) auto 0; line-height: 1.5; }
+@media (max-width: 760px) { .al-method__grid { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 
@@ -670,9 +685,9 @@ body {
   <section class="al-hero">
     <div>
       <span class="al-hero__kicker">ArquiLab · Layout Pro</span>
-      <h1 class="al-hero__title">Mientras tú sigues<br>dibujando líneas<br>en AutoCAD,<br><em>tus clientes<br>ya se fueron.</em></h1>
+      <h1 class="al-hero__title">Diseñas increíble.<br>Pero pierdes<br><em>noches enteras<br>armando láminas.</em></h1>
       <p class="al-hero__sub">
-        Sigues perdiendo horas en programas antiguos y herramientas que no fueron hechas para arquitectura. Tus presentaciones se ven como las de la U. Y el cliente que podría haberte contratado eligió a quien sí sabe presentar. <strong>Eso se acaba hoy.</strong>
+        Te amaneces ploteando lámina por lámina, saltando entre AutoCAD, Illustrator y Canva — y llegas sin energía para lo único que importa: <strong>diseñar</strong>. ArquiLab te enseña el flujo con SketchUp&nbsp;+&nbsp;Layout que entrega en <strong>2 fines de semana</strong> lo que antes te tomaba 3 semanas. Recupera tu tiempo.
       </p>
       <div class="al-hero__ctas">
         <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="al-btn al-btn--solid">
@@ -750,28 +765,55 @@ body {
   <!-- ============ PROBLEMA ============ -->
   <section class="al-problem" id="que-es">
     <span class="al-hero__kicker" style="color:rgba(247,244,238,0.5);">— El problema real</span>
-    <h2 class="al-problem__title">Tus proyectos son brillantes.<br>Pero tus láminas <em>no te están vendiendo</em>.</h2>
+    <h2 class="al-problem__title">Te quedas sin tiempo, sin energía<br>y sin ganas de <em>diseñar</em>.</h2>
     <p style="font-size:1.05rem; color:rgba(247,244,238,0.7); max-width:54ch; margin:0 auto; line-height:1.7;">
       Sé honesta contigo misma — ¿cuántas veces te ha pasado esto?
     </p>
     <div class="al-problem__list">
       <div class="al-problem__item">
         <span class="al-problem__num">01</span>
-        <p class="al-problem__text">Cambias una medida y tienes que actualizar 12 láminas a mano en Photoshop o Canva.</p>
+        <p class="al-problem__text">Te amaneces a las 6am ploteando lámina por lámina para entregar al mediodía.</p>
       </div>
       <div class="al-problem__item">
         <span class="al-problem__num">02</span>
-        <p class="al-problem__text">Tus planos se ven planos. Sin jerarquía. Sin identidad visual propia.</p>
+        <p class="al-problem__text">Cambias una sola medida y toca actualizar 12 láminas a mano, una por una.</p>
       </div>
       <div class="al-problem__item">
         <span class="al-problem__num">03</span>
-        <p class="al-problem__text">El cliente no entiende tu propuesta — y termina pidiéndote cambios que duelen.</p>
+        <p class="al-problem__text">Saltas entre AutoCAD, Illustrator, Canva e iLovePDF para armar una sola entrega.</p>
       </div>
       <div class="al-problem__item">
         <span class="al-problem__num">04</span>
-        <p class="al-problem__text">Pierdes horas en herramientas que nunca fueron diseñadas para arquitectura.</p>
+        <p class="al-problem__text">Terminas tan quemada que dejas el gym, el cine y a tu familia — y aún así no llegas.</p>
       </div>
     </div>
+  </section>
+
+  <!-- ============ METODOLOGÍA 3D ============ -->
+  <section class="al-method">
+    <div class="al-method__head">
+      <span class="al-hero__kicker" style="color:var(--olive);">— El sistema que enseño</span>
+      <h2 class="al-method__title">La Metodología <em>3D</em>.</h2>
+      <p class="al-method__sub">No es un truco de software. Es el sistema para llevar cualquier proyecto de la idea a los planos ejecutivos — sin caos, sin rehacer, sin quemarte. Tres pasos, un solo flujo en SketchUp&nbsp;+&nbsp;Layout.</p>
+    </div>
+    <div class="al-method__grid">
+      <div class="al-method__step">
+        <span class="al-method__num">01</span>
+        <h3 class="al-method__step-title">Definir</h3>
+        <p>Brief con el cliente: objetivo, gustos, presupuesto. Defines el concepto <em>antes</em> de dibujar una sola línea. Primer checkpoint — el cliente ya es parte del proyecto.</p>
+      </div>
+      <div class="al-method__step">
+        <span class="al-method__num">02</span>
+        <h3 class="al-method__step-title">Diseñar</h3>
+        <p>Distribución funcional en blanco y negro, luego el modelo 3D con materiales y renders. El cliente aprueba <em>antes</em> de que detalles nada. Cero cambios que duelen.</p>
+      </div>
+      <div class="al-method__step">
+        <span class="al-method__num">03</span>
+        <h3 class="al-method__step-title">Detallar</h3>
+        <p>Planos ejecutivos, mobiliario, instalaciones — el manual de diseño completo, listo para construir. Todo en Layout, todo con tu identidad visual.</p>
+      </div>
+    </div>
+    <p class="al-method__foot">El mismo sistema con el que manejo mis proyectos en Ecuador desde Barcelona — solo con Layout.</p>
   </section>
 
   <!-- ============ SOLUCIÓN ============ -->
@@ -779,7 +821,7 @@ body {
     <div class="al-solution__head">
       <h2 class="al-solution__title">ArquiLab —<br>el curso que ojalá<br>hubiera tenido <em>en la U</em>.</h2>
       <p class="al-solution__lead">
-        4 módulos que te llevan de cero a presentaciones nivel estudio profesional. Sin trucos. Sin atajos confusos. Solo el flujo de trabajo real que uso yo en proyectos reales.
+        4 módulos que te dan la Metodología 3D en la práctica — de cero a un manual de diseño completo en SketchUp&nbsp;+&nbsp;Layout. Sin trucos, sin atajos confusos. Solo el flujo real que uso yo en proyectos reales.
       </p>
     </div>
 
@@ -946,9 +988,9 @@ body {
       <span class="al-about__kicker">— Quién te va a enseñar</span>
       <h2 class="al-about__title">Soy Doménica.<br>Arquitecta entre <em>Quito y Barcelona</em>.</h2>
       <div class="al-about__body">
-        <p>Maestría en Elisava (Barcelona) con beca completa. Trabajé en estudios de retail design en España. Llevo años usando SketchUp + Layout como el corazón de mi flujo de trabajo profesional.</p>
-        <p>Empecé a compartir lo que aprendía en Instagram y de pronto eran 40,000 personas pidiéndome el mismo curso una y otra vez. Así nació ArquiLab.</p>
-        <p>No te voy a vender humo. Te voy a enseñar el flujo de trabajo real que uso yo en proyectos reales.</p>
+        <p>Aprendí este proceso donde se aprende de verdad — en oficinas reales de diseño interior y retail, en Quito y en España. Armando manuales de diseño, planos ejecutivos y presentaciones que cierran clientes. Hoy estudio una maestría en Elisava (Barcelona) con beca completa.</p>
+        <p>En el camino descubrí algo: pasaba semanas ploteando en AutoCAD lo que podía resolver en días con SketchUp + Layout. Construí mi propio flujo — y ese flujo me dejó llevar <strong>dos sueldos al mes</strong>, entregar en un fin de semana lo que antes me tomaba tres, y hoy manejar mis proyectos en Ecuador desde Barcelona.</p>
+        <p>Empecé a compartirlo en Instagram y de pronto eran 40,000 personas pidiéndome el mismo curso una y otra vez. Así nació ArquiLab. No te voy a vender humo — te voy a enseñar el flujo real que uso yo en proyectos reales.</p>
       </div>
       <div class="al-about__creds">
         <span class="al-cred">Elisava Barcelona</span>
@@ -962,9 +1004,9 @@ body {
   <!-- ============ OFERTA FINAL ============ -->
   <section class="al-offer">
     <span class="al-offer__kicker">— Última oportunidad</span>
-    <h2 class="al-offer__title">Tu próximo proyecto<br>merece <em>verse así</em>.</h2>
+    <h2 class="al-offer__title">Recupera tu tiempo.<br>Cobra <em>lo que vales</em>.</h2>
     <p class="al-offer__sub">
-      ArquiLab no es solo un curso. Es la diferencia entre seguir presentando como en la universidad y empezar a presentar como un estudio profesional.
+      ArquiLab no es solo un curso de Layout. Es el sistema que te devuelve tus noches, hace que tus proyectos cierren más rápido y convierte tu arquitectura en un negocio que sí te da.
     </p>
 
     <div class="al-offer__includes">
