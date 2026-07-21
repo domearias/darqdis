@@ -68,29 +68,54 @@ body {
 /* ============================================================
    NAV
    ============================================================ */
-.al-nav {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(250,250,247,0.92);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-  padding: 0.9rem var(--inset);
+.nav {
+  position: sticky; top: 0; z-index: 70;
   display: flex; align-items: center; justify-content: space-between;
+  padding: 1.05rem var(--inset);
+  background: rgba(250,250,247,0.92);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line-2);
 }
-.al-nav__brand {
-  font-family: var(--sans); font-size: 0.7rem;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--ink); text-decoration: none;
+.nav__brand { font-family: var(--sans); font-weight: 700; font-size: 1.02rem; letter-spacing: 0.01em; text-decoration: none; color: var(--ink); }
+.nav__brand .dot { color: var(--olive); }
+.nav__links { display: flex; gap: clamp(1.1rem, 2.4vw, 2.4rem); list-style: none; align-items: center; }
+.nav__links a {
+  font-family: var(--sans); font-size: 0.74rem; font-weight: 400;
+  letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+  color: var(--ink); position: relative; padding: 0.3rem 0;
 }
-.al-nav__brand span { color: var(--ink-soft); }
-.al-nav__cta {
-  font-family: var(--sans); font-size: 0.7rem;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  background: var(--oxblood); color: var(--bone);
-  border: 1px solid var(--oxblood);
-  padding: 0.7rem 1.2rem; text-decoration: none;
-  transition: all 0.3s var(--ease);
+.nav__links a::after { content: ''; position: absolute; left: 0; bottom: -1px; width: 0; height: 1px; background: var(--ink); transition: width 0.4s var(--ease); }
+.nav__links a:hover::after, .nav__links a.active::after { width: 100%; }
+.nav__links a.active { font-weight: 500; }
+.nav__right { display: flex; align-items: center; gap: 0.9rem; }
+.nav__toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
+.nav__toggle span { display: block; width: 25px; height: 1.5px; background: var(--ink); transition: transform 0.4s var(--ease), opacity 0.3s; }
+.nav.open .nav__toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav.open .nav__toggle span:nth-child(2) { opacity: 0; }
+.nav.open .nav__toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--sans); font-weight: 500; font-size: 0.68rem;
+  letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;
+  color: var(--bone); background: var(--oxblood);
+  border: 1.5px solid var(--oxblood); padding: 0.7rem 1.3rem;
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
 }
-.al-nav__cta:hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.nav-cta:hover { background: var(--ink); border-color: var(--ink); }
+.nav-cta .arrow { transition: transform 0.4s var(--ease); }
+.nav-cta:hover .arrow { transform: translateX(4px); }
+@media (max-width: 720px) {
+  .nav__links {
+    position: fixed; top: 0; right: 0; bottom: 0; width: min(80vw, 320px);
+    background: var(--bone); flex-direction: column; align-items: flex-start; justify-content: center;
+    gap: 1.6rem; padding: 2rem 2.2rem; transform: translateX(100%); transition: transform 0.55s var(--ease);
+    box-shadow: -20px 0 60px rgba(0,0,0,0.18); z-index: 75;
+  }
+  .nav.open .nav__links { transform: translateX(0); }
+  .nav__links a { font-size: 1rem; }
+  .nav__toggle { display: flex; z-index: 76; }
+}
+@media (max-width: 480px) { .nav-cta .arrow { display: none; } .nav-cta { padding: 0.6rem 0.9rem; } }
 
 /* ============================================================
    HERO — "Ustedes lo pidieron"
@@ -631,8 +656,6 @@ body {
   .al-quotes { grid-template-columns: 1fr; }
   .al-about { grid-template-columns: 1fr; }
   .al-about__photo { max-width: 380px; margin: 0 auto; width: 100%; }
-  .al-nav__brand { font-size: 0.62rem; }
-  .al-nav__cta { font-size: 0.62rem; padding: 0.6rem 0.9rem; }
 }
 @media (max-width: 560px) {
   .al-problem__list { grid-template-columns: 1fr; }
@@ -676,9 +699,20 @@ body {
   <div class="grain" aria-hidden="true"></div>
 
   <!-- ============ NAV ============ -->
-  <nav class="al-nav">
-    <a href="/" class="al-nav__brand">doménica<span>.arqdis</span></a>
-    <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="al-nav__cta">Inscríbete →</a>
+  <nav class="nav" id="nav">
+    <a href="/" class="nav__brand" aria-label="Doménica Arias — inicio">doménica<span class="dot">.</span>arqdis</a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="/arquilab" class="active">ArquiLab</a></li>
+      <li><a href="/proyectos">Proyectos</a></li>
+      <li><a href="/biblioteca">Biblioteca</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="nav-cta">Inscríbete <span class="arrow">→</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- ============ HERO ============ -->
@@ -1109,6 +1143,22 @@ body {
 </style>
 
 <script>
+// Menú móvil
+(function () {
+  var nav = document.getElementById('nav');
+  var toggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+})();
+
 // FAQ accordion
 document.querySelectorAll('.al-faq__item').forEach(item => {
   item.querySelector('.al-faq__q').addEventListener('click', () => {
