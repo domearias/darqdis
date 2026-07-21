@@ -862,12 +862,12 @@ input:focus-visible,
 
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav">
-  <a href="#hero" class="nav__brand" aria-label="Doménica Arias — inicio">doménica<span class="dot">.</span>arqdis</a>
+  <a href="/" class="nav__brand" aria-label="Doménica Arias — inicio">doménica<span class="dot">.</span>arqdis</a>
   <ul class="nav__links" id="navLinks">
-    <li><a href="/biblioteca">Biblioteca</a></li>
-    <li><a href="#arquilab">ArquiLab</a></li>
+    <li><a href="/arquilab">ArquiLab</a></li>
     <li><a href="/proyectos">Proyectos</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="/biblioteca">Biblioteca</a></li>
+    <li><a href="/contacto">Contacto</a></li>
   </ul>
   <div class="nav__right">
     <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="btn btn--oxblood nav-cta">Inscríbete <span class="arrow">→</span></a>
@@ -1086,27 +1086,6 @@ input:focus-visible,
   });
   navLinks.addEventListener('click', function (e) {
     if (e.target.tagName === 'A') closeMenu();
-  });
-
-  /* ---- Active section highlight ---- */
-  var sectionIds = ['arquilab', 'contacto'];
-  var linkMap = {};
-  document.querySelectorAll('.nav__links a').forEach(function (a) {
-    var id = a.getAttribute('href').replace('#', '');
-    linkMap[id] = a;
-  });
-  var spy = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (en.isIntersecting) {
-        Object.keys(linkMap).forEach(function (k) { linkMap[k].classList.remove('active'); });
-        var link = linkMap[en.target.id];
-        if (link) link.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-  sectionIds.forEach(function (id) {
-    var el = document.getElementById(id);
-    if (el) spy.observe(el);
   });
 
   /* ---- Scroll reveal ---- */
