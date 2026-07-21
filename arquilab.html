@@ -24,19 +24,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 :root {
-  --cream:     #FAFAF7;
-  --cream-2:   #F0EDE6;
-  --sand:      #C9BFAE;
-  --espresso:  #1A1714;
-  --espresso-2:#111009;
-  --ink:       #111009;
-  --ink-soft:  #3D3830;
-  --olive:     #6E6A4D;
-  --blue:      #A8B4B3;
-  --oxblood:   #5C2E26;
-  --accent:    #6E6A4D;
-  --line:      rgba(42,38,32,0.12);
-  --line-2:    rgba(42,38,32,0.06);
+  /* Sistema visual v3 — 6 tokens. Olivo = detalle. Oxblood = dinero. */
+  --bone:      #F7F4EE;   /* fondo base */
+  --espresso:  #1A1714;   /* bandas oscuras */
+  --ink:       #111009;   /* texto principal */
+  --ink-soft:  #3D3830;   /* texto secundario */
+  --olive:     #6E6A4D;   /* detalle: punto, kickers, bordes activos */
+  --oxblood:   #5C2E26;   /* dinero: CTAs de ArquiLab */
+  --accent:    #6E6A4D;   /* alias de olive (uso interno de esta página) */
+  --line:      rgba(17, 16, 9, 0.12);
+  --line-2:    rgba(17, 16, 9, 0.06);
   --serif:     'Playfair Display', Georgia, serif;
   --sans:      'Archivo', system-ui, sans-serif;
   --ease:      cubic-bezier(0.22, 1, 0.36, 1);
@@ -49,7 +46,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
   font-family: var(--sans);
-  background: var(--cream);
+  background: var(--bone);
   color: var(--ink);
   font-weight: 300;
   line-height: 1.7;
@@ -57,7 +54,7 @@ body {
 }
 
 .sheet {
-  width: 100%; background: var(--cream);
+  width: 100%; background: var(--bone);
   position: relative; overflow: hidden;
 }
 
@@ -72,7 +69,7 @@ body {
    ============================================================ */
 .al-nav {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(250,250,247,0.92);
+  background: rgba(247,244,238,0.92);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   padding: 0.9rem var(--inset);
@@ -87,12 +84,12 @@ body {
 .al-nav__cta {
   font-family: var(--sans); font-size: 0.7rem;
   letter-spacing: 0.16em; text-transform: uppercase;
-  background: var(--ink); color: var(--cream);
-  border: 1px solid var(--ink);
+  background: var(--oxblood); color: var(--bone);
+  border: 1px solid var(--oxblood);
   padding: 0.7rem 1.2rem; text-decoration: none;
   transition: all 0.3s var(--ease);
 }
-.al-nav__cta:hover { background: transparent; color: var(--ink); }
+.al-nav__cta:hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
 
 /* ============================================================
    HERO — "Ustedes lo pidieron"
@@ -132,19 +129,19 @@ body {
   padding: 1.05rem 1.8rem; text-decoration: none;
   transition: all 0.4s var(--ease); cursor: pointer; border: 1px solid var(--ink);
 }
-.al-btn--solid { background: var(--ink); color: var(--cream); }
-.al-btn--solid:hover { background: var(--espresso-2); gap: 0.9rem; }
+.al-btn--solid { background: var(--oxblood); color: var(--bone); border-color: var(--oxblood); }
+.al-btn--solid:hover { background: var(--ink); border-color: var(--ink); gap: 0.9rem; }
 .al-btn--ghost { background: transparent; color: var(--ink); }
-.al-btn--ghost:hover { background: var(--ink); color: var(--cream); gap: 0.9rem; }
+.al-btn--ghost:hover { background: var(--ink); color: var(--bone); gap: 0.9rem; }
 .al-btn svg { transition: transform 0.4s var(--ease); }
 
 .al-hero__visual {
   position: relative; aspect-ratio: 4 / 5; overflow: hidden;
-  background: var(--cream-2);
+  background: var(--bone);
 }
 .al-hero__ph {
   position: absolute; inset: 0;
-  background: var(--cream-2);
+  background: var(--bone);
   background-image:
     repeating-linear-gradient(0deg, rgba(42,38,32,0.05) 0, rgba(42,38,32,0.05) 1px, transparent 1px, transparent 22px),
     repeating-linear-gradient(90deg, rgba(42,38,32,0.05) 0, rgba(42,38,32,0.05) 1px, transparent 1px, transparent 22px);
@@ -153,7 +150,7 @@ body {
 .al-hero__ph-label {
   font-family: var(--sans); font-size: 0.65rem;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--ink-soft); background: var(--cream);
+  color: var(--ink-soft); background: var(--bone);
   padding: 0.6rem 1.2rem; border: 1px dashed var(--line);
 }
 
@@ -162,7 +159,7 @@ body {
    ============================================================ */
 .al-request {
   padding: var(--bandY) var(--inset);
-  background: var(--cream-2);
+  background: var(--bone);
   position: relative;
 }
 .al-request__head { text-align: center; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
@@ -191,7 +188,7 @@ body {
   margin-top: 2rem;
 }
 .al-msg {
-  background: var(--cream); padding: 1.5rem 1.6rem;
+  background: var(--bone); padding: 1.5rem 1.6rem;
   border: 1px solid var(--line); position: relative;
   font-family: var(--sans); font-size: 0.9rem;
   color: var(--ink); line-height: 1.6;
@@ -203,7 +200,7 @@ body {
 }
 .al-msg__avatar {
   width: 32px; height: 32px; border-radius: 50%;
-  background: var(--olive); color: var(--cream);
+  background: var(--olive); color: var(--bone);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--serif); font-size: 0.85rem;
   font-weight: 500; flex-shrink: 0;
@@ -222,7 +219,7 @@ body {
 .al-problem {
   padding: var(--bandY) var(--inset);
   background: var(--espresso);
-  color: var(--cream);
+  color: var(--bone);
   text-align: center;
 }
 .al-problem__title {
@@ -232,14 +229,14 @@ body {
   letter-spacing: -0.01em;
   max-width: 22ch; margin: 0 auto 1.5rem;
 }
-.al-problem__title em { font-style: italic; color: rgba(250,250,247,0.6); }
+.al-problem__title em { font-style: italic; color: rgba(247,244,238,0.6); }
 .al-problem__list {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1rem; margin-top: 3rem;
 }
 .al-problem__item {
   text-align: left; padding-top: 1.2rem;
-  border-top: 1px solid rgba(250,250,247,0.18);
+  border-top: 1px solid rgba(247,244,238,0.18);
 }
 .al-problem__num {
   font-family: var(--serif); font-size: 1.6rem;
@@ -247,7 +244,7 @@ body {
 }
 .al-problem__text {
   font-family: var(--sans); font-size: 0.88rem;
-  color: rgba(250,250,247,0.75); line-height: 1.55;
+  color: rgba(247,244,238,0.75); line-height: 1.55;
 }
 
 /* ============================================================
@@ -255,7 +252,7 @@ body {
    ============================================================ */
 .al-solution {
   padding: var(--bandY) var(--inset);
-  background: var(--cream);
+  background: var(--bone);
 }
 .al-solution__head {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -300,7 +297,7 @@ body {
    ============================================================ */
 .al-results {
   padding: var(--bandY) var(--inset);
-  background: var(--cream-2);
+  background: var(--bone);
 }
 .al-results__head { text-align: center; margin-bottom: 3rem; }
 .al-results__title {
@@ -315,10 +312,10 @@ body {
 }
 .al-compare__col { padding: 2rem; }
 .al-compare__col--before {
-  background: var(--cream); border: 1px solid var(--line);
+  background: var(--bone); border: 1px solid var(--line);
 }
 .al-compare__col--after {
-  background: var(--ink); color: var(--cream);
+  background: var(--ink); color: var(--bone);
 }
 .al-compare__label {
   font-family: var(--sans); font-size: 0.65rem;
@@ -337,7 +334,7 @@ body {
   padding-left: 1.5rem; position: relative;
 }
 .al-compare__col--after .al-compare__list li {
-  border-bottom-color: rgba(250,250,247,0.12);
+  border-bottom-color: rgba(247,244,238,0.12);
 }
 .al-compare__list li::before {
   position: absolute; left: 0; top: 0.6rem;
@@ -354,7 +351,7 @@ body {
    ============================================================ */
 .al-testimonials {
   padding: var(--bandY) var(--inset);
-  background: var(--cream);
+  background: var(--bone);
 }
 .al-testimonials__head { text-align: center; margin-bottom: 3rem; }
 .al-testimonials__title {
@@ -374,7 +371,7 @@ body {
 .al-quote {
   border-left: 2px solid var(--accent);
   padding: 1.3rem 1.5rem;
-  background: var(--cream-2);
+  background: var(--bone);
 }
 .al-quote__text {
   font-family: var(--serif); font-size: 1.05rem;
@@ -392,13 +389,13 @@ body {
    ============================================================ */
 .al-about {
   padding: var(--bandY) var(--inset);
-  background: var(--cream-2);
+  background: var(--bone);
   display: grid; grid-template-columns: 0.9fr 1.1fr;
   gap: clamp(2rem, 4vw, 5rem); align-items: center;
 }
 .al-about__photo {
   aspect-ratio: 4/5;
-  background: var(--cream);
+  background: var(--bone);
   border: 1px solid var(--line);
   position: relative;
   display: flex; align-items: center; justify-content: center;
@@ -442,7 +439,7 @@ body {
 .al-offer {
   padding: var(--bandY) var(--inset);
   background: var(--espresso);
-  color: var(--cream);
+  color: var(--bone);
   text-align: center;
   position: relative;
 }
@@ -459,14 +456,14 @@ body {
   max-width: 18ch; margin: 0 auto 1.5rem;
   letter-spacing: -0.01em;
 }
-.al-offer__title em { font-style: italic; color: rgba(250,250,247,0.6); }
+.al-offer__title em { font-style: italic; color: rgba(247,244,238,0.6); }
 .al-offer__sub {
-  font-size: 1rem; color: rgba(250,250,247,0.72);
+  font-size: 1rem; color: rgba(247,244,238,0.72);
   max-width: 50ch; margin: 0 auto 2.5rem; line-height: 1.7;
 }
 .al-offer__includes {
-  background: rgba(250,250,247,0.04);
-  border: 1px solid rgba(250,250,247,0.12);
+  background: rgba(247,244,238,0.04);
+  border: 1px solid rgba(247,244,238,0.12);
   padding: 2rem; margin: 0 auto 2.5rem;
   max-width: 600px; text-align: left;
 }
@@ -479,9 +476,9 @@ body {
 .al-offer__list { list-style: none; padding: 0; }
 .al-offer__list li {
   padding: 0.7rem 0; padding-left: 1.6rem;
-  border-bottom: 1px solid rgba(250,250,247,0.08);
+  border-bottom: 1px solid rgba(247,244,238,0.08);
   font-size: 0.92rem; line-height: 1.5;
-  color: rgba(250,250,247,0.85);
+  color: rgba(247,244,238,0.85);
   position: relative;
 }
 .al-offer__list li:last-child { border-bottom: none; }
@@ -489,22 +486,22 @@ body {
   content: '✓'; color: var(--accent); font-size: 0.85rem;
   position: absolute; left: 0; top: 0.85rem; font-weight: 500;
 }
-.al-offer__list li strong { color: var(--cream); font-weight: 500; }
+.al-offer__list li strong { color: var(--bone); font-weight: 500; }
 
 .al-offer__cta {
   display: inline-flex; align-items: center; gap: 0.7rem;
   font-family: var(--sans); font-size: 0.78rem;
   letter-spacing: 0.18em; text-transform: uppercase;
-  background: var(--accent); color: var(--cream);
-  border: 1px solid var(--accent);
+  background: var(--oxblood); color: var(--bone);
+  border: 1px solid var(--oxblood);
   padding: 1.3rem 2.5rem;
   text-decoration: none;
   transition: all 0.4s var(--ease);
 }
-.al-offer__cta:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); gap: 1rem; }
+.al-offer__cta:hover { background: var(--bone); color: var(--ink); border-color: var(--bone); gap: 1rem; }
 .al-offer__legal {
   font-family: var(--sans); font-size: 0.72rem;
-  color: rgba(250,250,247,0.4); letter-spacing: 0.06em;
+  color: rgba(247,244,238,0.4); letter-spacing: 0.06em;
   margin-top: 1.5rem;
 }
 
@@ -515,22 +512,22 @@ body {
   text-align: left;
 }
 .al-offer__price-box {
-  background: rgba(250,250,247,0.06);
-  border: 1px solid rgba(250,250,247,0.12);
+  background: rgba(247,244,238,0.06);
+  border: 1px solid rgba(247,244,238,0.12);
   padding: 2rem; display: flex; flex-direction: column;
   align-items: center; justify-content: center; text-align: center;
 }
 .al-offer__price-label {
   font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(250,250,247,0.5); margin-bottom: 0.6rem;
+  color: rgba(247,244,238,0.5); margin-bottom: 0.6rem;
 }
 .al-offer__price {
   font-family: var(--serif); font-size: 3.2rem;
-  font-weight: 500; color: var(--cream); line-height: 1; margin-bottom: 0.5rem;
+  font-weight: 500; color: var(--bone); line-height: 1; margin-bottom: 0.5rem;
 }
-.al-offer__currency { font-size: 1.2rem; font-weight: 300; color: rgba(250,250,247,0.5); }
+.al-offer__currency { font-size: 1.2rem; font-weight: 300; color: rgba(247,244,238,0.5); }
 .al-offer__price-sub {
-  font-size: 0.72rem; color: rgba(250,250,247,0.45);
+  font-size: 0.72rem; color: rgba(247,244,238,0.45);
   letter-spacing: 0.08em;
 }
 .al-offer__discount {
@@ -540,27 +537,27 @@ body {
 }
 .al-offer__discount-label {
   font-family: var(--serif); font-size: 1.15rem;
-  font-weight: 500; font-style: italic; color: var(--cream);
+  font-weight: 500; font-style: italic; color: var(--bone);
   margin-bottom: 0.8rem;
 }
 .al-offer__discount-text {
-  font-size: 0.88rem; color: rgba(250,250,247,0.75);
+  font-size: 0.88rem; color: rgba(247,244,238,0.75);
   line-height: 1.6; margin-bottom: 1rem;
 }
-.al-offer__discount-text strong { color: var(--cream); font-weight: 500; }
+.al-offer__discount-text strong { color: var(--bone); font-weight: 500; }
 .al-offer__code {
   display: inline-block;
-  background: rgba(250,250,247,0.1); border: 1px solid rgba(250,250,247,0.25);
+  background: rgba(247,244,238,0.1); border: 1px solid rgba(247,244,238,0.25);
   padding: 0.25rem 0.6rem; font-family: monospace;
-  letter-spacing: 0.15em; font-size: 0.95rem; color: var(--cream);
+  letter-spacing: 0.15em; font-size: 0.95rem; color: var(--bone);
 }
 .al-offer__discount-final {
   font-family: var(--serif); font-size: 1.4rem;
   font-weight: 500; color: var(--accent); margin-bottom: 0.6rem;
 }
-.al-offer__discount-final strong { color: var(--cream); }
+.al-offer__discount-final strong { color: var(--bone); }
 .al-offer__discount-warn {
-  font-size: 0.72rem; color: rgba(250,250,247,0.45);
+  font-size: 0.72rem; color: rgba(247,244,238,0.45);
   font-style: italic;
 }
 
@@ -571,7 +568,7 @@ body {
 /* ============================================================
    FAQ
    ============================================================ */
-.al-faq { padding: var(--bandY) var(--inset); background: var(--cream); }
+.al-faq { padding: var(--bandY) var(--inset); background: var(--bone); }
 .al-faq__head { text-align: center; margin-bottom: 3rem; }
 .al-faq__title {
   font-family: var(--serif);
@@ -608,7 +605,7 @@ body {
    ============================================================ */
 .al-footer {
   padding: 3rem var(--inset);
-  background: var(--cream);
+  background: var(--bone);
   border-top: 1px solid var(--line);
   text-align: center;
 }
@@ -751,9 +748,9 @@ body {
 
   <!-- ============ PROBLEMA ============ -->
   <section class="al-problem" id="que-es">
-    <span class="al-hero__kicker" style="color:rgba(250,250,247,0.5);">— El problema real</span>
+    <span class="al-hero__kicker" style="color:rgba(247,244,238,0.5);">— El problema real</span>
     <h2 class="al-problem__title">Tus proyectos son brillantes.<br>Pero tus láminas <em>no te están vendiendo</em>.</h2>
-    <p style="font-size:1.05rem; color:rgba(250,250,247,0.7); max-width:54ch; margin:0 auto; line-height:1.7;">
+    <p style="font-size:1.05rem; color:rgba(247,244,238,0.7); max-width:54ch; margin:0 auto; line-height:1.7;">
       Sé honesta contigo misma — ¿cuántas veces te ha pasado esto?
     </p>
     <div class="al-problem__list">
@@ -810,7 +807,7 @@ body {
   </section>
 
   <!-- ============ EJEMPLO BASE — Mockups del curso ============ -->
-  <section style="padding: var(--bandY) var(--inset); background: var(--cream-2);">
+  <section style="padding: var(--bandY) var(--inset); background: var(--bone);">
     <div style="text-align: center; margin-bottom: 2.5rem;">
       <span style="font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);">— Esto es lo que vas a crear</span>
       <h2 style="font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 500; line-height: 1.1; margin-top: 0.8rem;">
@@ -877,38 +874,38 @@ body {
   </section>
 
   <!-- ============ STUDENT SHOWCASE ============ -->
-  <section class="al-showcase" style="padding: var(--bandY) var(--inset); background: var(--espresso); color: var(--cream);">
+  <section class="al-showcase" style="padding: var(--bandY) var(--inset); background: var(--espresso); color: var(--bone);">
     <div style="text-align: center; margin-bottom: 3rem;">
-      <span class="al-hero__kicker" style="color: rgba(250,250,247,0.5);">— Resultados reales de alumnas ArquiLab</span>
+      <span class="al-hero__kicker" style="color: rgba(247,244,238,0.5);">— Resultados reales de alumnas ArquiLab</span>
       <h2 style="font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 500; line-height: 1.1; margin-top: 0.8rem;">
-        Así presentan <em style="font-style:italic; font-weight:400; color:rgba(250,250,247,0.6);">después de ArquiLab</em>.
+        Así presentan <em style="font-style:italic; font-weight:400; color:rgba(247,244,238,0.6);">después de ArquiLab</em>.
       </h2>
-      <p style="font-size: 1rem; color: rgba(250,250,247,0.6); max-width: 50ch; margin: 1rem auto 0;">
+      <p style="font-size: 1rem; color: rgba(247,244,238,0.6); max-width: 50ch; margin: 1rem auto 0;">
         Estos son Passion Projects reales de alumnas que terminaron el curso. Sus presentaciones hablan por sí solas.
       </p>
     </div>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-      <div style="border: 1px solid rgba(250,250,247,0.12); padding: 1.6rem;">
+      <div style="border: 1px solid rgba(247,244,238,0.12); padding: 1.6rem;">
         <div style="aspect-ratio: 16/10; overflow:hidden; margin-bottom: 1.2rem;">
           <img src="MOCKUP_GABY.png" alt="Cocina Pacífico — Arq. Gabriela Calvera — ArquiLab" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <h3 style="font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.4rem;">Cocina Pacífico</h3>
-        <p style="font-size: 0.82rem; color: rgba(250,250,247,0.6); margin-bottom: 0.6rem;">Diseño interior residencial + retail gastronómico. Planos técnicos, moodboard, renders y planos de ejecución — todo en Layout.</p>
+        <p style="font-size: 0.82rem; color: rgba(247,244,238,0.6); margin-bottom: 0.6rem;">Diseño interior residencial + retail gastronómico. Planos técnicos, moodboard, renders y planos de ejecución — todo en Layout.</p>
         <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">Arq. Gabriela Calvera · @gabriela.calvera</p>
       </div>
 
-      <div style="border: 1px solid rgba(250,250,247,0.12); padding: 1.6rem;">
+      <div style="border: 1px solid rgba(247,244,238,0.12); padding: 1.6rem;">
         <div style="aspect-ratio: 16/10; overflow:hidden; margin-bottom: 1.2rem;">
           <img src="MOCKUP_NAYELI.png" alt="NM Design Studio — Arq. Nagely Miño — ArquiLab" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <h3 style="font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.4rem;">NM Design Studio</h3>
-        <p style="font-size: 0.82rem; color: rgba(250,250,247,0.6); margin-bottom: 0.6rem;">Passion Project completo: concepto, moodboard, plano técnico, materialidad, axonometría, renders y presupuesto. Nivel estudio profesional.</p>
+        <p style="font-size: 0.82rem; color: rgba(247,244,238,0.6); margin-bottom: 0.6rem;">Passion Project completo: concepto, moodboard, plano técnico, materialidad, axonometría, renders y presupuesto. Nivel estudio profesional.</p>
         <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">Arq. Nagely Miño · NM Design Studio</p>
       </div>
     </div>
 
-    <p style="text-align: center; font-size: 0.82rem; color: rgba(250,250,247,0.45); margin-top: 2rem; font-style: italic;">
+    <p style="text-align: center; font-size: 0.82rem; color: rgba(247,244,238,0.45); margin-top: 2rem; font-style: italic;">
       + Carelis Granizo · Katherine Pasquel · Sofía Tapia · Valeria Ceballos · Jannet Flores · Fernanda Sánchez · Anahí Gallardo — y contando.
     </p>
   </section>
@@ -1058,8 +1055,8 @@ body {
   font-size: 0.85rem;
   letter-spacing: 0.04em;
   text-decoration: none;
-  color: #FAFAF7;
-  background: #111009;
+  color: var(--bone);
+  background: var(--oxblood);
   box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
 }
 @media (max-width: 720px) {
