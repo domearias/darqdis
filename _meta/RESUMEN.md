@@ -58,7 +58,10 @@
 
 - Es un **buscador curado**: modelos rehospedados de terceros (Marset, Minotti…), **NO modelados por Doménica**. Cada card acredita su **fuente**. Nunca decir que ella los modeló.
 - Datos en `biblioteca.json`. Modelos: **#001 Pace Pendant** (A-N-D), **#002 Minotti Block Outdoor**.
-- Skill del repo (`.claude/skills/biblioteca-3d`) publica modelos nuevos + genera contenido de Instagram.
+- **Publicar = UN comando** (`scripts/publicar.py`): copia el render → añade a `biblioteca.json` + regenera `biblioteca.html` → genera el **carrusel de IG en PNG 1080×1350** + `caption.txt` → (con `--commit`) push. Ver `scripts/README.md`.
+  - Desde el celu con Claude: *"sube este modelo"* + link de 3DW + adjunta el render + categoría → Claude corre el comando y devuelve los PNG.
+  - 3D Warehouse NO se puede raspar (bloquea bots) → siempre pasas el nombre + tu render propio (mejor calidad que la miniatura de 3DW de todos modos).
+  - Instagram: flujo **listo-para-postear** (auto todo menos el toque final de "publicar"). Auto-post 100% vía Graph API quedó como opción futura (necesita cuenta IG business + app de Meta + token que se renueva c/60 días).
 
 ## 6. CONTENIDO / TESTIMONIOS
 
@@ -93,6 +96,7 @@ Doménica envía inspo + info → Claude genera carruseles on-brand (ver plantil
 - Formato **4:5 (1080×1350)**. Portada oscura (gancho) → 3–6 slides claros (valor, numerados) → cierre beige con CTA ("link en bio").
 - Playfair en titulares, Archivo en cuerpo, paleta y reglas de acento del brand book. 1 idea por slide, títulos cortos, mucho aire.
 - Se generan como HTML/slides que Doménica exporta como imágenes (o se ajustan juntas antes).
+- **Carruseles de biblioteca**: automatizados por `scripts/carrusel.py` (lo llama `publicar.py`). Renderiza los slides a PNG 1080×1350 con Chromium + tipografía de marca incrustada. Portada oscura (render + #NNN) → tip → cierre beige CTA.
 
 ## 9. PENDIENTES / BUGS CONOCIDOS
 
@@ -106,4 +110,5 @@ Doménica envía inspo + info → Claude genera carruseles on-brand (ver plantil
 - **2026-07-14:** refactor v3 de index.html (bloques A–D): limpieza, tokens, estructura del home (Problema→Solución→Resultados→Biblioteca→Contacto).
 - **2026-07-22:** /proyectos nuevo (work-row, oscuro); arreglados links rotos; cascada de tokens a biblioteca/arquilab; ritmo de color blanco/beige/oscuro; nav uniforme + /contacto; scroll-spy eliminado; **copy de ArquiLab reescrita (eficiencia + Metodología 3D + historia)**; embajadora Gaby; foto real; **DMs como screenshots**; tipografía Archivo 400 + base 17px. Todo publicado.
 - **2026-07-22 (fin de sesión):** creado este RESUMEN.md + **BRANDBOOK.html** (brand book visual v1) en la carpeta `_RESUMEN_DARQDIS`. Tipografía marcada como provisional. Definido el flujo de generación de carruseles.
+- **2026-07-22:** **automatización de la Biblioteca 3D** — `scripts/publicar.py` (un comando: render → biblioteca.json/html → carrusel PNG 1080×1350 + caption → push). Nuevos: `carrusel.py`, `scripts/README.md`, fuentes de marca cacheadas en `scripts/assets/fonts/`. `build/` en gitignore. Flujo listo-para-postear.
 - **2026-07-22:** regla de **oxblood ampliada** (acento de marca, no solo dinero). Aplicado al sitio: itálicas de títulos en secciones claras pasan de gris a oxblood (las oscuras se quedan claras). Guardrail: botón sólido oxblood sigue reservado a CTAs de compra. Publicado.
