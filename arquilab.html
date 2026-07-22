@@ -43,13 +43,13 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; font-size: 106.25%; }
 
 body {
   font-family: var(--sans);
   background: var(--bone);
   color: var(--ink);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -357,7 +357,7 @@ body {
   position: absolute; left: 0; top: 0.6rem;
 }
 .al-compare__col--before .al-compare__list li::before {
-  content: '×'; color: var(--ink-soft); font-size: 1.2rem; line-height: 1; font-weight: 300;
+  content: '×'; color: var(--ink-soft); font-size: 1.2rem; line-height: 1; font-weight: 400;
 }
 .al-compare__col--after .al-compare__list li::before {
   content: '✓'; color: var(--accent); font-size: 0.9rem; font-weight: 500;
@@ -542,7 +542,7 @@ body {
   font-family: var(--serif); font-size: 3.2rem;
   font-weight: 500; color: var(--bone); line-height: 1; margin-bottom: 0.5rem;
 }
-.al-offer__currency { font-size: 1.2rem; font-weight: 300; color: rgba(247,244,238,0.5); }
+.al-offer__currency { font-size: 1.2rem; font-weight: 400; color: rgba(247,244,238,0.5); }
 .al-offer__price-sub {
   font-size: 0.72rem; color: rgba(247,244,238,0.45);
   letter-spacing: 0.08em;
@@ -606,7 +606,7 @@ body {
   gap: 1rem;
 }
 .al-faq__q::after {
-  content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--accent);
+  content: '+'; font-size: 1.4rem; font-weight: 400; color: var(--accent);
   transition: transform 0.3s var(--ease); flex-shrink: 0;
 }
 .al-faq__item.open .al-faq__q::after { transform: rotate(45deg); }
