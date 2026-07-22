@@ -52,11 +52,34 @@ Portada oscura (render a sangre + nombre + #NNN) → slides de más renders (si
 pasas varios) → slide de *tip* (si hay) → cierre beige con CTA "Link en bio".
 Sigue las plantillas del BRANDBOOK §09 (Playfair + Archivo, paleta y ritmo).
 
+## Editar los carruseles dentro de Canva (Bulk Create)
+
+Si quieres que el carrusel sea **editable en Canva** (no una imagen plana), usa
+**Bulk Create** (función de Canva Pro). El pipeline ya te deja el CSV listo:
+
+- Por modelo: `build/carrusel-NNN/datos.csv`
+- Todos de una: `python scripts/carrusel.py --csv-todos` → `build/biblioteca.csv`
+
+Setup **una sola vez** en Canva:
+
+1. Crea una plantilla de carrusel 1080×1350 con tu marca (Playfair + Archivo,
+   paleta). Deja campos de texto para: **nombre, numero, categoria, tip, cta,
+   handle, dominio** y un marcador de **imagen** para el render.
+2. **Apps → Bulk Create → subir CSV.** Sube `datos.csv` (o `biblioteca.csv`).
+3. Conecta cada columna a su campo (la columna `render` es una **URL pública**
+   de darqdis.com → Canva jala la imagen sola).
+4. **Generar** → cada carrusel sale como diseño **nativo y 100% editable**.
+
+> Ojo: importar el PNG a Canva NO es editable (entra como imagen plana). Para
+> editar de verdad dentro de Canva hay que ir por Bulk Create con el CSV.
+> El `render` debe estar ya **pusheado** para que su URL pública exista.
+
 ## Scripts
 
 - **`publicar.py`** — orquestador. El comando que usas normalmente.
 - **`add_model.py`** — motor de la biblioteca (JSON → HTML). Lo llama `publicar.py`.
-- **`carrusel.py`** — generador de slides + caption. Lo llama `publicar.py`.
+- **`carrusel.py`** — generador de slides + caption + `datos.csv`. Lo llama
+  `publicar.py`. También `--csv-todos` para volcar todos los modelos a un CSV.
 - **`assets/fonts/`** — Playfair + Archivo cacheadas (los PNG salen idénticos
   a la marca sin depender de red).
 

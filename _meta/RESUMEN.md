@@ -62,6 +62,7 @@
   - Desde el celu con Claude: *"sube este modelo"* + link de 3DW + adjunta el render + categoría → Claude corre el comando y devuelve los PNG.
   - 3D Warehouse NO se puede raspar (bloquea bots) → siempre pasas el nombre + tu render propio (mejor calidad que la miniatura de 3DW de todos modos).
   - Instagram: flujo **listo-para-postear** (auto todo menos el toque final de "publicar"). Auto-post 100% vía Graph API quedó como opción futura (necesita cuenta IG business + app de Meta + token que se renueva c/60 días).
+  - **Canva Pro:** el generador ya hace lo que haría el Autofill de Canva Enterprise (bloqueado en Pro), gratis. Para editar el carrusel DENTRO de Canva → **Bulk Create**: el pipeline genera `datos.csv` (y `--csv-todos` → `build/biblioteca.csv`) con la URL pública del render; se carga sobre una plantilla maestra de marca y sale un diseño editable. Importar el PNG a Canva NO es editable (imagen plana).
 
 ## 6. CONTENIDO / TESTIMONIOS
 

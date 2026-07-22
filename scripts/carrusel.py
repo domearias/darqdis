@@ -19,6 +19,7 @@ Salida: build/carrusel-003/{01.png, 02.png, ..., caption.txt, index.html}
 
 import argparse
 import base64
+import csv as csvmod
 import html
 import json
 import mimetypes
@@ -38,6 +39,11 @@ OLIVE = "#6E6A4D"
 OXBLOOD = "#5C2E26"
 HANDLE = "@domenica.arqdis"
 DOMINIO = "darqdis.com/biblioteca"
+SITIO = "https://darqdis.com"  # base para las URLs públicas de los renders
+
+# Columnas del CSV de Canva Bulk Create. Los encabezados son los nombres de
+# campo que Canva empareja con los marcadores de tu plantilla maestra.
+CSV_COLS = ["nombre", "numero", "categoria", "tip", "fuente", "cta", "handle", "dominio", "render"]
 
 W, H = 1080, 1350  # 4:5
 
@@ -221,6 +227,34 @@ def caption_text(m) -> str:
     return "\n".join(lineas)
 
 
+# ---------------------------------------------------------------- CSV Bulk Create
+def csv_row(m, sitio=SITIO) -> dict:
+    """Una fila = un carrusel en Canva Bulk Create. `render` es la URL pública."""
+    render_url = sitio.rstrip("/") + "/" + m["imagen"].lstrip("/")
+    return {
+        "nombre": m["nombre"],
+        "numero": f"#{m['numero']:03d}",
+        "categoria": CAT_LABEL.get(m["categoria"], m["categoria"].title()),
+        "tip": m.get("tip", ""),
+        "fuente": (f"Fuente · {m['fuente']}" if m.get("fuente") else ""),
+        "cta": "Link en bio →",
+        "handle": HANDLE,
+        "dominio": DOMINIO,
+        "render": render_url,
+    }
+
+
+def write_csv(rows, dest, sitio=SITIO):
+    dest = pathlib.Path(dest)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    with dest.open("w", newline="", encoding="utf-8-sig") as f:  # BOM: acentos ok en Canva/Excel
+        w = csvmod.DictWriter(f, fieldnames=CSV_COLS)
+        w.writeheader()
+        for r in rows:
+            w.writerow(r)
+    return dest
+
+
 # ---------------------------------------------------------------- render PNG
 def render_png(chrome, html_str, out_png):
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8") as tf:
@@ -287,23 +321,41 @@ def generar(numero, render_paths, root=".", out_dir=None):
     cap = out / "caption.txt"
     cap.write_text(caption_text(m), "utf-8")
 
+    # datos.csv → para Canva Bulk Create (diseño editable dentro de Canva)
+    write_csv([csv_row(m)], out / "datos.csv")
+
     return {"out": out, "pngs": pngs, "slides": len(slides), "chrome": bool(chrome)}
 
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--numero", type=int, required=True)
+    p.add_argument("--numero", type=int, help="genera el carrusel de un modelo")
     p.add_argument("--render", action="append", default=[], help="ruta a un render (repetible)")
     p.add_argument("--root", default=".")
     p.add_argument("--out")
+    p.add_argument("--csv-todos", action="store_true", dest="csv_todos",
+                   help="vuelca TODOS los modelos a build/biblioteca.csv (Canva Bulk Create)")
     a = p.parse_args()
+
+    # Modo lote: un solo CSV con todos los modelos, para Bulk Create de una.
+    if a.csv_todos:
+        root = pathlib.Path(a.root)
+        modelos = json.loads((root / "biblioteca.json").read_text("utf-8"))
+        modelos.sort(key=lambda m: m["numero"], reverse=True)
+        dest = write_csv([csv_row(m) for m in modelos], root / "build" / "biblioteca.csv")
+        print(f"\n  CSV para Canva Bulk Create: {dest} ({len(modelos)} modelos)\n")
+        return
+
+    if a.numero is None:
+        p.error("indica --numero N (o --csv-todos)")
     r = generar(a.numero, a.render, a.root, a.out)
     print(f"\n  Carrusel #{a.numero:03d}: {r['slides']} slides → {r['out']}")
     if r["chrome"]:
         print(f"  PNG renderizados: {len(r['pngs'])} (1080×1350, listos para postear)")
     else:
         print("  Chromium no disponible: slides dejados como HTML (captura manual).")
-    print(f"  Caption: {r['out']}/caption.txt\n")
+    print(f"  Caption: {r['out']}/caption.txt")
+    print(f"  CSV Canva Bulk Create: {r['out']}/datos.csv\n")
 
 
 if __name__ == "__main__":
