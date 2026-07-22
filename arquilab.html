@@ -756,6 +756,13 @@ body {
 .al-amb__legal b { color: rgba(247,244,238,0.75); font-weight: 500; letter-spacing: 0.1em; }
 @media (max-width: 860px) { .al-amb { grid-template-columns: 1fr; } }
 
+/* Capturas reales de DMs (galería tipo masonry) */
+.al-shots { columns: 3; column-gap: 1.2rem; max-width: 1040px; margin: 0 auto; }
+.al-shot { break-inside: avoid; margin-bottom: 1.2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 34px rgba(17,16,9,0.12); border: 1px solid var(--line); background: #fff; }
+.al-shot img { width: 100%; height: auto; display: block; }
+@media (max-width: 860px) { .al-shots { columns: 2; } }
+@media (max-width: 560px) { .al-shots { columns: 1; max-width: 440px; } }
+
 </style>
 </head>
 
@@ -810,53 +817,14 @@ body {
       <span class="al-request__kicker">— Cómo nació ArquiLab</span>
       <h2 class="al-request__title">Ustedes <em>lo pidieron</em>.</h2>
       <p class="al-request__sub">
-        Durante meses recibí cientos de mensajes pidiéndome que enseñara Layout. Son reales, tal cual llegaron — mantengo los nombres en privado.
+        Capturas reales de mensajes que recibo — de estudiantes, alumnas y clientes. Sin retoques.
       </p>
     </div>
 
-    <div class="al-messages">
-      <div class="al-msg">
-        <div class="al-msg__head">
-          <div class="al-msg__avatar">O</div>
-          <span class="al-msg__name">Arquitecta en oficina</span>
-        </div>
-        <p class="al-msg__text">ME MUEROO por hacer un curso de Layout. A las pasantes que pasan por la oficina les enseño en menos de media hora, y amo cómo en menos de un día hacen las presentaciones de mobiliario. Un cursooooo por faaa.</p>
-      </div>
-      <div class="al-msg">
-        <div class="al-msg__head">
-          <div class="al-msg__avatar">E</div>
-          <span class="al-msg__name">Estudiante de arquitectura</span>
-        </div>
-        <p class="al-msg__text">Layout es una herramienta excelente. Lo aprendí a usar y literal era la única que presentaba láminas bonitas en la U. Eres una capa, sigue adelante.</p>
-      </div>
-      <div class="al-msg">
-        <div class="al-msg__head">
-          <div class="al-msg__avatar">M</div>
-          <span class="al-msg__name">Diseñadora de mobiliario</span>
-        </div>
-        <p class="al-msg__text">Hola Dome, ¿con qué programa haces esas láminas? También diseño muebles de melamina pero pongo las medidas en SketchUp y listo. Me gustaría hacerlo más profesional.</p>
-      </div>
-      <div class="al-msg">
-        <div class="al-msg__head">
-          <div class="al-msg__avatar">V</div>
-          <span class="al-msg__name">Arqui de la comunidad</span>
-        </div>
-        <p class="al-msg__text">Me parece súper perfecto, muchas gracias de antemano. Me encantaría también estar en tu curso de Layout.</p>
-      </div>
-      <div class="al-msg">
-        <div class="al-msg__head">
-          <div class="al-msg__avatar">L</div>
-          <span class="al-msg__name">Arqui descubriendo Layout</span>
-        </div>
-        <p class="al-msg__text">Dome, ¿tienes tutoriales para Layout? Básicamente se actualizan todas las vistas de cada mueble automáticamente — solo debo acotar y escribir detalles.</p>
-      </div>
-      <div class="al-msg">
-        <div class="al-msg__head">
-          <div class="al-msg__avatar">A</div>
-          <span class="al-msg__name">Arquitecta · Ecuador</span>
-        </div>
-        <p class="al-msg__text">La misma presentación se la mostré a las chicas de la ofi y dijeron que quieren que les enseñe a usar Layout. Todo lo que compartes es de muchísimo valor. Sos una genia.</p>
-      </div>
+    <div class="al-shots">
+      <div class="al-shot"><img src="/img/arquilab/dm-passion.jpg" alt="Mensaje de una alumna: acabé el módulo 4 y mi passion project, aprendí muchísimo con ArquiLab" loading="lazy"></div>
+      <div class="al-shot"><img src="/img/arquilab/dm-capa.jpg" alt="Mensaje de una estudiante: Layout es una herramienta excelente, eres una capa" loading="lazy"></div>
+      <div class="al-shot"><img src="/img/arquilab/dm-cliente.jpg" alt="Mensaje de un cliente: mándame los planos, quiero empezar la construcción la próxima semana" loading="lazy"></div>
     </div>
   </section>
 
@@ -1099,16 +1067,16 @@ body {
     </div>
     <div class="al-quotes">
       <div class="al-quote">
-        <p class="al-quote__text">"¡Hola Domee! Ya acabé el módulo 4 y también mi Passion Project. De verdad quería agradecerte por este ArquiLab — estuvo increíble, aprendí muchísimo. ¡Gracias por todo!"</p>
-        <p class="al-quote__author">— Alumna ArquiLab · terminó su Passion Project</p>
-      </div>
-      <div class="al-quote">
-        <p class="al-quote__text">"Dome, porfa mándame los planos y el video. Está cheverísimo, quiero enseñarles a los otros socios para aprobar y empezar la construcción la próxima semana."</p>
-        <p class="al-quote__author">— Cliente · proyecto en construcción</p>
-      </div>
-      <div class="al-quote">
         <p class="al-quote__text">"Gracias por tus consejitos, arqui, eres increíble. Tomaré la decisión de estudiar la carrera sin duda alguna. Eres una inspiración para quienes queremos seguir arquitectura."</p>
         <p class="al-quote__author">— Futura estudiante de arquitectura</p>
+      </div>
+      <div class="al-quote">
+        <p class="al-quote__text">"Incluso para nosotros como arquis este tipo de planos puede resultar confuso y no hay una lectura clara. Gracias por compartirnos lo que has aprendido, Dome."</p>
+        <p class="al-quote__author">— Arquitecto en ejercicio</p>
+      </div>
+      <div class="al-quote">
+        <p class="al-quote__text">"Apenas te sigo hace poquito — muchas gracias por todas tus recomendaciones. Hay personas a las cuales todos tus recursos nos son súper útiles."</p>
+        <p class="al-quote__author">— Arqui de la comunidad</p>
       </div>
       <div class="al-quote">
         <p class="al-quote__text">"Te sigo hace ya un tiempo y de verdad tu contenido me ha ayudado muchísimo y me inspira. ¡Te admiro!"</p>
