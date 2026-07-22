@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>darqdis — Brand Book v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#FAFAF7; --beige:#F0EDE6; --espresso:#1A1714;
+  --ink:#111009; --ink-soft:#3D3830; --olive:#6E6A4D; --oxblood:#5C2E26;
+  --line:rgba(17,16,9,0.12); --line-2:rgba(17,16,9,0.06);
+  --serif:'Playfair Display',Georgia,serif; --sans:'Archivo',system-ui,sans-serif;
+  --inset:clamp(22px,5vw,90px); --ease:cubic-bezier(0.22,1,0.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:106.25%;scroll-behavior:smooth;}
+body{font-family:var(--sans);font-weight:400;background:var(--bone);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+section{padding:clamp(3rem,7vw,6rem) var(--inset);border-bottom:1px solid var(--line);}
+.band-dark{background:var(--espresso);color:var(--bone);}
+.band-beige{background:var(--beige);}
+.eyebrow{font-family:var(--sans);font-weight:500;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--olive);display:block;margin-bottom:1rem;}
+.band-dark .eyebrow{color:rgba(247,244,238,0.55);}
+h1{font-family:var(--serif);font-weight:500;line-height:0.98;}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4vw,3rem);line-height:1.05;margin-bottom:0.6rem;}
+h2 em{font-style:italic;font-weight:400;color:var(--ink-soft);}
+.band-dark h2 em{color:rgba(247,244,238,0.6);}
+.lead{font-size:1.05rem;color:var(--ink-soft);max-width:60ch;line-height:1.7;}
+.band-dark .lead{color:rgba(247,244,238,0.7);}
+.grid{display:grid;gap:1.2rem;margin-top:2.2rem;}
+.note{font-size:0.85rem;color:var(--ink-soft);}
+small{font-size:0.78rem;}
+
+/* cover */
+.cover{background:var(--espresso);color:var(--bone);min-height:88vh;display:flex;flex-direction:column;justify-content:center;border-bottom:none;}
+.cover__word{font-family:var(--sans);font-weight:700;font-size:clamp(3rem,11vw,9rem);letter-spacing:-0.02em;line-height:0.9;}
+.cover__word .dot{color:var(--olive);}
+.cover__sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,2.2rem);color:rgba(247,244,238,0.75);margin-top:1.2rem;}
+.cover__meta{margin-top:2.5rem;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(247,244,238,0.5);}
+.toc{margin-top:3rem;display:flex;flex-wrap:wrap;gap:0.8rem 1.6rem;}
+.toc a{color:rgba(247,244,238,0.7);text-decoration:none;font-size:0.85rem;border-bottom:1px solid transparent;}
+.toc a:hover{color:var(--bone);border-color:var(--bone);}
+
+/* color swatches */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:2.2rem;}
+.sw{border:1px solid var(--line);overflow:hidden;border-radius:6px;}
+.sw__chip{height:120px;}
+.sw__body{padding:1rem 1.1rem;background:#fff;}
+.sw__name{font-weight:600;font-size:0.95rem;}
+.sw__hex{font-family:ui-monospace,monospace;font-size:0.8rem;color:var(--ink-soft);margin:0.2rem 0 0.5rem;}
+.sw__role{font-size:0.8rem;color:var(--ink-soft);line-height:1.45;}
+.rule-box{margin-top:2rem;border-left:3px solid var(--olive);padding:0.8rem 1.2rem;background:#fff;border-radius:0 6px 6px 0;}
+.rule-box b{color:var(--oxblood);}
+
+/* type specimens */
+.spec{border:1px solid var(--line);border-radius:6px;padding:1.6rem;background:#fff;margin-top:1.2rem;}
+.spec__label{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--olive);margin-bottom:0.8rem;}
+.type-scale > div{display:flex;align-items:baseline;gap:1.4rem;padding:0.6rem 0;border-top:1px solid var(--line);flex-wrap:wrap;}
+.type-scale small{color:var(--ink-soft);font-family:ui-monospace,monospace;white-space:nowrap;}
+.provisional{display:inline-block;background:var(--oxblood);color:var(--bone);font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 0.8rem;border-radius:999px;margin-left:0.6rem;vertical-align:middle;}
+
+/* rhythm bands */
+.rhythm{display:flex;flex-direction:column;margin-top:2rem;border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+.rhythm > div{padding:1.3rem 1.5rem;font-size:0.9rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
+.r-white{background:#FAFAF7;color:var(--ink);}
+.r-beige{background:#F0EDE6;color:var(--ink);}
+.r-dark{background:#1A1714;color:var(--bone);}
+.rhythm b{font-family:var(--serif);font-weight:500;font-size:1.1rem;}
+
+/* components */
+.btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--sans);font-weight:500;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:1rem 1.9rem;border:1.5px solid var(--ink);color:var(--ink);background:transparent;border-radius:0;}
+.btn--oxblood{background:var(--oxblood);color:var(--bone);border-color:var(--oxblood);}
+.comp-row{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;margin-top:1.4rem;}
+.card-demo{border:1px solid var(--line);background:#fff;padding:1.4rem;border-radius:6px;max-width:280px;}
+.kick-demo{font-weight:500;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--olive);}
+
+/* voice */
+.voice{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;}
+.voice__col{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1.4rem 1.6rem;}
+.voice__col h4{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.9rem;}
+.voice__col.yes h4{color:var(--olive);} .voice__col.no h4{color:var(--oxblood);}
+.voice__col ul{list-style:none;} .voice__col li{padding:0.4rem 0;border-top:1px solid var(--line);font-size:0.92rem;}
+@media(max-width:640px){.voice{grid-template-columns:1fr;}}
+
+/* carousel templates */
+.carousels{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2rem;}
+.slide{aspect-ratio:4/5;border-radius:10px;overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 34px rgba(17,16,9,0.14);}
+.slide__pad{padding:1.6rem;height:100%;display:flex;flex-direction:column;}
+.slide--cover{background:var(--espresso);color:var(--bone);}
+.slide--cover .k{font-size:0.6rem;letter-spacing:0.24em;text-transform:uppercase;color:rgba(247,244,238,0.5);}
+.slide--cover h3{font-family:var(--serif);font-weight:500;font-size:1.9rem;line-height:1.05;margin-top:auto;}
+.slide--cover h3 em{font-style:italic;color:rgba(247,244,238,0.65);}
+.slide--tip{background:var(--bone);color:var(--ink);}
+.slide--tip .num{font-family:var(--serif);font-size:2.6rem;color:var(--olive);line-height:1;}
+.slide--tip h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin:0.6rem 0;}
+.slide--tip p{font-size:0.82rem;color:var(--ink-soft);}
+.slide--cta{background:var(--beige);color:var(--ink);}
+.slide--cta h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.1;margin-top:auto;}
+.slide--cta .btnmini{margin-top:1rem;display:inline-block;background:var(--oxblood);color:var(--bone);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1rem;font-weight:600;align-self:flex-start;}
+.slide__foot{margin-top:auto;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;opacity:0.55;}
+.slide--tip .slide__foot,.slide--cta .slide__foot{color:var(--ink-soft);}
+.wf{margin-top:2.4rem;background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.6rem 1.8rem;}
+.wf ol{margin:0.8rem 0 0 1.2rem;} .wf li{padding:0.35rem 0;font-size:0.95rem;}
+
+.footer{background:var(--espresso);color:rgba(247,244,238,0.6);padding:2.5rem var(--inset);font-size:0.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border:none;}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <span class="eyebrow">Brand Book · v1</span>
+  <div class="cover__word">doménica<span class="dot">.</span>arqdis</div>
+  <p class="cover__sub">Arquitectura, retail design y ArquiLab.</p>
+  <p class="cover__meta">darqdis.com · Julio 2026 · Documento vivo</p>
+  <nav class="toc">
+    <a href="#logo">01 Logo</a>
+    <a href="#color">02 Color</a>
+    <a href="#tipo">03 Tipografía</a>
+    <a href="#ritmo">04 Ritmo de fondos</a>
+    <a href="#comp">05 Componentes</a>
+    <a href="#voz">06 Voz y tono</a>
+    <a href="#arquilab">07 ArquiLab</a>
+    <a href="#imagen">08 Imágenes</a>
+    <a href="#redes">09 Carruseles / redes</a>
+  </nav>
+</section>
+
+<!-- 01 LOGO -->
+<section id="logo">
+  <span class="eyebrow">01 · Logo</span>
+  <h2>El <em>wordmark</em>.</h2>
+  <p class="lead">El logotipo es <b>doménica.arqdis</b> escrito en Archivo Bold, minúsculas. El punto (<span style="color:var(--olive);font-weight:700;">.</span>) siempre va en <b>olivo</b> — es el único detalle de color del logo y su firma. No se usan íconos, símbolos ni versiones alternativas.</p>
+  <div style="margin-top:2.4rem;display:flex;flex-direction:column;gap:1.4rem;">
+    <div style="font-family:var(--sans);font-weight:700;font-size:2.4rem;letter-spacing:-0.01em;">doménica<span style="color:var(--olive);">.</span>arqdis</div>
+    <div style="background:var(--espresso);color:var(--bone);padding:1.4rem 1.8rem;font-family:var(--sans);font-weight:700;font-size:2.4rem;letter-spacing:-0.01em;border-radius:6px;width:fit-content;">doménica<span style="color:var(--olive);">.</span>arqdis</div>
+  </div>
+  <p class="note" style="margin-top:1.4rem;">Marca corta / dominio: <b>darqdis</b> · darqdis.com · Instagram @domenica.arqdis</p>
+</section>
+
+<!-- 02 COLOR -->
+<section id="color" class="band-beige">
+  <span class="eyebrow">02 · Color</span>
+  <h2>Seis tokens, cada uno con <em>un trabajo</em>.</h2>
+  <p class="lead">Nada de beige por decorar. Cada color tiene una función escrita. Si un color no cumple una función, no se usa.</p>
+  <div class="swatches">
+    <div class="sw"><div class="sw__chip" style="background:#FAFAF7;border-bottom:1px solid var(--line);"></div><div class="sw__body"><div class="sw__name">Blanco</div><div class="sw__hex">#FAFAF7</div><div class="sw__role">Fondo por defecto. El 60–70% del sitio.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#F0EDE6;"></div><div class="sw__body"><div class="sw__name">Beige</div><div class="sw__hex">#F0EDE6</div><div class="sw__role">Acento cálido. Solo algunas bandas, nunca dominante.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#1A1714;"></div><div class="sw__body"><div class="sw__name">Espresso</div><div class="sw__hex">#1A1714</div><div class="sw__role">Impacto. Bandas oscuras, footer, portafolio.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#111009;"></div><div class="sw__body"><div class="sw__name">Ink</div><div class="sw__hex">#111009</div><div class="sw__role">Texto principal.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#3D3830;"></div><div class="sw__body"><div class="sw__name">Ink soft</div><div class="sw__hex">#3D3830</div><div class="sw__role">Texto secundario, subtítulos.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#6E6A4D;"></div><div class="sw__body"><div class="sw__name">Olivo</div><div class="sw__hex">#6E6A4D</div><div class="sw__role"><b>DETALLE.</b> Punto del logo, kickers, bordes activos.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#5C2E26;"></div><div class="sw__body"><div class="sw__name">Oxblood</div><div class="sw__hex">#5C2E26</div><div class="sw__role"><b>ACENTO DE MARCA + dinero.</b> Itálicas, números, detalles — y CTAs de compra.</div></div></div>
+  </div>
+  <div class="rule-box">
+    <p style="font-family:var(--serif);font-size:1.3rem;font-weight:500;">Oxblood = acento de marca. Olivo = detalle. Espresso = base.</p>
+    <p class="note" style="margin-top:0.6rem;">El <b>oxblood</b> es el color con personalidad de darqdis. Úsalo libre como <b>acento editorial</b>: itálicas de títulos (sobre fondos claros), números, comillas, líneas y detalles pequeños. Y sigue siendo el color del <b>dinero</b>. <b>Único guardrail:</b> el <b>botón sólido oxblood</b> se reserva para comprar (Hotmart), para que el CTA no pierda fuerza — para acciones gratis usa botón neutro. El <b>olivo</b> queda para detalles estructurales (punto del logo, algunos kickers). <b>Ojo de contraste:</b> el oxblood es oscuro — sobre fondo espresso no se lee; ahí el acento va en tono claro.</p>
+  </div>
+</section>
+
+<!-- 03 TIPOGRAFÍA -->
+<section id="tipo">
+  <span class="eyebrow">03 · Tipografía <span class="provisional">Provisional</span></span>
+  <h2>Playfair Display + <em>Archivo</em>.</h2>
+  <p class="lead">Dos familias. Serif para display, sans para todo lo demás. <b>Nota:</b> esta combinación es la actual y funciona, pero está en evaluación — podría cambiar en el futuro (referencia buscada: serif tipo Cormorant + sans más neutra). Mientras tanto, seguimos estos guidelines.</p>
+
+  <div class="spec">
+    <div class="spec__label">Playfair Display — display / títulos</div>
+    <div style="font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.02;">Diseñas increíble.<br><em style="font-style:italic;font-weight:400;color:var(--oxblood);">Recupera tu tiempo.</em></div>
+    <p class="note" style="margin-top:0.9rem;">↑ Ejemplo del nuevo uso: la <b style="color:var(--oxblood);">itálica en oxblood</b> como acento editorial (solo sobre fondos claros).</p>
+  </div>
+  <div class="spec">
+    <div class="spec__label">Archivo — texto / UI / etiquetas · peso 400 (nunca 300)</div>
+    <p style="font-size:1.05rem;max-width:60ch;">Archivo es la voz del cuerpo: párrafos, botones, navegación y kickers. Siempre en peso 400 o más — el peso 300 (light) se ve delgado y pequeño. Base del sitio: 17px.</p>
+  </div>
+
+  <div class="spec">
+    <div class="spec__label">Escala tipográfica</div>
+    <div class="type-scale">
+      <div><span style="font-family:var(--serif);font-size:3rem;font-weight:500;">Título display</span><small>Playfair 500 · clamp(2.4–4.4rem)</small></div>
+      <div><span style="font-family:var(--serif);font-size:1.8rem;font-weight:500;">Título de sección</span><small>Playfair 500 · ~2–3rem</small></div>
+      <div><span style="font-family:var(--sans);font-size:1.05rem;">Cuerpo de texto</span><small>Archivo 400 · 1–1.1rem</small></div>
+      <div><span style="font-family:var(--sans);font-weight:500;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--olive);">Kicker / etiqueta</span><small>Archivo 500 · 0.72rem · tracking 0.28em · UPPER</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 RITMO -->
+<section id="ritmo" class="band-dark">
+  <span class="eyebrow">04 · Ritmo de fondos</span>
+  <h2>Blanco domina. Beige acentúa. <em>Oscuro golpea.</em></h2>
+  <p class="lead">Las páginas se arman alternando fondos. La regla que lo hace ver diseñado y no plano:</p>
+  <div class="rhythm">
+    <div class="r-white"><span>Hero / lectura</span><b>Blanco</b></div>
+    <div class="r-beige"><span>Sección cálida / featured</span><b>Beige</b></div>
+    <div class="r-dark"><span>Momento de impacto (resultados, oferta)</span><b>Espresso</b></div>
+    <div class="r-white"><span>Contenido</span><b>Blanco</b></div>
+    <div class="r-beige"><span>Cierre / contacto</span><b>Beige</b></div>
+    <div class="r-dark"><span>Footer</span><b>Espresso</b></div>
+  </div>
+  <div class="rule-box" style="background:rgba(247,244,238,0.06);border-color:var(--olive);">
+    <p style="font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--bone);">Nunca 3 secciones seguidas del mismo tono.</p>
+    <p class="note" style="color:rgba(247,244,238,0.6);margin-top:0.5rem;">Excepción: <b style="color:rgba(247,244,238,0.85);">/proyectos</b> es 100% oscuro a propósito — es "otro mundo" (clientes/estudios, no estudiantes).</p>
+  </div>
+</section>
+
+<!-- 05 COMPONENTES -->
+<section id="comp">
+  <span class="eyebrow">05 · Componentes</span>
+  <h2>Piezas de <em>interfaz</em>.</h2>
+  <p class="lead">Esquinas rectas (border-radius 0 en botones), líneas finas, mucho aire. Nada de sombras dramáticas ni gradientes.</p>
+
+  <p class="kick-demo" style="margin-top:2.2rem;">Botones</p>
+  <div class="comp-row">
+    <a class="btn btn--oxblood">Inscríbete en ArquiLab →</a>
+    <a class="btn">Explorar la biblioteca →</a>
+  </div>
+  <p class="note" style="margin-top:0.8rem;">Oxblood = va a comprar (Hotmart). Neutro (borde ink) = acción gratis / secundaria.</p>
+
+  <p class="kick-demo" style="margin-top:2.4rem;">Kicker + tarjeta</p>
+  <div class="comp-row" style="align-items:stretch;">
+    <div class="card-demo">
+      <span class="kick-demo">03 · Resultados</span>
+      <h2 style="font-size:1.5rem;margin:0.7rem 0 0.5rem;">Cocina Pacífico</h2>
+      <p class="note">Retail · F&amp;B · Quito · 2025</p>
+    </div>
+    <div class="card-demo" style="background:var(--espresso);color:var(--bone);border-color:var(--espresso);">
+      <span class="kick-demo" style="color:rgba(247,244,238,0.55);">Nav</span>
+      <div style="font-family:var(--sans);font-weight:700;margin:0.6rem 0;">doménica<span style="color:var(--olive);">.</span>arqdis</div>
+      <p class="note" style="color:rgba(247,244,238,0.6);">ArquiLab · Proyectos · Biblioteca · Contacto</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06 VOZ -->
+<section id="voz" class="band-beige">
+  <span class="eyebrow">06 · Voz y tono</span>
+  <h2>Cercana, directa, <em>de arqui a arqui</em>.</h2>
+  <p class="lead">Español, tuteo, cálida y honesta. Habla como Doménica habla en sus DMs y su masterclass: "Hello arqui", "no te voy a vender humo", con energía pero sin gritar. Frases cortas que impactan.</p>
+  <div class="voice">
+    <div class="voice__col yes">
+      <h4>✓ Sí</h4>
+      <ul>
+        <li>"Diseñas increíble. Pero pierdes noches armando láminas."</li>
+        <li>Dolor real y específico (amanecerse ploteando).</li>
+        <li>Beneficio en tiempo/vida, no solo estética.</li>
+        <li>Mensajes reales de la comunidad (screenshots).</li>
+        <li>Números concretos: "3 semanas → 2 fines de semana".</li>
+      </ul>
+    </div>
+    <div class="voice__col no">
+      <h4>✗ No</h4>
+      <ul>
+        <li>Textos largos y genéricos que no impactan.</li>
+        <li>Corporativo/frío ("soluciones integrales de diseño").</li>
+        <li>Prometer sin prueba.</li>
+        <li>Inventar testimonios o nombres.</li>
+        <li>Oxblood en botones que no llevan a comprar.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 07 ARQUILAB -->
+<section id="arquilab">
+  <span class="eyebrow">07 · ArquiLab — mensaje</span>
+  <h2>El ángulo es <em>eficiencia</em>.</h2>
+  <p class="lead">ArquiLab no vende "láminas bonitas" — vende <b>recuperar tu tiempo</b> y hacer de la arquitectura un negocio. La estética y el dinero son la consecuencia.</p>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+    <div class="card-demo" style="max-width:none;"><span class="kick-demo">Método</span><h2 style="font-size:1.4rem;margin:0.6rem 0;">Metodología 3D</h2><p class="note">Definir · Diseñar · Detallar. Un flujo, de la idea a los planos ejecutivos.</p></div>
+    <div class="card-demo" style="max-width:none;"><span class="kick-demo">Prueba</span><h2 style="font-size:1.4rem;margin:0.6rem 0;">2 fines de semana</h2><p class="note">Lo que antes tomaba 3 semanas. Reemplaza 5 programas por SketchUp + Layout.</p></div>
+    <div class="card-demo" style="max-width:none;"><span class="kick-demo">Oferta</span><h2 style="font-size:1.4rem;margin:0.6rem 0;">$180 · HELLOARQUI</h2><p class="note">Código general 10% off. Embajadora Gaby: cupón GABYARQUILAB.</p></div>
+  </div>
+</section>
+
+<!-- 08 IMÁGENES -->
+<section id="imagen" class="band-dark">
+  <span class="eyebrow">08 · Imágenes</span>
+  <h2>Reales, cálidas, <em>sin stock</em>.</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));color:rgba(247,244,238,0.75);">
+    <div><b style="color:var(--bone);">Retrato</b><p class="note" style="color:rgba(247,244,238,0.6);margin-top:0.4rem;">Foto oficial: blazer negro, fondo transparente (portrait-transparente.png). Cálida, cercana.</p></div>
+    <div><b style="color:var(--bone);">Proyectos</b><p class="note" style="color:rgba(247,244,238,0.6);margin-top:0.4rem;">Renders y planos reales hechos en Layout. Retail / F&amp;B / interiorismo.</p></div>
+    <div><b style="color:var(--bone);">Prueba social</b><p class="note" style="color:rgba(247,244,238,0.6);margin-top:0.4rem;">Screenshots reales de DMs (WhatsApp/IG). Nombres reservados. Más creíbles que texto.</p></div>
+    <div><b style="color:var(--bone);">Fondo de renders</b><p class="note" style="color:rgba(247,244,238,0.6);margin-top:0.4rem;">Hueso profundo #EFEAE1 con sombra de contacto suave. Contraste por sombra, no por fondo oscuro.</p></div>
+  </div>
+</section>
+
+<!-- 09 REDES / CARRUSELES -->
+<section id="redes">
+  <span class="eyebrow">09 · Carruseles / redes</span>
+  <h2>Posts que se ven <em>darqdis</em>.</h2>
+  <p class="lead">Los carruseles usan el mismo sistema: Playfair para titulares, Archivo para el cuerpo, la paleta y el ritmo blanco/beige/oscuro. Formato vertical <b>4:5 (1080×1350)</b>. Portada oscura, contenido claro, cierre con CTA.</p>
+
+  <div class="carousels">
+    <div class="slide slide--cover"><div class="slide__pad"><span class="k">ArquiLab · Tip</span><h3>Deja de amanecerte <em>armando láminas.</em></h3><span class="slide__foot">@domenica.arqdis</span></div></div>
+    <div class="slide slide--tip"><div class="slide__pad"><span class="num">01</span><h3>Setea tus escenas</h3><p>En SketchUp deja cada vista fija. Si hay un cambio, la lámina se actualiza sola.</p><span class="slide__foot">darqdis.com</span></div></div>
+    <div class="slide slide--cta"><div class="slide__pad"><span class="kick-demo">Metodología 3D</span><h3>Aprende el flujo completo en ArquiLab.</h3><span class="btnmini">Inscríbete →</span><span class="slide__foot" style="margin-top:1rem;">Link en bio</span></div></div>
+  </div>
+
+  <div class="wf">
+    <p class="kick-demo">Cómo generamos un carrusel</p>
+    <ol>
+      <li><b>Tú me envías:</b> el tema + la info (o inspo/referencia visual). Ej: "un carrusel de 5 tips para presentar en Layout".</li>
+      <li><b>Yo genero:</b> los slides on-brand (portada + contenido + cierre CTA) siguiendo estas plantillas, con tu copy y tu voz.</li>
+      <li><b>Tú exportas:</b> los slides como imágenes (o los ajustamos juntas antes).</li>
+    </ol>
+    <p class="note" style="margin-top:0.9rem;">Estructura recomendada: <b>Portada</b> (gancho, fondo oscuro) → <b>3–6 slides</b> de valor (fondo claro, numerados) → <b>Cierre</b> (CTA, fondo beige, "link en bio"). Máximo 1 idea por slide, títulos cortos, mucho aire.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>darqdis — Brand Book v1 · Julio 2026</span>
+  <span>Documento vivo · se actualiza junto al RESUMEN.md</span>
+</footer>
+
+</body>
+</html>
