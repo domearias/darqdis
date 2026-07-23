@@ -46,7 +46,7 @@ import sys
 
 CATEGORIAS = [
     "asientos", "mesas", "almacenaje", "iluminacion",
-    "cocina", "baño", "exterior", "decoracion",
+    "cocina", "baño", "exterior", "decoracion", "celosias",
 ]
 
 TIPOS = ["warehouse", "link"]

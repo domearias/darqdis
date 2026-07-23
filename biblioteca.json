@@ -20,5 +20,16 @@
     "fuente": "Minotti",
     "fuente_url": "https://www.minotti.com/es/block-outdoor",
     "tip": ""
+  },
+  {
+    "numero": 3,
+    "nombre": "Celosía Empúries",
+    "url": "https://ceramicaferres.com/productos/empuries/",
+    "imagen": "/img/biblioteca/empuries.jpg",
+    "categoria": "celosias",
+    "tipo": "link",
+    "fuente": "Cerámica Ferrés",
+    "fuente_url": "https://ceramicaferres.com/productos/empuries/",
+    "tip": ""
   }
 ]
