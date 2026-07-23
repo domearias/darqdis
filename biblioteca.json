@@ -5,6 +5,7 @@
     "url": "https://3dwarehouse.sketchup.com/model/7de5a605-dabe-41bb-92de-213e7620c601/PACE-PENDANT",
     "imagen": "/img/biblioteca/pace-pendant.png",
     "categoria": "iluminacion",
+    "tipo": "warehouse",
     "fuente": "A-N-D",
     "fuente_url": "https://a-n-d.com/PACE-PENDANT",
     "tip": "Ritmo y repetición: la luz cruza sus capas de vidrio y se vuelve degradado. Ligera, sinuosa y apilable."
@@ -15,6 +16,7 @@
     "url": "https://3dwarehouse.sketchup.com/model/8cbc6ee8-fe3e-4e72-8110-6fc56f951820/MINOTI-BLOCK-OUTDOOR",
     "imagen": "/img/biblioteca/minoti-block-outdoor.png",
     "categoria": "mesas",
+    "tipo": "warehouse",
     "fuente": "Minotti",
     "fuente_url": "https://www.minotti.com/es/block-outdoor",
     "tip": ""
