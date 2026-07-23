@@ -4,3 +4,5 @@
 Thumbs.db
 .claude/
 darqdis-sistema-v3.md
+__pycache__/
+*.pyc
