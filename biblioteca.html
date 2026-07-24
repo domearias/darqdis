@@ -1016,6 +1016,15 @@ body {
 }
 .bib-filtro:hover { border-color: var(--ink); color: var(--ink); }
 .bib-filtro[aria-pressed="true"] { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.bib-filtros__label {
+  font-family: var(--sans); font-weight: 500; font-size: 0.6rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-soft); align-self: center; margin-right: 0.3rem;
+}
+/* Fila de tipo de descarga — separación sutil de la de categorías */
+.bib-tipos { padding-bottom: 0; }
+.bib-filtro--wh[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); }
+.bib-filtro--link[aria-pressed="true"] { background: var(--oxblood); border-color: var(--oxblood); }
 
 /* Grid — retícula de hairlines, igual que .proj-grid */
 .bib-grid {
@@ -1029,6 +1038,17 @@ body {
 .bib-card__media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; display: block; background: var(--line); }
 .bib-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.1s var(--ease); }
 .bib-card:hover .bib-card__media img { transform: scale(1.04); }
+/* Badge de tipo de descarga — distingue los dos lados de la biblioteca */
+.bib-card__badge {
+  position: absolute; top: 0.8rem; left: 0.8rem; z-index: 3;
+  font-family: var(--sans); font-weight: 500; font-size: 0.56rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.4rem 0.7rem; color: var(--bone);
+  background: rgba(17,16,9,0.72);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.bib-card__badge--warehouse { background: rgba(17,16,9,0.72); }
+.bib-card__badge--link { background: rgba(92,46,38,0.82); }
 .bib-card__body { padding: clamp(1.3rem, 2vw, 1.8rem); display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
 .bib-card__kicker { font-family: var(--sans); font-weight: 500; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
 .bib-card__kicker b { font-weight: 500; color: var(--olive); }
@@ -1114,13 +1134,13 @@ body {
   <p class="kicker">Recursos — Biblioteca 3D</p>
   <h1 class="bib-hero__title">Muebles listos.<br><em>Proyecto en marcha.</em></h1>
   <p class="bib-hero__sub">
-    Un buscador de muebles y piezas para SketchUp: los reúno, los subo a mi 3D Warehouse para que los descargues sin dar mil vueltas, y te digo de dónde vienen. Gratis y para compartir — sin registro, sin correo.
-    <span class="lang-sub">A finder for SketchUp furniture — collected, re-hosted for easy download, credited to the source.</span>
+    Un buscador de muebles y piezas para SketchUp. Algunos los subo a mi 3D&nbsp;Warehouse para que los bajes en un clic; otros te llevo directo al link oficial donde se descargan. Siempre con su fuente. Gratis y para compartir — sin registro, sin correo.
+    <span class="lang-sub">A finder for SketchUp furniture — some re-hosted on my 3D Warehouse, others linked straight to the source. Always credited.</span>
   </p>
   <div class="bib-meta">
     <div>
       <span class="bib-meta__n"><!-- COUNT:START -->
-2
+3
 <!-- COUNT:END --></span>
       <span class="kicker">Modelos disponibles</span>
     </div>
@@ -1136,6 +1156,12 @@ body {
 </header>
 
 <!-- ============ FILTROS ============ -->
+<nav class="bib-filtros bib-tipos" id="bibTipos" aria-label="Filtrar por tipo de descarga">
+  <span class="bib-filtros__label">Descarga</span>
+  <button class="bib-filtro" data-t="todos" aria-pressed="true">Todas</button>
+  <button class="bib-filtro bib-filtro--wh" data-t="warehouse" aria-pressed="false">En mi 3D&nbsp;Warehouse</button>
+  <button class="bib-filtro bib-filtro--link" data-t="link" aria-pressed="false">Link directo</button>
+</nav>
 <nav class="bib-filtros" id="bibFiltros" aria-label="Filtrar por categoría">
   <button class="bib-filtro" data-f="todos" aria-pressed="true">Todos</button>
   <button class="bib-filtro" data-f="asientos" aria-pressed="false">Asientos</button>
@@ -1146,14 +1172,30 @@ body {
   <button class="bib-filtro" data-f="baño" aria-pressed="false">Baño</button>
   <button class="bib-filtro" data-f="exterior" aria-pressed="false">Exterior</button>
   <button class="bib-filtro" data-f="decoracion" aria-pressed="false">Decoración</button>
+  <button class="bib-filtro" data-f="celosias" aria-pressed="false">Celosías</button>
 </nav>
 
 <!-- ============ GRID ============ -->
 <section class="bib-grid" id="bibGrid">
 <!-- GRID:START -->
-      <article class="bib-card reveal" data-cat="mesas">
+      <article class="bib-card reveal" data-cat="celosias" data-tipo="link">
+        <a class="bib-card__media" href="https://ceramicaferres.com/productos/empuries/" target="_blank" rel="noopener" aria-label="Ir a la descarga de Celosía Empúries">
+          <span class="bib-card__badge bib-card__badge--link">Link directo</span>
+          <img src="/img/biblioteca/empuries.jpg" alt="Celosía Empúries — modelo 3D para SketchUp" loading="lazy">
+        </a>
+        <div class="bib-card__body">
+          <span class="bib-card__kicker">#003 &middot; <b>celosias</b></span>
+          <h3 class="bib-card__title">Celosía Empúries</h3>
+          <span class="bib-card__fuente">Fuente &middot; <a href="https://ceramicaferres.com/productos/empuries/" target="_blank" rel="noopener nofollow">Cerámica Ferrés</a></span>
+          <a class="bib-card__cta" href="https://ceramicaferres.com/productos/empuries/" target="_blank" rel="noopener">
+            <span>Ir a la descarga</span> <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+      </article>
+      <article class="bib-card reveal" data-cat="mesas" data-tipo="warehouse">
         <a class="bib-card__media" href="https://3dwarehouse.sketchup.com/model/8cbc6ee8-fe3e-4e72-8110-6fc56f951820/MINOTI-BLOCK-OUTDOOR" target="_blank" rel="noopener" aria-label="Descargar MINOTI BLOCK OUTDOOR en 3D Warehouse">
-          <img src="/img/biblioteca/minoti-block-outdoor.png" alt="MINOTI BLOCK OUTDOOR — modelo 3D para SketchUp" loading="lazy">
+          <span class="bib-card__badge bib-card__badge--warehouse">3D Warehouse</span>
+          <img src="/img/biblioteca/minoti-block-outdoor.jpg" alt="MINOTI BLOCK OUTDOOR — modelo 3D para SketchUp" loading="lazy">
         </a>
         <div class="bib-card__body">
           <span class="bib-card__kicker">#002 &middot; <b>mesas</b></span>
@@ -1164,8 +1206,9 @@ body {
           </a>
         </div>
       </article>
-      <article class="bib-card reveal" data-cat="iluminacion">
+      <article class="bib-card reveal" data-cat="iluminacion" data-tipo="warehouse">
         <a class="bib-card__media" href="https://3dwarehouse.sketchup.com/model/7de5a605-dabe-41bb-92de-213e7620c601/PACE-PENDANT" target="_blank" rel="noopener" aria-label="Descargar Pace Pendant en 3D Warehouse">
+          <span class="bib-card__badge bib-card__badge--warehouse">3D Warehouse</span>
           <img src="/img/biblioteca/pace-pendant.png" alt="Pace Pendant — modelo 3D para SketchUp" loading="lazy">
         </a>
         <div class="bib-card__body">
@@ -1261,21 +1304,41 @@ body {
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
 
-  /* ---- Filtros ---- */
+  /* ---- Filtros: categoría + tipo de descarga (dos dimensiones) ---- */
   var grid = document.getElementById('bibGrid');
+  var catActiva = 'todos';
+  var tipoActivo = 'todos';
+
+  function aplicarFiltros() {
+    grid.querySelectorAll('.bib-card').forEach(function (c) {
+      var okCat = (catActiva === 'todos' || c.dataset.cat === catActiva);
+      var okTipo = (tipoActivo === 'todos' || (c.dataset.tipo || 'warehouse') === tipoActivo);
+      c.style.display = (okCat && okTipo) ? '' : 'none';
+    });
+    // Las bandas de ArquiLab solo tienen sentido con la vista completa.
+    grid.querySelectorAll('.bib-banda').forEach(function (x) {
+      x.style.display = (catActiva === 'todos' && tipoActivo === 'todos') ? '' : 'none';
+    });
+  }
+
   document.getElementById('bibFiltros').addEventListener('click', function (e) {
     var b = e.target.closest('.bib-filtro');
     if (!b) return;
-    document.querySelectorAll('.bib-filtro').forEach(function (x) {
+    this.querySelectorAll('.bib-filtro').forEach(function (x) {
       x.setAttribute('aria-pressed', String(x === b));
     });
-    var f = b.dataset.f;
-    grid.querySelectorAll('.bib-card').forEach(function (c) {
-      c.style.display = (f === 'todos' || c.dataset.cat === f) ? '' : 'none';
+    catActiva = b.dataset.f;
+    aplicarFiltros();
+  });
+
+  document.getElementById('bibTipos').addEventListener('click', function (e) {
+    var b = e.target.closest('.bib-filtro');
+    if (!b) return;
+    this.querySelectorAll('.bib-filtro').forEach(function (x) {
+      x.setAttribute('aria-pressed', String(x === b));
     });
-    grid.querySelectorAll('.bib-banda').forEach(function (x) {
-      x.style.display = (f === 'todos') ? '' : 'none';
-    });
+    tipoActivo = b.dataset.t;
+    aplicarFiltros();
   });
 })();
 </script>
