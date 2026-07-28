@@ -31,5 +31,16 @@
     "fuente": "Cerámica Ferrés",
     "fuente_url": "https://ceramicaferres.com/productos/empuries/",
     "tip": ""
+  },
+  {
+    "numero": 4,
+    "nombre": "Travertine Base and Wood Shelves",
+    "url": "https://3dwarehouse.sketchup.com/model/200aa21c-31ac-44c5-b01f-3b8b77012fe7/Travertine-Base-and-Wood-Shelves",
+    "imagen": "/img/biblioteca/travertine-base-wood-shelves.jpg",
+    "categoria": "almacenaje",
+    "tipo": "warehouse",
+    "fuente": "3D Warehouse",
+    "fuente_url": "https://3dwarehouse.sketchup.com/model/200aa21c-31ac-44c5-b01f-3b8b77012fe7/Travertine-Base-and-Wood-Shelves",
+    "tip": ""
   }
 ]
