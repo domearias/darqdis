@@ -56,6 +56,11 @@ python3 scripts/add_model.py \
 > Si solo quieres regenerar el HTML sin agregar nada:
 > `python3 scripts/add_model.py --rebuild`
 
+> **Pinterest automático:** cada modelo nuevo se publica solo en tu Pinterest
+> al hacer push a `main` (sin republicar los viejos). Configúralo una vez
+> siguiendo `scripts/PINTEREST_SETUP.md`. Para ver el texto antes de publicar:
+> `python3 scripts/publish_pinterest.py --dry-run`.
+
 ---
 
 ## Categorías válidas

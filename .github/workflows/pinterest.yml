@@ -1,0 +1,48 @@
+name: Publicar Biblioteca en Pinterest
+
+# Cada vez que cambie biblioteca.json en main, publica en Pinterest los
+# modelos que todavía no tienen pin y guarda el estado de vuelta en el repo.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "biblioteca.json"
+  workflow_dispatch: {}   # botón manual en la pestaña Actions
+
+# Permite que el workflow haga commit del estado actualizado.
+permissions:
+  contents: write
+
+concurrency:
+  group: pinterest-publish
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Publicar modelos nuevos en Pinterest
+        env:
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+        run: python3 scripts/publish_pinterest.py
+
+      - name: Guardar el estado de pines publicados
+        run: |
+          if [[ -n "$(git status --porcelain scripts/pinterest_state.json)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add scripts/pinterest_state.json
+            git commit -m "pinterest: actualizar estado de pines publicados"
+            git push
+          else
+            echo "Sin cambios en el estado; nada que commitear."
+          fi
