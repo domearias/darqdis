@@ -42,5 +42,16 @@
     "fuente": "3D Warehouse",
     "fuente_url": "https://3dwarehouse.sketchup.com/model/200aa21c-31ac-44c5-b01f-3b8b77012fe7/Travertine-Base-and-Wood-Shelves",
     "tip": ""
+  },
+  {
+    "numero": 5,
+    "nombre": "Column Floor 175-4",
+    "url": "https://3dwarehouse.sketchup.com/model/ec5c7d42-5aaa-4192-adad-03e31f07afa1/AND-COLUMN-FLOOR-175-4",
+    "imagen": "/img/biblioteca/005-column-floor.jpg",
+    "categoria": "iluminacion",
+    "tipo": "warehouse",
+    "fuente": "A-N-D",
+    "fuente_url": "https://a-n-d.com/COLUMN-FLOOR",
+    "tip": ""
   }
 ]
