@@ -64,5 +64,16 @@
     "fuente": "Ferm Living",
     "fuente_url": "https://fermliving.com/es-es/products/distinct-grande-duo-tables-travertine",
     "tip": ""
+  },
+  {
+    "numero": 7,
+    "nombre": "Pillar Table Tall Burned Black",
+    "url": "https://3dwarehouse.sketchup.com/model/0724a966-cac6-4f0e-82c5-e9d88409951b/101-COPENHAGEN-Pillar-Table-Tall-Burned-Black",
+    "imagen": "/img/biblioteca/007-pillar-table-tall-burned-black.jpg",
+    "categoria": "mesas",
+    "tipo": "warehouse",
+    "fuente": "101 Copenhagen",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
