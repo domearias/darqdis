@@ -53,5 +53,16 @@
     "fuente": "A-N-D",
     "fuente_url": "https://a-n-d.com/COLUMN-FLOOR",
     "tip": ""
+  },
+  {
+    "numero": 6,
+    "nombre": "Distinct Grande Duo Tables",
+    "url": "https://3dwarehouse.sketchup.com/model/73db067b-3d65-410a-985f-cb2e54db3af3/FERM-LIVING-Distinct-Grande-Duo-Tables",
+    "imagen": "/img/biblioteca/006-distinct-grande-duo-tables.jpg",
+    "categoria": "mesas",
+    "tipo": "warehouse",
+    "fuente": "Ferm Living",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
