@@ -2,7 +2,8 @@
 * - copia.html
 .DS_Store
 Thumbs.db
-.claude/
+.claude/*
+!.claude/skills/
 darqdis-sistema-v3.md
 __pycache__/
 *.pyc
