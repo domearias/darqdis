@@ -67,48 +67,53 @@ Ej.: número 5 + "Column Floor 175-4" → `img/biblioteca/005-column-floor.jpg`
 palabras si el nombre es largo). El usuario **nunca** nombra la imagen: lo haces
 tú con esta regla.
 
-## Paso 3 — Conseguir la imagen (la única trampa)
+## Paso 3 — Conseguir la imagen (el canal correcto)
 
-La card se ve rota si el archivo no existe, así que la imagen tiene que quedar en
-disco con el nombre del Paso 2. Ojo con esto, que es lo que más cuesta:
+La card se ve rota si el archivo no existe, así que la foto tiene que quedar en
+disco con el nombre del Paso 2. Aquí está la única trampa real, y está
+**confirmada por pruebas** en este entorno:
 
-> **Las imágenes PEGADAS en el chat NO llegan al disco.** Las *ves*, pero no hay
-> archivo que puedas commitear. Solo las que el usuario **adjunta como archivo**
-> aterrizan en el filesystem.
+> **En Claude Code web, las imágenes que el usuario pega O adjunta con el clip
+> NO llegan al disco.** Me llegan solo como contenido visual; no queda ningún
+> fichero que pueda commitear. No pierdas tiempo buscándolas en el filesystem:
+> no están. Además, la red del sandbox **solo deja pasar GitHub** (Drive, Imgur,
+> googleusercontent, webs de marca… todo da 403), y bajar la foto por el MCP de
+> Google Drive tampoco sirve: la entrega en base64 y una foto de varios MB no
+> cabe para reescribirla a disco. **Los bytes de la foto solo pueden entrar por
+> GitHub.**
 
-Orden de intentos:
+Por eso el flujo es: **el usuario sube la foto al repo por GitHub con el nombre
+que sea** (una sola acción de arrastrar-y-soltar), y tú te encargas del resto:
+detectarla, renombrarla sola y publicar. El usuario nunca nombra la imagen.
 
-1. **Busca un archivo de imagen recién adjuntado.** Mira archivos `.jpg/.jpeg/
-   .png/.webp` modificados en los últimos minutos que no sean ya assets del repo:
+Cómo tomar la foto que el usuario subió:
 
-   ```bash
-   find / -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) \
-     -newermt '-10 minutes' 2>/dev/null \
-     | grep -vE '/proc/|/sys/|/usr/|/opt/|node_modules|site-packages|darqdis/img|darqdis/[0-9]|scratchpad/.*placeholder'
-   ```
+1. **Trae el repo actualizado** (la subida del usuario es un commit nuevo):
+   `git fetch origin && git pull` en la rama donde subió (normalmente `main`).
 
-   Si aparece la foto del producto, **muévela** al nombre del Paso 2 con `git mv`
-   o `mv`. Verifícala con la herramienta Read (que muestra la imagen) antes de
-   confiar en que es la correcta.
+2. **Localiza la foto nueva.** Es un archivo de imagen dentro de `img/biblioteca/`
+   que **todavía no está referenciado** en `biblioteca.json` (esos son los que
+   ya están catalogados). Si hay una sola imagen sin catalogar, esa es. Si hay
+   varias, o dudas, pregúntale al usuario cuál corresponde a esta pieza. Verifícala
+   con la herramienta Read (muestra la imagen) antes de confiar.
 
-2. **Normaliza la extensión.** GitHub y algunos flujos dejan nombres como
-   `005-column-floor.jpg.jpg`. Si ves doble extensión o una extensión que no
-   coincide con el path del JSON, renómbrala al nombre canónico y borra sobrantes.
-   Si la foto real es `.png` en vez de `.jpg`, ajusta el campo `imagen` del JSON
-   para que coincida con la extensión real (mejor que renombrar a ciegas).
+3. **Renómbrala al nombre canónico** del Paso 2 con `git mv` y usa ese path en el
+   Paso 5. Normaliza rarezas de la subida: doble extensión (`005-x.jpg.jpg`),
+   espacios, mayúsculas. Si la foto real es `.png` y no `.jpg`, deja la extensión
+   real y usa esa en el campo `imagen`.
 
-3. **Si solo la pegó (no hay archivo):** genera un **placeholder de marca** para
-   que la card no quede rota, y dile al usuario que, para la foto definitiva, la
-   **adjunte como archivo** (no pegada) o la suba por el link de GitHub. El
-   placeholder usa el mismo nombre, así que la foto real lo sobrescribe después
-   sin tocar nada más:
+**Si el usuario aún no subió foto** (solo la pegó, o quiere ir publicando):
+genera un **placeholder de marca** con el nombre canónico para que la card no se
+vea rota. Cuando después suba la foto real con ese mismo nombre, la sobrescribe
+sin tocar nada más. Recuérdale que la única vía para la foto es subirla a
+`img/biblioteca/` por GitHub (con cualquier nombre; tú la renombras).
 
-   ```bash
-   pip install Pillow --quiet   # si hace falta
-   python3 .claude/skills/biblioteca/scripts/placeholder.py \
-     --nombre "Column Floor 175-4" --categoria iluminacion --fuente "A-N-D" \
-     --salida "img/biblioteca/005-column-floor.jpg"
-   ```
+```bash
+pip install Pillow --quiet   # si hace falta
+python3 .claude/skills/biblioteca/scripts/placeholder.py \
+  --nombre "Column Floor 175-4" --categoria iluminacion --fuente "A-N-D" \
+  --salida "img/biblioteca/005-column-floor.jpg"
+```
 
 La card es 4:3 y recorta al centro (`object-fit: cover`); una foto vertical se
 recorta arriba y abajo, normalmente sin problema. Menciónalo si la foto es muy
@@ -176,7 +181,8 @@ subida de GitHub con el mismo nombre de archivo).
 
 - Nunca edites `biblioteca.html` a mano; siempre pasa por `add_model.py`.
 - El nombre de la imagen lo pones tú (Paso 2); el usuario no nombra nada.
-- Imágenes pegadas = no hay archivo. Solo sirven las adjuntas como archivo.
+- Imágenes pegadas **o adjuntas con el clip** = no hay archivo en disco. La foto
+  solo entra subiéndola al repo por GitHub (con cualquier nombre; tú la renombras).
 - `fuente_url` y `tip`: vacíos salvo dato real. No inventes.
 - Una sola pregunta al usuario (categoría/fuente) y solo si no los dio ya.
 - Cierra el ciclo: no lo dejes en "pendiente de mergear" salvo que falte la foto
