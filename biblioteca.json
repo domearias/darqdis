@@ -108,5 +108,16 @@
     "fuente": "Tribu",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 11,
+    "nombre": "Dunes Mesas",
+    "url": "https://3dwarehouse.sketchup.com/model/34df018b-8280-4f0f-89bb-85c0a6a01de5/TRIBU-Dunes-Mesas",
+    "imagen": "/img/biblioteca/011-dunes-mesas.jpg",
+    "categoria": "mesas",
+    "tipo": "warehouse",
+    "fuente": "Tribu",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
