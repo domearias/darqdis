@@ -86,5 +86,16 @@
     "fuente": "Baxter",
     "fuente_url": "https://www.baxter.it/en/products/afra-chairs",
     "tip": ""
+  },
+  {
+    "numero": 9,
+    "nombre": "Illum Mesa de Comedor",
+    "url": "https://3dwarehouse.sketchup.com/model/252583e1-2848-40f2-8fef-6a66ed55ff1d/TRIBU-ILLUM-Mesa-de-comedor-en-teca",
+    "imagen": "/img/biblioteca/009-illum-mesa-comedor.jpg",
+    "categoria": "mesas",
+    "tipo": "warehouse",
+    "fuente": "Tribu",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
