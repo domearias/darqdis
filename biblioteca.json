@@ -97,5 +97,16 @@
     "fuente": "Tribu",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 10,
+    "nombre": "Nomad Silla",
+    "url": "https://3dwarehouse.sketchup.com/model/63e9b007-4a39-4d91-a973-0df4977ab901/TRIBU-NOMAD-Silla",
+    "imagen": "/img/biblioteca/010-nomad-silla.jpg",
+    "categoria": "asientos",
+    "tipo": "warehouse",
+    "fuente": "Tribu",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
