@@ -913,7 +913,7 @@ body {
   //   mientras no las definas, así que un proyecto solo-renders queda limpio.
   //   4. Añade también su fila en proyectos.html (lista del portafolio).
   // ============================================================
-  var ORDER = ['sisters-kitchen', 'piza', 'holy-cow', 'diagonal-499'];
+  var ORDER = ['sisters-kitchen', 'piza', 'holy-cow', 'diagonal-499', 'park-turo'];
 
   var DATA = {
     'sisters-kitchen': {
@@ -968,6 +968,34 @@ body {
       conceptLead: 'Un apartamento donde la madera, la piedra y la luz difusa construyen calma.',
       conceptEs: 'Diagonal 499 es un ejercicio de lujo silencioso: roble de vetas cálidas, mármol de vetas dramáticas y textiles en tonos crema, equilibrados con luz indirecta. Del salón con chimenea al vestidor, cada estancia comparte una misma paleta y una atmósfera serena, contemporánea y mediterránea.',
       conceptEn: 'Diagonal 499 is an exercise in quiet luxury: warm-grained oak, dramatically veined marble and cream textiles balanced by indirect light. From the fireplace living room to the dressing room, every space shares one palette and a serene, contemporary Mediterranean mood.',
+      quote: '',
+      clientName: '', clientRole: ''
+    },
+    'park-turo': {
+      name: 'Park <em>Turó</em>', type: 'Residencial · Interiorismo', typeEn: 'Residential', year: '2025',
+      loc: 'Barcelona, España', locShort: 'Barcelona, ES', role: 'Interiorismo · Visualización 3D · en LUV', area: 'Vivienda · Turó Park',
+      hero: 'img/proyectos/park-turo/salon.jpg',
+      gallery: [
+        { src: 'img/proyectos/park-turo/salon-2.jpg', alt: 'Park Turó — salón, segunda vista' },
+        { src: 'img/proyectos/park-turo/comedor.jpg', alt: 'Park Turó — comedor', wide: true },
+        { src: 'img/proyectos/park-turo/cocina.jpg', alt: 'Park Turó — cocina' },
+        { src: 'img/proyectos/park-turo/hall.jpg', alt: 'Park Turó — hall de ingreso' },
+        { src: 'img/proyectos/park-turo/estudio.jpg', alt: 'Park Turó — estudio' },
+        { src: 'img/proyectos/park-turo/bano-social.jpg', alt: 'Park Turó — baño social' },
+        { src: 'img/proyectos/park-turo/master.jpg', alt: 'Park Turó — dormitorio principal' },
+        { src: 'img/proyectos/park-turo/closet.jpg', alt: 'Park Turó — vestidor' },
+        { src: 'img/proyectos/park-turo/bano-master.jpg', alt: 'Park Turó — baño principal' },
+        { src: 'img/proyectos/park-turo/dormitorio-2.jpg', alt: 'Park Turó — segundo dormitorio' },
+        { src: 'img/proyectos/park-turo/bano-dormitorio-2.jpg', alt: 'Park Turó — baño del segundo dormitorio' },
+        { src: 'img/proyectos/park-turo/dormitorio-3.jpg', alt: 'Park Turó — tercer dormitorio' },
+        { src: 'img/proyectos/park-turo/dormitorio-kids.jpg', alt: 'Park Turó — dormitorio infantil' },
+        { src: 'img/proyectos/park-turo/bano-kids.jpg', alt: 'Park Turó — baño infantil' },
+        { src: 'img/proyectos/park-turo/terraza.jpg', alt: 'Park Turó — terraza', wide: true }
+      ],
+      conceptTitle: 'Calidez mediterránea en <em>Park Turó</em>',
+      conceptLead: 'Un apartamento familiar en la zona alta de Barcelona, resuelto con luz cálida y materiales naturales.',
+      conceptEs: 'Park Turó traduce la calma mediterránea a un hogar familiar: madera de tonos miel, piedra clara y textiles crudos, todo bañado por una luz suave. Del salón al comedor abierto, de los dormitorios de invitados al ala infantil y la terraza, cada estancia comparte una paleta cálida y natural que hace del apartamento un refugio sereno en plena ciudad.',
+      conceptEn: 'Park Turó brings Mediterranean calm into a family home: honey-toned wood, pale stone and raw textiles bathed in soft light. From the living room to the open dining area, the guest bedrooms, the kids\' wing and the terrace, every space shares one warm, natural palette that turns the apartment into a serene refuge in the heart of the city.',
       quote: '',
       clientName: '', clientRole: ''
     }
