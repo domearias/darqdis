@@ -1098,7 +1098,7 @@ body {
   // El render del hero (header) se repite como primera imagen de la galería.
   var gallery = (d.gallery || []).slice();
   if (d.hero && gallery.length) {
-    gallery.unshift({ src: d.hero, alt: stripTags(d.name) + ' — vista principal' });
+    gallery.unshift({ src: d.hero, alt: stripTags(d.name) + ' — vista principal', wide: true });
   }
   if (gallery.length) {
     var grid = document.getElementById('pdGalleryGrid');
