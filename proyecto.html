@@ -1118,19 +1118,25 @@ body {
   if (!d.materials) hide('pdMaterials');
 
   // ---- Galería de renders ----
-  // El render del hero (header) se repite como primera imagen de la galería.
-  var gallery = (d.gallery || []).slice();
+  // La portada (hero) abre la galería a ancho completo; el resto va en parejas
+  // en un grid de 2 columnas. Si sobra una impar al final, cierra también a
+  // ancho completo. Así la galería NUNCA deja huecos (se ignora cualquier
+  // 'wide' manual del DATA para que el cálculo de paridad sea el único que manda).
+  var gallery = (d.gallery || []).slice().map(function (g) {
+    return (typeof g === 'string') ? { src: g } : { src: g.src, alt: g.alt };
+  });
   if (d.hero && gallery.length) {
-    gallery.unshift({ src: d.hero, alt: stripTags(d.name) + ' — vista principal', wide: true });
+    gallery.unshift({ src: d.hero, alt: stripTags(d.name) + ' — vista principal' });
   }
   if (gallery.length) {
+    gallery[0].wide = true;                                   // portada a ancho completo
+    var rest = gallery.length - 1;                            // imágenes tras la portada
+    if (rest > 0 && rest % 2 === 1) gallery[gallery.length - 1].wide = true;
     var grid = document.getElementById('pdGalleryGrid');
     grid.innerHTML = gallery.map(function (g, i) {
-      var src = typeof g === 'string' ? g : g.src;
-      var alt = (typeof g === 'object' && g.alt) ? g.alt : (stripTags(d.name) + ' — render ' + (i + 1));
-      var wide = (typeof g === 'object' && g.wide) || (gallery.length % 2 === 1 && i === gallery.length - 1);
-      return '<figure class="pd-rgallery__item' + (wide ? ' pd-rgallery__item--wide' : '') + ' reveal">' +
-             '<img src="' + src + '" alt="' + alt.replace(/"/g, '&quot;') + '" loading="lazy"></figure>';
+      var alt = g.alt || (stripTags(d.name) + ' — render ' + (i + 1));
+      return '<figure class="pd-rgallery__item' + (g.wide ? ' pd-rgallery__item--wide' : '') + ' reveal">' +
+             '<img src="' + g.src + '" alt="' + alt.replace(/"/g, '&quot;') + '" loading="lazy"></figure>';
     }).join('');
     set('galleryCount', String(gallery.length) + (gallery.length === 1 ? ' vista' : ' vistas'));
     document.getElementById('pdGallery').hidden = false;
