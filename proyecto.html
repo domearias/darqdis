@@ -1095,7 +1095,11 @@ body {
   if (!d.materials) hide('pdMaterials');
 
   // ---- Galería de renders ----
-  var gallery = d.gallery || [];
+  // El render del hero (header) se repite como primera imagen de la galería.
+  var gallery = (d.gallery || []).slice();
+  if (d.hero && gallery.length) {
+    gallery.unshift({ src: d.hero, alt: stripTags(d.name) + ' — vista principal' });
+  }
   if (gallery.length) {
     var grid = document.getElementById('pdGalleryGrid');
     grid.innerHTML = gallery.map(function (g, i) {
