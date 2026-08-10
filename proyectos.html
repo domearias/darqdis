@@ -295,8 +295,9 @@ button:focus-visible,
    ============================================================ */
 @media (max-width: 900px) {
   .work-row { grid-template-columns: 1fr; gap: 1.8rem; }
-  .work-row:nth-child(even) .work-row__body { order: 2; }
-  .work-row:nth-child(even) .work-row__media { order: 1; }
+  /* en móvil, la foto siempre va arriba del título en todas las fichas */
+  .work-row__body { order: 2; }
+  .work-row__media { order: 1; }
   .work-row__media { aspect-ratio: 16 / 11; }
   .pj-close__grid { grid-template-columns: 1fr; gap: 2rem; }
   .pj-close__photo { max-width: 420px; }
