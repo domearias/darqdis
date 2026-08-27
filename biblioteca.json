@@ -141,5 +141,16 @@
     "fuente": "Meridiani",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 14,
+    "nombre": "Triangular Tube",
+    "url": "https://3dwarehouse.sketchup.com/model/a6521ad5-a2c4-422f-950c-c6fd839a2d85/United-Alabaster-TRIANGULAR-TUBE",
+    "imagen": "/img/biblioteca/014-triangular-tube.jpg",
+    "categoria": "iluminacion",
+    "tipo": "warehouse",
+    "fuente": "United Alabaster",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
