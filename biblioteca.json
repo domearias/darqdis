@@ -130,5 +130,16 @@
     "fuente": "Desiree",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 13,
+    "nombre": "Baco Pouf",
+    "url": "https://3dwarehouse.sketchup.com/model/945069b7-cec0-48d0-8e6a-16b5617526ec/MERIDIANI-Baco-Pouf",
+    "imagen": "/img/biblioteca/013-baco-pouf.jpg",
+    "categoria": "asientos",
+    "tipo": "warehouse",
+    "fuente": "Meridiani",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
