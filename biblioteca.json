@@ -152,5 +152,16 @@
     "fuente": "United Alabaster",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 15,
+    "nombre": "Stami Bench",
+    "url": "https://3dwarehouse.sketchup.com/model/2ae15cf1-70cc-4009-9536-a61cc424c0fd/Stami-Bench-GallottiRadice",
+    "imagen": "/img/biblioteca/015-stami-bench.jpg",
+    "categoria": "asientos",
+    "tipo": "warehouse",
+    "fuente": "Gallotti&Radice",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
