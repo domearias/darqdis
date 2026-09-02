@@ -163,5 +163,16 @@
     "fuente": "Gallotti&Radice",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 16,
+    "nombre": "Ledtube Mini Spot",
+    "url": "https://3dwarehouse.sketchup.com/model/c7203c5e-889e-4f2a-a3ea-1b52e18bd0d0/Ledtube-Mini-spot-MARSET",
+    "imagen": "/img/biblioteca/016-ledtube-mini-spot.jpg",
+    "categoria": "iluminacion",
+    "tipo": "warehouse",
+    "fuente": "Marset",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
