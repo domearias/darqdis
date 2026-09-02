@@ -185,5 +185,38 @@
     "fuente": "Tacchini",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 18,
+    "nombre": "Ronny Night Table",
+    "url": "https://3dwarehouse.sketchup.com/model/5783742b-bad7-4bd6-86a8-20de5710e4ee/Ronny-Night-Table-MERIDIANI",
+    "imagen": "/img/biblioteca/018-ronny-night-table.jpg",
+    "categoria": "mesas",
+    "tipo": "warehouse",
+    "fuente": "Meridiani",
+    "fuente_url": "",
+    "tip": ""
+  },
+  {
+    "numero": 19,
+    "nombre": "Pala",
+    "url": "https://3dwarehouse.sketchup.com/model/0666c33c-34bf-4e8c-a025-c1434e524f6f/Pala-Kristalia",
+    "imagen": "/img/biblioteca/019-pala.jpg",
+    "categoria": "asientos",
+    "tipo": "warehouse",
+    "fuente": "Kristalia",
+    "fuente_url": "",
+    "tip": ""
+  },
+  {
+    "numero": 20,
+    "nombre": "Bohemia",
+    "url": "https://3dwarehouse.sketchup.com/model/ae012918-d325-4bd3-a9e6-9ae6a2b33ca2/Bohemia-Marset",
+    "imagen": "/img/biblioteca/020-bohemia.jpg",
+    "categoria": "iluminacion",
+    "tipo": "warehouse",
+    "fuente": "Marset",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
