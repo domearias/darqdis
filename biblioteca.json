@@ -174,5 +174,16 @@
     "fuente": "Marset",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 17,
+    "nombre": "Agnese",
+    "url": "https://3dwarehouse.sketchup.com/model/1f3b26ba-374a-46d0-a842-446129ab4d88/Agnese-TACCHINI",
+    "imagen": "/img/biblioteca/017-agnese.jpg",
+    "categoria": "asientos",
+    "tipo": "warehouse",
+    "fuente": "Tacchini",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
