@@ -218,5 +218,16 @@
     "fuente": "Marset",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 21,
+    "nombre": "Avant Garde Chair",
+    "url": "https://3dwarehouse.sketchup.com/model/ddbd5e2f-827a-45e1-9ec3-c0cfda7861e1/Avant-Garde-chair-BONALDO",
+    "imagen": "/img/biblioteca/021-avant-garde-chair.jpg",
+    "categoria": "asientos",
+    "tipo": "warehouse",
+    "fuente": "Bonaldo",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
