@@ -281,10 +281,12 @@ button:focus-visible,
   .pj-close__grid { grid-template-columns: 1fr; gap: 2rem; }
   .pj-close__photo { max-width: 420px; }
 }
-@media (max-width: 460px) {
-  .work { gap: 1.4rem 1rem; }
-  .gcard__name { font-size: 1rem; }
-  .gcard__loc { font-size: 0.58rem; letter-spacing: 0.12em; }
+/* Móvil: un proyecto por fila para que no se amontonen */
+@media (max-width: 620px) {
+  .work { grid-template-columns: 1fr; gap: clamp(2rem, 7vw, 2.8rem); }
+  .gcard__media { aspect-ratio: 3 / 2; }
+  .gcard__name { font-size: 1.35rem; }
+  .gcard__loc { font-size: 0.66rem; }
 }
 @media (max-width: 720px) {
   .nav__links {
