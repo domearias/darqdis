@@ -20,293 +20,191 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
 /* ============================================================
-   DOMENICA ARIAS — darqdis · /proyectos · Sistema visual v3 (invertido)
-   Base espresso · texto bone · galería en grid · sin oxblood (otro público)
+   DOMENICA ARIAS — darqdis · /proyectos
+   Sistema visual v4 — mid-century moderno, fondo yeso, grilla modular
    ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap');
-
-:root {
-  --bone:      #F7F4EE;
-  --espresso:  #1A1714;
-  --ink:       #111009;
-  --ink-soft:  #3D3830;
-  --olive:     #6E6A4D;
-  --oxblood:   #5C2E26;
-  --line:      rgba(247, 244, 238, 0.14);
-  --line-2:    rgba(247, 244, 238, 0.07);
+:root{
+  --paper:    #E9E2D4;   /* fondo yeso cálido */
+  --paper-2:  #EFE9DD;   /* banda clara alterna */
+  --sand:     #D8CDB6;   /* bloque de respiro */
+  --ink:      #221D16;   /* texto principal */
+  --ink-soft: #6A6153;   /* texto secundario */
+  --bone:     #F7F4EE;
+  --terracotta:#B96A43;
+  --oxblood:  #5C2E26;
+  --olive:    #6E6A4D;
+  --walnut:   #6B4A31;
+  --burgundy: #7A2E33;
+  --brass:    #9C7A3E;
+  --line:     rgba(34,29,22,0.16);
+  --line-2:   rgba(34,29,22,0.08);
   --serif: 'Playfair Display', Georgia, serif;
   --sans:  'Archivo', system-ui, -apple-system, sans-serif;
-  --inset: clamp(22px, 5vw, 80px);
-  --bandY: clamp(4rem, 8vw, 7.5rem);
+  --inset: clamp(20px, 4.5vw, 68px);
+  --bandY: clamp(3.5rem, 7vw, 6.5rem);
+  --gap: clamp(10px, 1.4vw, 18px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; font-size:106.25%; }
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-wrap:break-word;
+}
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+  outline:2px solid var(--terracotta); outline-offset:3px;
+}
+.tnum{ font-variant-numeric:tabular-nums; }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; font-size: 106.25%; }
+/* ---- NAV ---- */
+.nav{
+  position:sticky; top:0; z-index:70;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1rem var(--inset);
+  background:rgba(233,226,212,0.88);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav__brand{ font-family:var(--sans); font-weight:700; font-size:1.02rem; letter-spacing:.01em; text-decoration:none; color:var(--ink); }
+.nav__brand .dot{ color:var(--olive); }
+.nav__links{ display:flex; gap:clamp(1.1rem,2.4vw,2.4rem); list-style:none; align-items:center; }
+.nav__links a{
+  font-family:var(--sans); font-size:.74rem; font-weight:400;
+  letter-spacing:.14em; text-transform:uppercase; text-decoration:none;
+  color:var(--ink); position:relative; padding:.3rem 0;
+}
+.nav__links a::after{ content:''; position:absolute; left:0; bottom:-1px; width:0; height:1px; background:var(--ink); transition:width .4s var(--ease); }
+.nav__links a:hover::after, .nav__links a.active::after{ width:100%; }
+.nav__links a.active{ font-weight:600; }
+.nav__right{ display:flex; align-items:center; gap:.9rem; }
+.nav__toggle{ display:none; background:none; border:none; cursor:pointer; padding:.5rem; flex-direction:column; gap:5px; }
+.nav__toggle span{ display:block; width:25px; height:1.5px; background:var(--ink); transition:transform .4s var(--ease), opacity .3s; }
+.nav.open .nav__toggle span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+.nav.open .nav__toggle span:nth-child(2){ opacity:0; }
+.nav.open .nav__toggle span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+.nav-cta{
+  display:inline-flex; align-items:center; gap:.55rem;
+  font-family:var(--sans); font-weight:600; font-size:.68rem;
+  letter-spacing:.16em; text-transform:uppercase; text-decoration:none;
+  color:var(--bone); background:var(--oxblood);
+  padding:.7rem 1.3rem; border:1.5px solid var(--oxblood);
+  transition:background .4s var(--ease), color .4s var(--ease);
+}
+.nav-cta:hover{ background:transparent; color:var(--oxblood); }
+.nav-cta .arrow{ transition:transform .4s var(--ease); }
+.nav-cta:hover .arrow{ transform:translateX(4px); }
+@media(max-width:480px){ .nav-cta .arrow{ display:none; } .nav-cta{ padding:.6rem .9rem; } }
 
-body {
-  font-family: var(--sans);
-  background: var(--espresso);
-  color: var(--bone);
-  font-weight: 400;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  overflow-wrap: break-word;
+/* ---- HERO ---- */
+.pj-hero{ padding:clamp(2.6rem,5vw,4.4rem) var(--inset) clamp(1.8rem,3.5vw,3rem); }
+.pj-hero__top{
+  display:flex; align-items:baseline; justify-content:space-between; gap:1.5rem;
+  border-bottom:1px solid var(--line); padding-bottom:1.1rem; margin-bottom:clamp(1.6rem,3vw,2.6rem);
 }
+.kicker{ font-family:var(--sans); font-weight:600; font-size:.68rem; letter-spacing:.28em; text-transform:uppercase; color:var(--terracotta); }
+.pj-hero__idx{ font-family:var(--sans); font-size:.72rem; letter-spacing:.14em; color:var(--ink-soft); }
+.pj-hero__grid{ display:grid; grid-template-columns:1.4fr 1fr; gap:clamp(1.5rem,4vw,4rem); align-items:end; }
+.pj-hero__title{ font-family:var(--serif); font-weight:500; font-size:clamp(2.8rem,8vw,6.4rem); line-height:.92; letter-spacing:-.01em; }
+.pj-hero__title em{ font-style:italic; font-weight:400; color:var(--terracotta); }
+.pj-hero__lead{ font-family:var(--serif); font-style:italic; font-size:clamp(1.15rem,2vw,1.6rem); line-height:1.4; color:var(--ink); margin-bottom:.9rem; }
+.pj-hero__meta{ font-size:.9rem; color:var(--ink-soft); line-height:1.7; max-width:42ch; }
 
-a:focus-visible,
-button:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid var(--olive);
-  outline-offset: 3px;
-  border-radius: 1px;
+/* ---- GRILLA MODULAR ---- */
+.work{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap);
+  padding:clamp(1.4rem,3vw,2.4rem) var(--inset) var(--bandY);
 }
+.cell{ position:relative; aspect-ratio:1; overflow:hidden; }
+/* fotos */
+.cell--photo{ display:block; text-decoration:none; color:var(--ink); background:var(--sand); }
+.cell--photo img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform 1s var(--ease); }
+.cell--photo:hover img{ transform:scale(1.045); }
+.cell__tag{
+  position:absolute; left:0; bottom:0; z-index:2;
+  display:flex; align-items:baseline; gap:.5rem;
+  background:var(--paper); color:var(--ink);
+  padding:.5rem .8rem; max-width:calc(100% - 12px);
+}
+.cell__tag .n{ font-family:var(--serif); font-style:italic; font-size:.82rem; color:var(--terracotta); }
+.cell__tag .nm{ font-family:var(--sans); font-weight:500; font-size:.74rem; letter-spacing:.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.cell__tag .lc{ font-family:var(--sans); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); }
+/* bloques planos */
+.cell--block{ display:flex; align-items:flex-end; padding:1.1rem 1.2rem; }
+.cell--block .blab{ font-family:var(--serif); font-weight:500; font-size:clamp(1.1rem,2vw,1.6rem); line-height:1.05; }
+.cell--block .bnum{ font-family:var(--sans); font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; margin-top:.35rem; display:block; }
+.b-terra{ background:var(--terracotta); color:#231206; }
+.b-terra .bnum{ color:rgba(35,18,6,.7); }
+.b-oxblood{ background:var(--oxblood); color:var(--bone); }
+.b-oxblood .bnum{ color:rgba(247,244,238,.65); }
+.b-burgundy{ background:var(--burgundy); color:var(--bone); }
+.b-burgundy .bnum{ color:rgba(247,244,238,.65); }
+.b-olive{ background:var(--olive); }
+.b-walnut{ background:var(--walnut); }
+.b-sand{ background:var(--sand); }
 
-.grain {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: soft-light;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+/* ---- BIO + CONTACTO ---- */
+.pj-close{ padding:var(--bandY) var(--inset); background:var(--paper-2); border-top:1px solid var(--line); }
+.pj-close__grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2.2rem,6vw,5.5rem); align-items:start; }
+.pj-close__photo{ aspect-ratio:4/5; overflow:hidden; background:var(--sand); }
+.pj-close__photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+.pj-close__title{ font-family:var(--serif); font-weight:500; font-size:clamp(1.9rem,4.2vw,3.2rem); line-height:1.06; margin-bottom:1.4rem; }
+.pj-close__title em{ font-style:italic; font-weight:400; color:var(--terracotta); }
+.pj-close__bio{ font-size:1rem; color:var(--ink-soft); max-width:50ch; line-height:1.8; margin-bottom:2.2rem; }
+.pj-contact{ border-top:1px solid var(--line); }
+.pj-contact__row{ display:flex; align-items:baseline; justify-content:space-between; gap:1.5rem; padding:1.2rem 0; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+.pj-contact__row dt{ font-family:var(--sans); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); }
+.pj-contact__row dd{ font-family:var(--serif); font-size:clamp(1.1rem,2.6vw,1.6rem); }
+.pj-contact__row dd a{ color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .4s var(--ease); }
+.pj-contact__row dd a:hover{ border-bottom-color:var(--terracotta); }
 
-/* ---- TYPE PRIMITIVES ---- */
-.kicker {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 0.68rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--olive);
-}
-.num {
-  font-family: var(--sans);
-  font-weight: 400;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  color: rgba(247, 244, 238, 0.5);
-}
+/* ---- FOOTER ---- */
+.footer{ padding:clamp(2.4rem,5vw,3.5rem) var(--inset) 2rem; border-top:1px solid var(--line); }
+.footer__base{ display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; font-family:var(--sans); font-size:.72rem; color:var(--ink-soft); }
+.footer__base a{ color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; }
+.footer__base a:hover{ border-bottom-color:var(--terracotta); }
 
-/* ============================================================
-   NAV (misma que el resto del sitio, invertida sobre espresso)
-   ============================================================ */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 70;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.05rem var(--inset);
-  background: rgba(26, 23, 20, 0.82);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line-2);
-}
-.nav__brand {
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 1.02rem;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  color: var(--bone);
-}
-.nav__brand .dot { color: var(--olive); }
-.nav__links {
-  display: flex;
-  gap: clamp(1.1rem, 2.4vw, 2.4rem);
-  list-style: none;
-  align-items: center;
-}
-.nav__links a {
-  font-family: var(--sans);
-  font-size: 0.74rem;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--bone);
-  position: relative;
-  padding: 0.3rem 0;
-}
-.nav__links a::after {
-  content: '';
-  position: absolute;
-  left: 0; bottom: -1px;
-  width: 0; height: 1px;
-  background: var(--bone);
-  transition: width 0.4s var(--ease);
-}
-.nav__links a:hover::after,
-.nav__links a.active::after { width: 100%; }
-.nav__links a.active { font-weight: 500; }
-
-.nav__right { display: flex; align-items: center; gap: 0.9rem; }
-.nav__toggle {
-  display: none;
-  background: none; border: none; cursor: pointer;
-  padding: 0.5rem; flex-direction: column; gap: 5px;
-}
-.nav__toggle span { display: block; width: 25px; height: 1.5px; background: var(--bone); transition: transform 0.4s var(--ease), opacity 0.3s; }
-.nav.open .nav__toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav.open .nav__toggle span:nth-child(2) { opacity: 0; }
-.nav.open .nav__toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-/* ---- BUTTONS ---- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 0.74rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--bone);
-  background: transparent;
-  padding: 1.1rem 2rem;
-  border: 1.5px solid rgba(247, 244, 238, 0.6);
-  border-radius: 0;
-  cursor: pointer;
-  transition: background 0.45s var(--ease), color 0.45s var(--ease), border-color 0.45s var(--ease);
-}
-.btn .arrow { transition: transform 0.45s var(--ease); }
-.btn:hover { background: var(--bone); color: var(--ink); border-color: var(--bone); }
-.btn:hover .arrow { transform: translateX(5px); }
-.btn--oxblood { background: var(--oxblood); color: var(--bone); border-color: var(--oxblood); }
-.btn--oxblood:hover { background: var(--bone); color: var(--ink); border-color: var(--bone); }
-.nav-cta { border: 1.5px solid var(--oxblood) !important; padding: 0.7rem 1.3rem !important; font-size: 0.68rem !important; }
-.nav-cta::after { display: none; }
-@media (max-width: 480px) { .nav-cta span.arrow { display: none; } .nav-cta { padding: 0.6rem 0.9rem !important; } }
-
-/* ============================================================
-   HERO / INTRO
-   ============================================================ */
-.pj-hero { padding: clamp(3.5rem, 8vw, 7rem) var(--inset) clamp(2.5rem, 5vw, 4rem); }
-.pj-hero__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; margin-bottom: clamp(1.6rem, 3vw, 2.4rem); }
-.pj-hero__title {
-  font-family: var(--serif); font-weight: 500;
-  font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.95;
-  letter-spacing: -0.01em;
-}
-.pj-hero__title em { font-style: italic; font-weight: 400; color: rgba(247, 244, 238, 0.55); }
-.pj-hero__lead {
-  font-family: var(--serif); font-style: italic;
-  font-size: clamp(1.3rem, 2.6vw, 2rem); line-height: 1.35;
-  max-width: 30ch; color: var(--bone);
-}
-.pj-hero__meta { font-size: 0.88rem; color: rgba(247, 244, 238, 0.6); max-width: 40ch; margin-top: 1.4rem; line-height: 1.7; }
-
-/* ============================================================
-   WORK ROWS
-   ============================================================ */
-.work {
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.4rem, 3vw, 2.6rem) clamp(1.2rem, 2.5vw, 2rem);
-  padding: clamp(2.2rem, 5vw, 4rem) var(--inset) var(--bandY);
+/* ---- REVEAL ---- */
+.reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.in{ opacity:1; transform:translateY(0); }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.01ms!important; transition-duration:.01ms!important; scroll-behavior:auto!important; }
+  .reveal{ opacity:1!important; transform:none!important; }
 }
 
-/* Tarjeta de galería: foto + nombre + ubicación */
-.gcard { display: block; text-decoration: none; color: var(--bone); }
-.gcard__media {
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: rgba(247, 244, 238, 0.04);
+/* ---- RESPONSIVE ---- */
+@media(max-width:900px){
+  .pj-hero__grid{ grid-template-columns:1fr; align-items:start; gap:1.4rem; }
+  .work{ grid-template-columns:repeat(2,1fr); }
+  .pj-close__grid{ grid-template-columns:1fr; gap:2rem; }
+  .pj-close__photo{ max-width:420px; }
 }
-.gcard__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.9s var(--ease); }
-.gcard:hover .gcard__media img { transform: scale(1.04); }
-.gcard__body {
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 1rem; margin-top: 0.85rem;
+@media(max-width:620px){
+  .work{ grid-template-columns:1fr; }
+  .cell{ aspect-ratio:3/2; }
+  .cell--block{ display:none; }         /* en móvil, solo fotos, 1 por fila */
+  .cell__tag .nm{ font-size:.82rem; }
 }
-.gcard__name {
-  font-family: var(--serif); font-weight: 500;
-  font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.15;
-}
-.gcard__name em { font-style: italic; font-weight: 400; }
-.gcard__loc {
-  font-family: var(--sans); font-size: 0.64rem;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: rgba(247, 244, 238, 0.55); white-space: nowrap; flex-shrink: 0;
-}
-
-/* ============================================================
-   BIO + CONTACTO PROFESIONAL (sin oxblood, sin ArquiLab)
-   ============================================================ */
-.pj-close { padding: var(--bandY) var(--inset); }
-.pj-close__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
-.pj-close__photo { aspect-ratio: 4 / 5; overflow: hidden; background: rgba(247, 244, 238, 0.04); }
-.pj-close__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.pj-close__title { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.05; margin-bottom: 1.6rem; }
-.pj-close__title em { font-style: italic; font-weight: 400; color: rgba(247, 244, 238, 0.6); }
-.pj-close__bio { font-size: 1.02rem; color: rgba(247, 244, 238, 0.78); max-width: 50ch; line-height: 1.8; margin-bottom: 2.4rem; }
-.pj-contact { margin-top: 0.5rem; border-top: 1px solid var(--line); }
-.pj-contact__row { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; padding: 1.3rem 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.pj-contact__row dt { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247, 244, 238, 0.55); }
-.pj-contact__row dd { font-family: var(--serif); font-size: clamp(1.2rem, 3vw, 1.8rem); }
-.pj-contact__row dd a { color: var(--bone); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.4s var(--ease); }
-.pj-contact__row dd a:hover { border-bottom-color: var(--bone); }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-.footer { padding: var(--bandY) var(--inset) 2rem; border-top: 1px solid var(--line); }
-.footer__base { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; font-family: var(--sans); font-size: 0.72rem; color: rgba(247, 244, 238, 0.45); }
-.footer__base a { color: rgba(247, 244, 238, 0.6); text-decoration: none; }
-.footer__base a:hover { color: var(--bone); }
-
-/* ---- SCROLL REVEAL ---- */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
-.reveal.in { opacity: 1; transform: translateY(0); }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@media(max-width:720px){
+  .nav__links{
+    position:fixed; top:0; right:0; bottom:0; width:min(80vw,320px);
+    background:var(--paper); flex-direction:column; align-items:flex-start; justify-content:center;
+    gap:1.6rem; padding:2rem 2.2rem; transform:translateX(100%); transition:transform .55s var(--ease);
+    box-shadow:-20px 0 60px rgba(34,29,22,.18); z-index:75;
   }
-  .reveal { opacity: 1 !important; transform: none !important; }
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 900px) {
-  .work { grid-template-columns: repeat(2, 1fr); }
-  .pj-close__grid { grid-template-columns: 1fr; gap: 2rem; }
-  .pj-close__photo { max-width: 420px; }
-}
-/* Móvil: un proyecto por fila para que no se amontonen */
-@media (max-width: 620px) {
-  .work { grid-template-columns: 1fr; gap: clamp(2rem, 7vw, 2.8rem); }
-  .gcard__media { aspect-ratio: 3 / 2; }
-  .gcard__name { font-size: 1.35rem; }
-  .gcard__loc { font-size: 0.66rem; }
-}
-@media (max-width: 720px) {
-  .nav__links {
-    position: fixed; top: 0; right: 0; bottom: 0;
-    width: min(80vw, 320px);
-    background: var(--espresso);
-    flex-direction: column; align-items: flex-start; justify-content: center;
-    gap: 1.6rem; padding: 2rem 2.2rem;
-    transform: translateX(100%); transition: transform 0.55s var(--ease);
-    box-shadow: -20px 0 60px rgba(0,0,0,0.4);
-    z-index: 75;
-  }
-  .nav.open .nav__links { transform: translateX(0); }
-  .nav__links a { font-size: 1rem; }
-  .nav__toggle { display: flex; z-index: 76; }
+  .nav.open .nav__links{ transform:translateX(0); }
+  .nav__links a{ font-size:1rem; }
+  .nav__toggle{ display:flex; z-index:76; }
 }
 </style>
 </head>
 <body>
-<div class="grain"></div>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav">
@@ -318,142 +216,103 @@ button:focus-visible,
     <li><a href="/contacto">Contacto</a></li>
   </ul>
   <div class="nav__right">
-    <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="btn btn--oxblood nav-cta">Inscríbete <span class="arrow">→</span></a>
+    <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="nav-cta">Inscríbete <span class="arrow">→</span></a>
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- ============ HERO / INTRO ============ -->
+<!-- ============ HERO ============ -->
 <header class="pj-hero">
-  <div class="pj-hero__head">
-    <p class="kicker">Portafolio · Selected work</p>
-    <span class="num">2024 — 2025</span>
+  <div class="pj-hero__top">
+    <span class="kicker">Portafolio — darqdis</span>
+    <span class="pj-hero__idx tnum">Índice · 11 espacios · 2024—2026</span>
   </div>
-  <h1 class="pj-hero__title">Proyectos<em>.</em></h1>
-  <div style="display:grid;grid-template-columns:1fr;gap:1.4rem;margin-top:clamp(1.6rem,3vw,2.4rem);max-width:60ch;">
-    <p class="pj-hero__lead">Diseño retail que comunica la marca — un espacio debería vender solo.</p>
-    <p class="pj-hero__meta">Interiorismo comercial, F&amp;B y experiencia de marca entre Quito y Barcelona. Cada proyecto trabaja marca, espacio y cliente como un solo sistema.</p>
+  <div class="pj-hero__grid">
+    <h1 class="pj-hero__title">Proyectos<em>.</em></h1>
+    <div>
+      <p class="pj-hero__lead">Un espacio debería vender solo.</p>
+      <p class="pj-hero__meta">Interiorismo comercial, F&amp;B y experiencia de marca entre Quito y Barcelona. Cada proyecto trabaja marca, espacio y cliente como un solo sistema.</p>
+    </div>
   </div>
 </header>
 
-<!-- ============ GALERÍA DE PROYECTOS ============ -->
+<!-- ============ GRILLA MODULAR ============ -->
 <main class="work">
 
-  <a href="/proyecto?p=sisters-kitchen" class="gcard reveal" aria-label="Ver Sisters Kitchen — Quito">
-    <div class="gcard__media">
-      <img src="sisters-kitchen.jpg" alt="Sisters Kitchen — Quito" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name">Sisters <em>Kitchen</em></span>
-      <span class="gcard__loc">Quito</span>
-    </div>
+  <div class="cell cell--block b-terra reveal"><div><span class="blab">Retail<br>&amp; F&amp;B</span><span class="bnum">Comercial</span></div></div>
+
+  <a href="/proyecto?p=sisters-kitchen" class="cell cell--photo reveal" aria-label="Ver Sisters Kitchen — Quito">
+    <img src="sisters-kitchen.jpg" alt="Sisters Kitchen — Quito" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">01</span><span class="nm">Sisters Kitchen</span><span class="lc">Quito</span></span>
   </a>
 
-  <a href="/proyecto?p=piza" class="gcard reveal" aria-label="Ver Piza — Quito">
-    <div class="gcard__media">
-      <img src="piza.jpg" alt="Piza — Quito" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name"><em>Piza</em></span>
-      <span class="gcard__loc">Quito</span>
-    </div>
+  <a href="/proyecto?p=piza" class="cell cell--photo reveal" aria-label="Ver Piza — Quito">
+    <img src="piza.jpg" alt="Piza — Quito" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">02</span><span class="nm">Piza</span><span class="lc">Quito</span></span>
   </a>
 
-  <a href="/proyecto?p=holy-cow" class="gcard reveal" aria-label="Ver Holy Cow — Quito">
-    <div class="gcard__media">
-      <img src="holy-cow.jpg" alt="Holy Cow — Quito" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name">Holy <em>Cow</em></span>
-      <span class="gcard__loc">Quito</span>
-    </div>
+  <a href="/proyecto?p=holy-cow" class="cell cell--photo reveal" aria-label="Ver Holy Cow — Quito">
+    <img src="holy-cow.jpg" alt="Holy Cow — Quito" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">03</span><span class="nm">Holy Cow</span><span class="lc">Quito</span></span>
   </a>
 
-  <a href="/proyecto?p=diagonal-499" class="gcard reveal" aria-label="Ver Diagonal 499 — Barcelona">
-    <div class="gcard__media">
-      <img src="img/proyectos/diagonal-499/salon.jpg" alt="Diagonal 499 — Barcelona" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name">Diagonal <em>499</em></span>
-      <span class="gcard__loc">Barcelona</span>
-    </div>
+  <a href="/proyecto?p=diagonal-499" class="cell cell--photo reveal" aria-label="Ver Diagonal 499 — Barcelona">
+    <img src="img/proyectos/diagonal-499/salon.jpg" alt="Diagonal 499 — Barcelona" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">04</span><span class="nm">Diagonal 499</span><span class="lc">Barcelona</span></span>
   </a>
 
-  <a href="/proyecto?p=park-turo" class="gcard reveal" aria-label="Ver Park Turó — Barcelona">
-    <div class="gcard__media">
-      <img src="img/proyectos/park-turo/salon.jpg" alt="Park Turó — Barcelona" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name">Park <em>Turó</em></span>
-      <span class="gcard__loc">Barcelona</span>
-    </div>
+  <div class="cell cell--block b-olive reveal"></div>
+
+  <a href="/proyecto?p=park-turo" class="cell cell--photo reveal" aria-label="Ver Park Turó — Barcelona">
+    <img src="img/proyectos/park-turo/salon.jpg" alt="Park Turó — Barcelona" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">05</span><span class="nm">Park Turó</span><span class="lc">Barcelona</span></span>
   </a>
 
-  <a href="/proyecto?p=maduixer-1" class="gcard reveal" aria-label="Ver Maduixer I — Barcelona">
-    <div class="gcard__media">
-      <img src="img/proyectos/maduixer-1/salon.jpg" alt="Maduixer I — Barcelona" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name">Maduixer <em>I</em></span>
-      <span class="gcard__loc">Barcelona</span>
-    </div>
+  <div class="cell cell--block b-oxblood reveal"><div><span class="blab">Residencial</span><span class="bnum">Interiorismo</span></div></div>
+
+  <a href="/proyecto?p=maduixer-1" class="cell cell--photo reveal" aria-label="Ver Maduixer I — Barcelona">
+    <img src="img/proyectos/maduixer-1/salon.jpg" alt="Maduixer I — Barcelona" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">06</span><span class="nm">Maduixer I</span><span class="lc">Barcelona</span></span>
   </a>
 
-  <a href="/proyecto?p=maduixer-2" class="gcard reveal" aria-label="Ver Maduixer II — Barcelona">
-    <div class="gcard__media">
-      <img src="img/proyectos/maduixer-2/salon.jpg" alt="Maduixer II — Barcelona" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name">Maduixer <em>II</em></span>
-      <span class="gcard__loc">Barcelona</span>
-    </div>
+  <div class="cell cell--block b-sand reveal"></div>
+
+  <a href="/proyecto?p=maduixer-2" class="cell cell--photo reveal" aria-label="Ver Maduixer II — Barcelona">
+    <img src="img/proyectos/maduixer-2/salon.jpg" alt="Maduixer II — Barcelona" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">07</span><span class="nm">Maduixer II</span><span class="lc">Barcelona</span></span>
   </a>
 
-  <a href="/proyecto?p=roca-lisa" class="gcard reveal" aria-label="Ver Roca Lisa — Ibiza">
-    <div class="gcard__media">
-      <img src="img/proyectos/roca-lisa/salon.jpg" alt="Roca Lisa — Ibiza" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name">Roca <em>Lisa</em></span>
-      <span class="gcard__loc">Ibiza</span>
-    </div>
+  <a href="/proyecto?p=roca-lisa" class="cell cell--photo reveal" aria-label="Ver Roca Lisa — Ibiza">
+    <img src="img/proyectos/roca-lisa/salon.jpg" alt="Roca Lisa — Ibiza" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">08</span><span class="nm">Roca Lisa</span><span class="lc">Ibiza</span></span>
   </a>
 
-  <a href="/proyecto?p=platja-daro" class="gcard reveal" aria-label="Ver Platja d'Aro — Costa Brava">
-    <div class="gcard__media">
-      <img src="img/proyectos/platja-daro/salon.jpg" alt="Platja d'Aro — Costa Brava" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name">Platja d'<em>Aro</em></span>
-      <span class="gcard__loc">Costa Brava</span>
-    </div>
+  <a href="/proyecto?p=platja-daro" class="cell cell--photo reveal" aria-label="Ver Platja d'Aro — Costa Brava">
+    <img src="img/proyectos/platja-daro/salon.jpg" alt="Platja d'Aro — Costa Brava" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">09</span><span class="nm">Platja d'Aro</span><span class="lc">Costa Brava</span></span>
   </a>
 
-  <a href="/proyecto?p=bisbe" class="gcard reveal" aria-label="Ver Bisbe — Barcelona">
-    <div class="gcard__media">
-      <img src="img/proyectos/bisbe/salon.jpg" alt="Bisbe — Barcelona" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name"><em>Bisbe</em></span>
-      <span class="gcard__loc">Barcelona</span>
-    </div>
+  <div class="cell cell--block b-walnut reveal"></div>
+
+  <a href="/proyecto?p=bisbe" class="cell cell--photo reveal" aria-label="Ver Bisbe — Barcelona">
+    <img src="img/proyectos/bisbe/salon.jpg" alt="Bisbe — Barcelona" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">10</span><span class="nm">Bisbe</span><span class="lc">Barcelona</span></span>
   </a>
 
-  <a href="/proyecto?p=el-tarter" class="gcard reveal" aria-label="Ver El Tarter — Andorra">
-    <div class="gcard__media">
-      <img src="img/proyectos/el-tarter/salon.jpg" alt="El Tarter — Andorra" loading="lazy" decoding="async">
-    </div>
-    <div class="gcard__body">
-      <span class="gcard__name">El <em>Tarter</em></span>
-      <span class="gcard__loc">Andorra</span>
-    </div>
+  <div class="cell cell--block b-burgundy reveal"><div><span class="blab">2024<br>—2026</span><span class="bnum">Selección</span></div></div>
+
+  <a href="/proyecto?p=el-tarter" class="cell cell--photo reveal" aria-label="Ver El Tarter — Andorra">
+    <img src="img/proyectos/el-tarter/salon.jpg" alt="El Tarter — Andorra" loading="lazy" decoding="async">
+    <span class="cell__tag"><span class="n tnum">11</span><span class="nm">El Tarter</span><span class="lc">Andorra</span></span>
   </a>
+
+  <div class="cell cell--block b-sand reveal"></div>
 
 </main>
 
-<!-- ============ BIO + CONTACTO PROFESIONAL ============ -->
+<!-- ============ BIO + CONTACTO ============ -->
 <section class="pj-close">
   <div class="pj-close__grid">
     <div class="pj-close__photo reveal">
