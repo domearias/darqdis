@@ -126,15 +126,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .cell--photo{ display:block; text-decoration:none; color:var(--ink); background:var(--sand); }
 .cell--photo img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform 1s var(--ease); }
 .cell--photo:hover img{ transform:scale(1.045); }
+.cell--photo::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:42%; z-index:1;
+  background:linear-gradient(to top, rgba(22,16,10,0.62), rgba(22,16,10,0.14) 58%, transparent);
+  pointer-events:none;
+}
 .cell__tag{
   position:absolute; left:0; bottom:0; z-index:2;
   display:flex; align-items:baseline; gap:.5rem;
-  background:var(--paper); color:var(--ink);
-  padding:.5rem .8rem; max-width:calc(100% - 12px);
+  padding:.7rem .95rem 0.8rem; max-width:100%;
 }
-.cell__tag .n{ font-family:var(--serif); font-style:italic; font-size:.82rem; color:var(--terracotta); }
-.cell__tag .nm{ font-family:var(--sans); font-weight:500; font-size:.74rem; letter-spacing:.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.cell__tag .lc{ font-family:var(--sans); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); }
+.cell__tag .n{ font-family:var(--serif); font-style:italic; font-size:.92rem; color:#E3A078; text-shadow:0 1px 5px rgba(0,0,0,0.5); }
+.cell__tag .nm{ font-family:var(--sans); font-weight:500; font-size:.8rem; letter-spacing:.01em; color:var(--bone); text-shadow:0 1px 6px rgba(0,0,0,0.55); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.cell__tag .lc{ font-family:var(--sans); font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(247,244,238,0.82); text-shadow:0 1px 5px rgba(0,0,0,0.5); }
 /* bloques planos */
 .cell--block{ display:flex; align-items:flex-end; padding:1.1rem 1.2rem; }
 .cell--block .blab{ font-family:var(--serif); font-weight:500; font-size:clamp(1.1rem,2vw,1.6rem); line-height:1.05; }
