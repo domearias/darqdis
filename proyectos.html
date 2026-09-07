@@ -23,13 +23,14 @@
    DOMENICA ARIAS — darqdis · /proyectos
    Sistema visual v4 — mid-century moderno, fondo yeso, grilla modular
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@font-face{ font-family:'Frunchy Sage'; src:url('/fonts/frunchysage.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
 
 :root{
-  --paper:    #F5F1E8;   /* blanco cálido (tipo Casa Ren), más claro que el yeso */
-  --paper-2:  #EFEADF;   /* banda clara alterna */
+  --paper:    #FBFAF6;   /* casi blanco (cálido apenas) */
+  --paper-2:  #F5F2EB;   /* banda alterna */
   --sand:     #DBD1BC;   /* bloque de respiro */
-  --ink:      #221D16;   /* texto principal */
+  --ink:      #1C1815;   /* casi negro cálido — texto en negro */
   --ink-soft: #6A6153;   /* texto secundario */
   --bone:     #F7F4EE;
   --terracotta:#B96A43;
@@ -40,8 +41,8 @@
   --brass:    #9C7A3E;
   --line:     rgba(34,29,22,0.16);
   --line-2:   rgba(34,29,22,0.08);
-  --serif: 'Playfair Display', Georgia, serif;
-  --sans:  'Archivo', system-ui, -apple-system, sans-serif;
+  --serif: 'Frunchy Sage', Georgia, serif;
+  --sans:  'Poppins', system-ui, -apple-system, sans-serif;
   --inset: clamp(20px, 4.5vw, 68px);
   --bandY: clamp(3.5rem, 7vw, 6.5rem);
   --gap: clamp(10px, 1.4vw, 18px);
@@ -59,7 +60,7 @@ body{
   overflow-wrap:break-word;
 }
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
-  outline:2px solid var(--terracotta); outline-offset:3px;
+  outline:2px solid var(--oxblood); outline-offset:3px;
 }
 .tnum{ font-variant-numeric:tabular-nums; }
 
@@ -68,13 +69,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   position:sticky; top:0; z-index:70;
   display:flex; align-items:center; justify-content:space-between;
   padding:1rem var(--inset);
-  background:rgba(245,241,232,0.86);
+  background:rgba(251,250,246,0.90);
   backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
 .nav__brand{ font-family:var(--sans); font-weight:700; font-size:1.02rem; letter-spacing:.01em; text-decoration:none; color:var(--ink); }
 .nav__brand .dot{ color:var(--olive); }
-.nav__links{ display:flex; gap:clamp(1.1rem,2.4vw,2.4rem); list-style:none; align-items:center; }
+.nav__links{ margin-left:auto; display:flex; gap:clamp(1.1rem,2.4vw,2.4rem); list-style:none; align-items:center; }
 .nav__links a{
   font-family:var(--sans); font-size:.74rem; font-weight:400;
   letter-spacing:.14em; text-transform:uppercase; text-decoration:none;
@@ -104,8 +105,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
 /* ---- HERO ---- */
 .pj-hero{ padding:clamp(2.6rem,5.5vw,4.4rem) var(--inset) clamp(1.8rem,3.5vw,2.8rem); text-align:center; border-bottom:1px solid var(--line); }
-.pj-hero__title{ font-family:var(--serif); font-weight:500; font-size:clamp(2.2rem,5vw,3.4rem); line-height:1; letter-spacing:.005em; }
-.pj-hero__title em{ font-style:italic; font-weight:400; color:var(--terracotta); }
+.pj-hero__title{ font-family:var(--serif); font-weight:400; font-size:clamp(2.6rem,6vw,4.4rem); line-height:1; letter-spacing:.01em; text-transform:lowercase; color:var(--ink); }
+.pj-hero__title em{ font-style:normal; color:var(--oxblood); }
 
 /* ---- GRILLA MODULAR ---- */
 .work{
@@ -127,22 +128,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   display:flex; align-items:baseline; gap:.45rem;
   padding:.55rem .8rem .6rem; max-width:100%;
 }
-.cell__tag .n{ font-family:var(--serif); font-style:italic; font-size:.8rem; color:#E7AA83; text-shadow:0 1px 4px rgba(0,0,0,0.45); }
+.cell__tag .n{ font-family:var(--serif); font-style:normal; font-size:.9rem; color:var(--bone); text-shadow:0 1px 4px rgba(0,0,0,0.45); }
 .cell__tag .nm{ font-family:var(--sans); font-weight:500; font-size:.74rem; letter-spacing:.01em; color:var(--bone); text-shadow:0 1px 5px rgba(0,0,0,0.5); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .cell__tag .lc{ font-family:var(--sans); font-size:.58rem; letter-spacing:.13em; text-transform:uppercase; color:rgba(247,244,238,0.8); text-shadow:0 1px 4px rgba(0,0,0,0.45); }
 /* bloques planos */
 .cell--block{ display:flex; align-items:flex-end; padding:.9rem 1rem; }
 .cell--block .blab{ font-family:var(--serif); font-weight:500; font-size:clamp(.92rem,1.3vw,1.15rem); line-height:1.1; }
 .cell--block .bnum{ font-family:var(--sans); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; margin-top:.3rem; display:block; }
-.b-terra{ background:var(--terracotta); color:#231206; }
-.b-terra .bnum{ color:rgba(35,18,6,.7); }
 .b-oxblood{ background:var(--oxblood); color:var(--bone); }
-.b-oxblood .bnum{ color:rgba(247,244,238,.65); }
-.b-burgundy{ background:var(--burgundy); color:var(--bone); }
-.b-burgundy .bnum{ color:rgba(247,244,238,.65); }
-.b-olive{ background:var(--olive); }
-.b-walnut{ background:var(--walnut); }
-.b-sand{ background:var(--sand); }
+.b-walnut{ background:var(--walnut); color:var(--bone); }
+.b-olive{ background:var(--olive); color:var(--bone); }
+.b-oxblood .bnum, .b-walnut .bnum, .b-olive .bnum{ color:rgba(247,244,238,.62); }
+.b-sand{ background:var(--sand); color:var(--ink); }
 
 /* ---- BIO + CONTACTO ---- */
 .pj-close{ padding:var(--bandY) var(--inset); background:var(--paper-2); border-top:1px solid var(--line); }
@@ -150,20 +147,20 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .pj-close__photo{ aspect-ratio:4/5; overflow:hidden; background:var(--sand); }
 .pj-close__photo img{ width:100%; height:100%; object-fit:cover; display:block; }
 .pj-close__title{ font-family:var(--serif); font-weight:500; font-size:clamp(1.9rem,4.2vw,3.2rem); line-height:1.06; margin-bottom:1.4rem; }
-.pj-close__title em{ font-style:italic; font-weight:400; color:var(--terracotta); }
+.pj-close__title em{ font-style:italic; font-weight:400; color:var(--ink); }
 .pj-close__bio{ font-size:1rem; color:var(--ink-soft); max-width:50ch; line-height:1.8; margin-bottom:2.2rem; }
 .pj-contact{ border-top:1px solid var(--line); }
 .pj-contact__row{ display:flex; align-items:baseline; justify-content:space-between; gap:1.5rem; padding:1.2rem 0; border-bottom:1px solid var(--line); flex-wrap:wrap; }
 .pj-contact__row dt{ font-family:var(--sans); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); }
 .pj-contact__row dd{ font-family:var(--serif); font-size:clamp(1.1rem,2.6vw,1.6rem); }
 .pj-contact__row dd a{ color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .4s var(--ease); }
-.pj-contact__row dd a:hover{ border-bottom-color:var(--terracotta); }
+.pj-contact__row dd a:hover{ border-bottom-color:var(--oxblood); }
 
 /* ---- FOOTER ---- */
 .footer{ padding:clamp(2.4rem,5vw,3.5rem) var(--inset) 2rem; border-top:1px solid var(--line); }
 .footer__base{ display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; font-family:var(--sans); font-size:.72rem; color:var(--ink-soft); }
 .footer__base a{ color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; }
-.footer__base a:hover{ border-bottom-color:var(--terracotta); }
+.footer__base a:hover{ border-bottom-color:var(--oxblood); }
 
 /* ---- REVEAL ---- */
 .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
@@ -229,7 +226,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 <!-- ============ GRILLA MODULAR ============ -->
 <main class="work">
 
-  <div class="cell cell--block b-terra reveal"><div><span class="blab">Retail<br>&amp; F&amp;B</span><span class="bnum">Comercial</span></div></div>
+  <div class="cell cell--block b-oxblood reveal"><div><span class="blab">Retail<br>&amp; F&amp;B</span><span class="bnum">Comercial</span></div></div>
 
   <a href="/proyecto?p=sisters-kitchen" class="cell cell--photo reveal" aria-label="Ver Sisters Kitchen — Quito">
     <img src="sisters-kitchen.jpg" alt="Sisters Kitchen — Quito" loading="lazy" decoding="async">
@@ -251,14 +248,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
     <span class="cell__tag"><span class="n tnum">04</span><span class="nm">Diagonal 499</span><span class="lc">Barcelona</span></span>
   </a>
 
-  <div class="cell cell--block b-olive reveal"></div>
+  <div class="cell cell--block b-sand reveal"></div>
 
   <a href="/proyecto?p=park-turo" class="cell cell--photo reveal" aria-label="Ver Park Turó — Barcelona">
     <img src="img/proyectos/park-turo/salon.jpg" alt="Park Turó — Barcelona" loading="lazy" decoding="async">
     <span class="cell__tag"><span class="n tnum">05</span><span class="nm">Park Turó</span><span class="lc">Barcelona</span></span>
   </a>
 
-  <div class="cell cell--block b-oxblood reveal"><div><span class="blab">Residencial</span><span class="bnum">Interiorismo</span></div></div>
+  <div class="cell cell--block b-walnut reveal"><div><span class="blab">Residencial</span><span class="bnum">Interiorismo</span></div></div>
 
   <a href="/proyecto?p=maduixer-1" class="cell cell--photo reveal" aria-label="Ver Maduixer I — Barcelona">
     <img src="img/proyectos/maduixer-1/salon.jpg" alt="Maduixer I — Barcelona" loading="lazy" decoding="async">
@@ -282,14 +279,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
     <span class="cell__tag"><span class="n tnum">09</span><span class="nm">Platja d'Aro</span><span class="lc">Costa Brava</span></span>
   </a>
 
-  <div class="cell cell--block b-walnut reveal"></div>
+  <div class="cell cell--block b-sand reveal"></div>
 
   <a href="/proyecto?p=bisbe" class="cell cell--photo reveal" aria-label="Ver Bisbe — Barcelona">
     <img src="img/proyectos/bisbe/salon.jpg" alt="Bisbe — Barcelona" loading="lazy" decoding="async">
     <span class="cell__tag"><span class="n tnum">10</span><span class="nm">Bisbe</span><span class="lc">Barcelona</span></span>
   </a>
 
-  <div class="cell cell--block b-burgundy reveal"><div><span class="blab">2024<br>—2026</span><span class="bnum">Selección</span></div></div>
+  <div class="cell cell--block b-olive reveal"><div><span class="blab">2024<br>—2026</span><span class="bnum">Selección</span></div></div>
 
   <a href="/proyecto?p=el-tarter" class="cell cell--photo reveal" aria-label="Ver El Tarter — Andorra">
     <img src="img/proyectos/el-tarter/salon.jpg" alt="El Tarter — Andorra" loading="lazy" decoding="async">
