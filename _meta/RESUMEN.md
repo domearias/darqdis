@@ -3,7 +3,7 @@
 > **Para Claude:** lee este archivo al iniciar cada sesión en vez de releer el chat (ahorra créditos). **Actualízalo al final de cada avance.**
 > **Para Doménica:** este es el estado real del sitio, las decisiones y lo pendiente.
 >
-> **Última actualización:** 2026-07-22
+> **Última actualización:** 2026-09-07
 >
 > 📘 **Brand Book visual:** abre `BRANDBOOK.html` (en esta misma carpeta) — logo, color, tipografía, componentes, voz, y **plantillas de carrusel**. Es la referencia de diseño para el sitio Y para las redes.
 
@@ -23,7 +23,7 @@
 |-----|---------|--------|
 | `/` | index.html | **Home** — embudo de ArquiLab (público: estudiantes) |
 | `/arquilab` | arquilab.html | Página de ventas del curso |
-| `/proyectos` | proyectos.html | Portafolio índice — **fondo oscuro** (público: clientes/estudios) |
+| `/proyectos` | proyectos.html | Portafolio índice — **fondo oscuro**, **galería en grid** (3 col escritorio / 2 tablet / 1 móvil), solo nombre + ubicación (público: clientes/estudios) |
 | `/proyecto?p=slug` | proyecto.html | Ficha individual (slugs: sisters-kitchen, piza, holy-cow). **NO TOCAR** — usa paleta vieja (cream) a propósito |
 | `/biblioteca` | biblioteca.html | Buscador de modelos 3D curados |
 | `/contacto` | contacto.html | Página de contacto |
@@ -57,6 +57,7 @@
 ## 5. BIBLIOTECA 3D
 
 - Es un **buscador curado**: modelos rehospedados de terceros (Marset, Minotti…), **NO modelados por Doménica**. Cada card acredita su **fuente**. Nunca decir que ella los modeló.
+- **Idioma:** la página va **solo en español** (se quitaron las traducciones al inglés del hero/cierre/footer, 2026-09-07). Mantener un solo idioma.
 - Datos en `biblioteca.json`. Modelos: **#001 Pace Pendant** (A-N-D), **#002 Minotti Block Outdoor**.
 - Skill del repo (`.claude/skills/biblioteca-3d`) publica modelos nuevos + genera contenido de Instagram.
 
@@ -100,6 +101,7 @@ Doménica envía inspo + info → Claude genera carruseles on-brand (ver plantil
 - ⚠️ **Cupón GABYARQUILAB:** verificar en el checkout de Hotmart que el descuento se aplique solo con el link (la oferta debe tener el cupón activado en Hotmart).
 - Encuadre de la foto en el hero/about: revisar en vivo, calibrable con `object-position`.
 - `font-pairings.html` (comparador de fuentes) está en la carpeta pero NO se publica.
+- **Idioma pendiente:** `index.html` y `proyecto.html` todavía tienen texto bilingüe (clase `.en` usada de forma inconsistente — a veces envuelve español). Si se quiere el sitio 100% en un idioma, revisar frase por frase (no borrar por clase). `biblioteca.html` ya quedó solo en español.
 
 ## 10. LOG DE AVANCES (breve, cronológico)
 
@@ -107,3 +109,4 @@ Doménica envía inspo + info → Claude genera carruseles on-brand (ver plantil
 - **2026-07-22:** /proyectos nuevo (work-row, oscuro); arreglados links rotos; cascada de tokens a biblioteca/arquilab; ritmo de color blanco/beige/oscuro; nav uniforme + /contacto; scroll-spy eliminado; **copy de ArquiLab reescrita (eficiencia + Metodología 3D + historia)**; embajadora Gaby; foto real; **DMs como screenshots**; tipografía Archivo 400 + base 17px. Todo publicado.
 - **2026-07-22 (fin de sesión):** creado este RESUMEN.md + **BRANDBOOK.html** (brand book visual v1) en la carpeta `_RESUMEN_DARQDIS`. Tipografía marcada como provisional. Definido el flujo de generación de carruseles.
 - **2026-07-22:** regla de **oxblood ampliada** (acento de marca, no solo dinero). Aplicado al sitio: itálicas de títulos en secciones claras pasan de gris a oxblood (las oscuras se quedan claras). Guardrail: botón sólido oxblood sigue reservado a CTAs de compra. Publicado.
+- **2026-09-07:** **Biblioteca** pasada a **un solo idioma (español)** — quitadas las traducciones al inglés del hero, cierre de ArquiLab y footer. **Proyectos** rediseñado: de work-row (filas grandes con descripción larga) a **galería en grid** (3 col escritorio / 2 tablet / **1 col en móvil**), con solo **nombre + ubicación**; el detalle queda al abrir cada proyecto. **Rendimiento:** `loading="lazy"` + `decoding="async"` en las imágenes; portadas Sisters Kitchen / Piza / Holy Cow recomprimidas de ~2 MB a ~220 KB (JPEG q82, mismas dimensiones). Publicado (PR #35 y #36).
