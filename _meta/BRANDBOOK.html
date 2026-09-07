@@ -6,8 +6,10 @@
 <title>darqdis — Brand Book v1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Frunchy Sage';src:url('/fonts/frunchysage.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+
 :root{
   --bone:#FAFAF7; --beige:#F0EDE6; --espresso:#1A1714;
   --ink:#111009; --ink-soft:#3D3830; --olive:#6E6A4D; --oxblood:#5C2E26;
@@ -15,7 +17,7 @@
   --terracotta:#B96A43; --brass:#B0894C; --walnut:#6B4A31;
   --burgundy:#7A2E33; --plaster:#E7DECF;
   --line:rgba(17,16,9,0.12); --line-2:rgba(17,16,9,0.06);
-  --serif:'Playfair Display',Georgia,serif; --sans:'Archivo',system-ui,sans-serif;
+  --serif: 'Frunchy Sage', Georgia, serif; --sans: 'Poppins', system-ui, -apple-system, sans-serif;
   --inset:clamp(22px,5vw,90px); --ease:cubic-bezier(0.22,1,0.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -114,7 +116,7 @@ small{font-size:0.78rem;}
 
 <!-- COVER -->
 <section class="cover">
-  <span class="eyebrow">Brand Book · v2</span>
+  <span class="eyebrow">Brand Book · v3</span>
   <div class="cover__word">doménica<span class="dot">.</span>arqdis</div>
   <p class="cover__sub">Arquitectura, retail design y ArquiLab.</p>
   <p class="cover__meta">darqdis.com · Septiembre 2026 · Documento vivo</p>
@@ -178,27 +180,27 @@ small{font-size:0.78rem;}
 
 <!-- 03 TIPOGRAFÍA -->
 <section id="tipo">
-  <span class="eyebrow">03 · Tipografía <span class="provisional">Provisional</span></span>
-  <h2>Playfair Display + <em>Archivo</em>.</h2>
-  <p class="lead">Dos familias. Serif para display, sans para todo lo demás. <b>Nota:</b> esta combinación es la actual y funciona, pero está en evaluación — podría cambiar en el futuro (referencia buscada: serif tipo Cormorant + sans más neutra). Mientras tanto, seguimos estos guidelines.</p>
+  <span class="eyebrow">03 · Tipografía</span>
+  <h2>Frunchy Sage + <em>Poppins</em>.</h2>
+  <p class="lead">La tipografía oficial de la marca (v3). <b>Frunchy Sage</b> es la serif de display — la misma del logo <b>darq</b> — para títulos y palabras clave. <b>Poppins</b> es la sans para todo lo demás: navegación, textos, etiquetas y botones. Frunchy Sage se hospeda en el repo (<code>/fonts/frunchysage.ttf</code>, <code>@font-face</code>); Poppins carga de Google Fonts.</p>
 
   <div class="spec">
-    <div class="spec__label">Playfair Display — display / títulos</div>
-    <div style="font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.02;">Diseñas increíble.<br><em style="font-style:italic;font-weight:400;color:var(--oxblood);">Recupera tu tiempo.</em></div>
-    <p class="note" style="margin-top:0.9rem;">↑ Ejemplo del nuevo uso: la <b style="color:var(--oxblood);">itálica en oxblood</b> como acento editorial (solo sobre fondos claros).</p>
+    <div class="spec__label">Frunchy Sage — display / títulos (la del logo darq)</div>
+    <div style="font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.02;">proyectos<span style="color:var(--oxblood);">.</span></div>
+    <p class="note" style="margin-top:0.9rem;">↑ Solo tiene un peso (Regular). <b>No lleva itálica</b> (no la tiene): para acentos usa el punto/detalle en <b style="color:var(--oxblood);">oxblood</b>, no cursiva.</p>
   </div>
   <div class="spec">
-    <div class="spec__label">Archivo — texto / UI / etiquetas · peso 400 (nunca 300)</div>
-    <p style="font-size:1.05rem;max-width:60ch;">Archivo es la voz del cuerpo: párrafos, botones, navegación y kickers. Siempre en peso 400 o más — el peso 300 (light) se ve delgado y pequeño. Base del sitio: 17px.</p>
+    <div class="spec__label">Poppins — texto / UI / etiquetas</div>
+    <p style="font-size:1.05rem;max-width:60ch;font-family:var(--sans);">Poppins es la voz del cuerpo: párrafos, botones, navegación, kickers y el logotipo <b>doménica.arqdis</b>. Pesos 400–700. Base del sitio: 17px.</p>
   </div>
 
   <div class="spec">
     <div class="spec__label">Escala tipográfica</div>
     <div class="type-scale">
-      <div><span style="font-family:var(--serif);font-size:3rem;font-weight:500;">Título display</span><small>Playfair 500 · clamp(2.4–4.4rem)</small></div>
-      <div><span style="font-family:var(--serif);font-size:1.8rem;font-weight:500;">Título de sección</span><small>Playfair 500 · ~2–3rem</small></div>
-      <div><span style="font-family:var(--sans);font-size:1.05rem;">Cuerpo de texto</span><small>Archivo 400 · 1–1.1rem</small></div>
-      <div><span style="font-family:var(--sans);font-weight:500;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--olive);">Kicker / etiqueta</span><small>Archivo 500 · 0.72rem · tracking 0.28em · UPPER</small></div>
+      <div><span style="font-family:var(--serif);font-size:3rem;font-weight:500;">Título display</span><small>Frunchy Sage · clamp(2.4–4.4rem)</small></div>
+      <div><span style="font-family:var(--serif);font-size:1.8rem;font-weight:500;">Título de sección</span><small>Frunchy Sage · ~2–3rem</small></div>
+      <div><span style="font-family:var(--sans);font-size:1.05rem;">Cuerpo de texto</span><small>Poppins 400 · 1–1.1rem</small></div>
+      <div><span style="font-family:var(--sans);font-weight:500;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--olive);">Kicker / etiqueta</span><small>Poppins 500 · 0.72rem · tracking 0.28em · UPPER</small></div>
     </div>
   </div>
 </section>
@@ -355,7 +357,7 @@ small{font-size:0.78rem;}
     <div class="voice__col yes" style="background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);">
       <h4 style="color:var(--brass);">Mantener</h4>
       <ul style="color:rgba(247,244,238,0.75);">
-        <li style="border-color:rgba(247,244,238,0.12);">Playfair Display + Archivo 400 (base 17px)</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Frunchy Sage (display) + Poppins (base 17px)</li>
         <li style="border-color:rgba(247,244,238,0.12);">Oxblood como color de marca y de dinero</li>
         <li style="border-color:rgba(247,244,238,0.12);">Verde olivo como contrapunto</li>
         <li style="border-color:rgba(247,244,238,0.12);">Nav uniforme y estructura editorial</li>
@@ -397,7 +399,7 @@ small{font-size:0.78rem;}
 </section>
 
 <footer class="footer">
-  <span>darqdis — Brand Book v2 · Septiembre 2026</span>
+  <span>darqdis — Brand Book v3 · Septiembre 2026</span>
   <span>Documento vivo · se actualiza junto al RESUMEN.md</span>
 </footer>
 
