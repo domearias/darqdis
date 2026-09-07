@@ -234,7 +234,7 @@ input:focus-visible,
   position: relative;
   height: clamp(600px, 92vh, 980px);
   width: 100%;
-  background: #C8C4BC;  /* gris estudio más oscuro como referencia */
+  background: #FAFAF7;  /* casi blanco (lo más parecido a blanco que tenemos) */
   overflow: hidden;
 }
 .heroA__right {
@@ -253,15 +253,15 @@ input:focus-visible,
   line-height: 0.85;
 }
 .heroA__wordmark span {
-  font-family: var(--sans); font-weight: 700;
+  font-family: var(--serif); font-weight: 400;
   font-size: clamp(5rem, 17vw, 17rem);
-  color: rgba(17,16,9,0.12);
-  letter-spacing: -0.03em;
+  color: var(--ink);
+  letter-spacing: -0.02em;
   text-transform: lowercase; display: block;
 }
 .heroA__wordmark span:last-child {
-  font-style: normal; font-weight: 700;
-  color: rgba(17,16,9,0.08);
+  font-style: normal; font-weight: 400;
+  color: var(--ink);
 }
 
 /* Foto — PNG con fondo transparente, directo sobre el texto */
