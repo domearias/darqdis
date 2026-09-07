@@ -23,7 +23,8 @@
    DOMENICA ARIAS — darqdis · /proyectos
    Sistema visual v4 — mid-century moderno, fondo yeso, grilla modular
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@font-face{ font-family:'Frunchy Sage'; src:url('/fonts/frunchysage.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
 
 :root{
   --paper:    #FBFAF6;   /* casi blanco (cálido apenas) */
@@ -40,7 +41,7 @@
   --brass:    #9C7A3E;
   --line:     rgba(34,29,22,0.16);
   --line-2:   rgba(34,29,22,0.08);
-  --serif: 'Fraunces', 'Playfair Display', Georgia, serif;  /* provisional — reemplazar por Frunchy Sage */
+  --serif: 'Frunchy Sage', Georgia, serif;
   --sans:  'Archivo', system-ui, -apple-system, sans-serif;
   --inset: clamp(20px, 4.5vw, 68px);
   --bandY: clamp(3.5rem, 7vw, 6.5rem);
@@ -104,7 +105,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
 /* ---- HERO ---- */
 .pj-hero{ padding:clamp(2.6rem,5.5vw,4.4rem) var(--inset) clamp(1.8rem,3.5vw,2.8rem); text-align:center; border-bottom:1px solid var(--line); }
-.pj-hero__title{ font-family:var(--serif); font-weight:500; font-size:clamp(2.4rem,5.5vw,4rem); line-height:1; letter-spacing:.005em; text-transform:lowercase; color:var(--ink); }
+.pj-hero__title{ font-family:var(--serif); font-weight:400; font-size:clamp(2.6rem,6vw,4.4rem); line-height:1; letter-spacing:.01em; text-transform:lowercase; color:var(--ink); }
 .pj-hero__title em{ font-style:normal; color:var(--oxblood); }
 
 /* ---- GRILLA MODULAR ---- */
@@ -127,7 +128,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   display:flex; align-items:baseline; gap:.45rem;
   padding:.55rem .8rem .6rem; max-width:100%;
 }
-.cell__tag .n{ font-family:var(--serif); font-style:italic; font-size:.82rem; color:var(--bone); text-shadow:0 1px 4px rgba(0,0,0,0.45); }
+.cell__tag .n{ font-family:var(--serif); font-style:normal; font-size:.9rem; color:var(--bone); text-shadow:0 1px 4px rgba(0,0,0,0.45); }
 .cell__tag .nm{ font-family:var(--sans); font-weight:500; font-size:.74rem; letter-spacing:.01em; color:var(--bone); text-shadow:0 1px 5px rgba(0,0,0,0.5); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .cell__tag .lc{ font-family:var(--sans); font-size:.58rem; letter-spacing:.13em; text-transform:uppercase; color:rgba(247,244,238,0.8); text-shadow:0 1px 4px rgba(0,0,0,0.45); }
 /* bloques planos */
