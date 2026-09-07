@@ -11,6 +11,9 @@
 :root{
   --bone:#FAFAF7; --beige:#F0EDE6; --espresso:#1A1714;
   --ink:#111009; --ink-soft:#3D3830; --olive:#6E6A4D; --oxblood:#5C2E26;
+  /* Dirección mid-century (v2) — acentos nuevos, entran al sistema */
+  --terracotta:#B96A43; --brass:#B0894C; --walnut:#6B4A31;
+  --burgundy:#7A2E33; --plaster:#E7DECF;
   --line:rgba(17,16,9,0.12); --line-2:rgba(17,16,9,0.06);
   --serif:'Playfair Display',Georgia,serif; --sans:'Archivo',system-ui,sans-serif;
   --inset:clamp(22px,5vw,90px); --ease:cubic-bezier(0.22,1,0.36,1);
@@ -111,10 +114,10 @@ small{font-size:0.78rem;}
 
 <!-- COVER -->
 <section class="cover">
-  <span class="eyebrow">Brand Book · v1</span>
+  <span class="eyebrow">Brand Book · v2</span>
   <div class="cover__word">doménica<span class="dot">.</span>arqdis</div>
   <p class="cover__sub">Arquitectura, retail design y ArquiLab.</p>
-  <p class="cover__meta">darqdis.com · Julio 2026 · Documento vivo</p>
+  <p class="cover__meta">darqdis.com · Septiembre 2026 · Documento vivo</p>
   <nav class="toc">
     <a href="#logo">01 Logo</a>
     <a href="#color">02 Color</a>
@@ -125,6 +128,7 @@ small{font-size:0.78rem;}
     <a href="#arquilab">07 ArquiLab</a>
     <a href="#imagen">08 Imágenes</a>
     <a href="#redes">09 Carruseles / redes</a>
+    <a href="#direccion">10 Dirección estética</a>
   </nav>
 </section>
 
@@ -143,8 +147,9 @@ small{font-size:0.78rem;}
 <!-- 02 COLOR -->
 <section id="color" class="band-beige">
   <span class="eyebrow">02 · Color</span>
-  <h2>Seis tokens, cada uno con <em>un trabajo</em>.</h2>
-  <p class="lead">Nada de beige por decorar. Cada color tiene una función escrita. Si un color no cumple una función, no se usa.</p>
+  <h2>Cada token, con <em>un trabajo</em>.</h2>
+  <p class="lead">Nada de beige por decorar. Cada color tiene una función escrita. Si un color no cumple una función, no se usa. En <b>v2</b> la paleta se amplía hacia la <a href="#direccion" style="color:var(--oxblood);">dirección mid-century</a> — mismo ADN cálido, más temperatura.</p>
+  <p class="kick-demo" style="margin-top:2.4rem;">Base — sistema original</p>
   <div class="swatches">
     <div class="sw"><div class="sw__chip" style="background:#FAFAF7;border-bottom:1px solid var(--line);"></div><div class="sw__body"><div class="sw__name">Blanco</div><div class="sw__hex">#FAFAF7</div><div class="sw__role">Fondo por defecto. El 60–70% del sitio.</div></div></div>
     <div class="sw"><div class="sw__chip" style="background:#F0EDE6;"></div><div class="sw__body"><div class="sw__name">Beige</div><div class="sw__hex">#F0EDE6</div><div class="sw__role">Acento cálido. Solo algunas bandas, nunca dominante.</div></div></div>
@@ -154,9 +159,20 @@ small{font-size:0.78rem;}
     <div class="sw"><div class="sw__chip" style="background:#6E6A4D;"></div><div class="sw__body"><div class="sw__name">Olivo</div><div class="sw__hex">#6E6A4D</div><div class="sw__role"><b>DETALLE.</b> Punto del logo, kickers, bordes activos.</div></div></div>
     <div class="sw"><div class="sw__chip" style="background:#5C2E26;"></div><div class="sw__body"><div class="sw__name">Oxblood</div><div class="sw__hex">#5C2E26</div><div class="sw__role"><b>ACENTO DE MARCA + dinero.</b> Itálicas, números, detalles — y CTAs de compra.</div></div></div>
   </div>
+
+  <p class="kick-demo" style="margin-top:2.6rem;color:var(--terracotta);">Nuevos — dirección mid-century (v2)</p>
+  <div class="swatches">
+    <div class="sw"><div class="sw__chip" style="background:#B96A43;"></div><div class="sw__body"><div class="sw__name">Terracota</div><div class="sw__hex">#B96A43</div><div class="sw__role"><b>ACENTO CÁLIDO.</b> Arcilla. Kickers, líneas y detalles donde hoy hay gris/beige plano.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#B0894C;"></div><div class="sw__body"><div class="sw__name">Latón</div><div class="sw__hex">#B0894C</div><div class="sw__role"><b>ÚNICO METAL.</b> Líneas finas, subrayados de enlaces, flechas, iconos. Nunca cromo frío.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#6B4A31;"></div><div class="sw__body"><div class="sw__name">Nogal</div><div class="sw__hex">#6B4A31</div><div class="sw__role"><b>MADERA.</b> Tono de mueble y calidez media entre espresso y terracota.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#7A2E33;"></div><div class="sw__body"><div class="sw__name">Burdeos</div><div class="sw__hex">#7A2E33</div><div class="sw__role"><b>SUPERFICIE.</b> Terciopelo vivo para grandes áreas (portadas, fondos). Versión más viva del oxblood.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#E7DECF;"></div><div class="sw__body"><div class="sw__name">Yeso</div><div class="sw__hex">#E7DECF</div><div class="sw__role"><b>PARED CÁLIDA.</b> Off-white más cálido que el blanco, para respirar y montar renders.</div></div></div>
+  </div>
+
   <div class="rule-box">
-    <p style="font-family:var(--serif);font-size:1.3rem;font-weight:500;">Oxblood = acento de marca. Olivo = detalle. Espresso = base.</p>
+    <p style="font-family:var(--serif);font-size:1.3rem;font-weight:500;">Oxblood = acento de marca. Olivo = detalle. Espresso = base. <b style="color:var(--terracotta);">Terracota = calidez. Latón = metal.</b></p>
     <p class="note" style="margin-top:0.6rem;">El <b>oxblood</b> es el color con personalidad de darqdis. Úsalo libre como <b>acento editorial</b>: itálicas de títulos (sobre fondos claros), números, comillas, líneas y detalles pequeños. Y sigue siendo el color del <b>dinero</b>. <b>Único guardrail:</b> el <b>botón sólido oxblood</b> se reserva para comprar (Hotmart), para que el CTA no pierda fuerza — para acciones gratis usa botón neutro. El <b>olivo</b> queda para detalles estructurales (punto del logo, algunos kickers). <b>Ojo de contraste:</b> el oxblood es oscuro — sobre fondo espresso no se lee; ahí el acento va en tono claro.</p>
+    <p class="note" style="margin-top:0.6rem;"><b style="color:var(--terracotta);">Acentos v2:</b> la <b>terracota</b> es el nuevo acento cálido (entra donde había gris/beige plano). El <b>latón</b> es el único metal de la marca — líneas, subrayados y flechas en dorado, nunca plateado/cromo. <b>Nogal</b> y <b>burdeos</b> son para superficies y madera; <b>yeso</b> es la pared cálida. Oxblood y terracota conviven pero no compiten: oxblood = marca/dinero, terracota = calidez ambiental. Detalle completo en <b>§10</b>.</p>
   </div>
 </section>
 
@@ -310,8 +326,78 @@ small{font-size:0.78rem;}
   </div>
 </section>
 
+<!-- 10 DIRECCIÓN ESTÉTICA -->
+<section id="direccion" class="band-dark">
+  <span class="eyebrow">10 · Dirección estética — Mid-Century Modernism</span>
+  <h2>Terciopelo, arcilla y <em style="color:var(--terracotta);">latón</em>.</h2>
+  <p class="lead">La dirección visual de la marca. No es un cambio de rumbo — es profundizar el ADN cálido que ya existe: más temperatura, más textura, más seguridad. <b style="color:rgba(247,244,238,0.85);">Moody, no crema.</b></p>
+
+  <p class="kick-demo" style="margin-top:2.4rem;color:rgba(247,244,238,0.55);">Materiales a evocar (foto, fondos, redes)</p>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;">
+    <div><div style="height:70px;border-radius:6px;background:linear-gradient(135deg,#8a3339,#7A2E33 55%,#4d1f24);"></div><p class="note" style="color:rgba(247,244,238,0.7);margin-top:0.5rem;"><b style="color:var(--bone);">Terciopelo</b><br>capitoné (Camaleonda)</p></div>
+    <div><div style="height:70px;border-radius:6px;background:repeating-linear-gradient(60deg,#5c3e28 0 8px,#6b4a31 8px 18px);"></div><p class="note" style="color:rgba(247,244,238,0.7);margin-top:0.5rem;"><b style="color:var(--bone);">Nogal</b><br>en espiga</p></div>
+    <div><div style="height:70px;border-radius:6px;background:conic-gradient(from 0deg at 50% 50%,#B96A43 0 25%,#a25a37 0 50%,#B96A43 0 75%,#a25a37 0 100%);background-size:34px 34px;"></div><p class="note" style="color:rgba(247,244,238,0.7);margin-top:0.5rem;"><b style="color:var(--bone);">Terracota</b><br>/ damero</p></div>
+    <div><div style="height:70px;border-radius:6px;background:radial-gradient(circle at 50% 40%,#f3ead8,#d8c7a6 60%,#b49b74);"></div><p class="note" style="color:rgba(247,244,238,0.7);margin-top:0.5rem;"><b style="color:var(--bone);">Alabastro</b><br>/ opalina</p></div>
+    <div><div style="height:70px;border-radius:6px;background:linear-gradient(115deg,#8a6a34,#d9b878 45%,#9a7a3e 60%,#c7a866);"></div><p class="note" style="color:rgba(247,244,238,0.7);margin-top:0.5rem;"><b style="color:var(--bone);">Latón</b><br>único metal</p></div>
+  </div>
+
+  <p class="kick-demo" style="margin-top:2.6rem;color:rgba(247,244,238,0.55);">Lo que define el vibe</p>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+    <div class="card-demo" style="max-width:none;background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);color:rgba(247,244,238,0.75);"><span class="kick-demo" style="color:var(--terracotta);">Paleta</span><p class="note" style="color:rgba(247,244,238,0.65);margin-top:0.5rem;">Tierras cálidas y saturadas: arcilla, burdeos, nogal, yeso. Olivo y negro de contrapunto; latón como único metal.</p></div>
+    <div class="card-demo" style="max-width:none;background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);color:rgba(247,244,238,0.75);"><span class="kick-demo" style="color:var(--terracotta);">Materiales</span><p class="note" style="color:rgba(247,244,238,0.65);margin-top:0.5rem;">Táctiles y honestos: terciopelo capitoné, nogal en espiga, terracota, alabastro, mármol/ónix, vidrio bloque.</p></div>
+    <div class="card-demo" style="max-width:none;background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);color:rgba(247,244,238,0.75);"><span class="kick-demo" style="color:var(--terracotta);">Formas</span><p class="note" style="color:rgba(247,244,238,0.65);margin-top:0.5rem;">Orgánicas y rotundas: modulares curvos, mesas ovaladas de pata gruesa, pedestales, arcos.</p></div>
+    <div class="card-demo" style="max-width:none;background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);color:rgba(247,244,238,0.75);"><span class="kick-demo" style="color:var(--terracotta);">Motivos</span><p class="note" style="color:rgba(247,244,238,0.65);margin-top:0.5rem;">Damero, suelos geométricos, arcos, alfombras de formas curvas, arte figurativo mid-century.</p></div>
+    <div class="card-demo" style="max-width:none;background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);color:rgba(247,244,238,0.75);"><span class="kick-demo" style="color:var(--terracotta);">Luz</span><p class="note" style="color:rgba(247,244,238,0.65);margin-top:0.5rem;">Cálida, baja, envolvente. Apliques de latón, alabastro que brilla como brasa. Sombra con intención.</p></div>
+    <div class="card-demo" style="max-width:none;background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);color:rgba(247,244,238,0.75);"><span class="kick-demo" style="color:var(--terracotta);">Actitud</span><p class="note" style="color:rgba(247,244,238,0.65);margin-top:0.5rem;">Maximalismo refinado. "Vida en terciopelo": lujo cálido y coleccionado, pero editado. Confianza, no ruido.</p></div>
+  </div>
+
+  <div class="voice" style="margin-top:2.6rem;">
+    <div class="voice__col yes" style="background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);">
+      <h4 style="color:var(--brass);">Mantener</h4>
+      <ul style="color:rgba(247,244,238,0.75);">
+        <li style="border-color:rgba(247,244,238,0.12);">Playfair Display + Archivo 400 (base 17px)</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Oxblood como color de marca y de dinero</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Verde olivo como contrapunto</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Nav uniforme y estructura editorial</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Botón sólido oxblood reservado a comprar</li>
+      </ul>
+    </div>
+    <div class="voice__col yes" style="background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);">
+      <h4 style="color:var(--terracotta);">Evolucionar</h4>
+      <ul style="color:rgba(247,244,238,0.75);">
+        <li style="border-color:rgba(247,244,238,0.12);">Sumar terracota, latón y nogal a la paleta</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Más textura: terciopelo, madera, arcilla</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Fondos más profundos y cálidos (menos beige plano)</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Motivos: arcos, damero, curvas orgánicas</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Fotografía y renders más moody y saturados</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="voice" style="margin-top:1.5rem;">
+    <div class="voice__col yes" style="background:rgba(110,106,77,0.15);border-color:rgba(110,106,77,0.4);">
+      <h4 style="color:var(--olive);">✓ Sí</h4>
+      <ul style="color:rgba(247,244,238,0.75);">
+        <li style="border-color:rgba(247,244,238,0.12);">Un protagonismo por pieza: un terciopelo, un arco, un metal.</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Latón dorado como único metal en toda la marca.</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Calidez saturada sobre fondos profundos.</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Mucho aire alrededor de los títulos Playfair.</li>
+      </ul>
+    </div>
+    <div class="voice__col no" style="background:rgba(122,46,51,0.16);border-color:rgba(122,46,51,0.5);">
+      <h4 style="color:#c97b6a;">✗ No</h4>
+      <ul style="color:rgba(247,244,238,0.75);">
+        <li style="border-color:rgba(247,244,238,0.12);">Crema plano con serif y terracota — el look "de IA".</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Metales fríos (cromo, plata) mezclados con el latón.</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Damero + curvas + arcos todos juntos en una pieza.</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Perder la legibilidad por lo moody: contraste siempre.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
-  <span>darqdis — Brand Book v1 · Julio 2026</span>
+  <span>darqdis — Brand Book v2 · Septiembre 2026</span>
   <span>Documento vivo · se actualiza junto al RESUMEN.md</span>
 </footer>
 
