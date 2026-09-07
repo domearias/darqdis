@@ -103,18 +103,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 @media(max-width:480px){ .nav-cta .arrow{ display:none; } .nav-cta{ padding:.6rem .9rem; } }
 
 /* ---- HERO ---- */
-.pj-hero{ padding:clamp(2rem,4vw,3.2rem) var(--inset) clamp(1.3rem,2.6vw,2rem); }
-.pj-hero__top{
-  display:flex; align-items:baseline; justify-content:space-between; gap:1.5rem;
-  border-bottom:1px solid var(--line); padding-bottom:.9rem; margin-bottom:clamp(1.3rem,2.6vw,2rem);
-}
-.kicker{ font-family:var(--sans); font-weight:600; font-size:.62rem; letter-spacing:.26em; text-transform:uppercase; color:var(--terracotta); }
-.pj-hero__idx{ font-family:var(--sans); font-size:.66rem; letter-spacing:.12em; color:var(--ink-soft); }
-.pj-hero__grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(1.4rem,4vw,3.5rem); align-items:end; }
-.pj-hero__title{ font-family:var(--serif); font-weight:500; font-size:clamp(2rem,4.6vw,3.3rem); line-height:1; letter-spacing:-.01em; }
+.pj-hero{ padding:clamp(2.6rem,5.5vw,4.4rem) var(--inset) clamp(1.8rem,3.5vw,2.8rem); text-align:center; border-bottom:1px solid var(--line); }
+.pj-hero__title{ font-family:var(--serif); font-weight:500; font-size:clamp(2.2rem,5vw,3.4rem); line-height:1; letter-spacing:.005em; }
 .pj-hero__title em{ font-style:italic; font-weight:400; color:var(--terracotta); }
-.pj-hero__lead{ font-family:var(--serif); font-style:italic; font-size:clamp(1rem,1.5vw,1.22rem); line-height:1.4; color:var(--ink); margin-bottom:.7rem; }
-.pj-hero__meta{ font-size:.82rem; color:var(--ink-soft); line-height:1.65; max-width:44ch; }
 
 /* ---- GRILLA MODULAR ---- */
 .work{
@@ -184,7 +175,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
 /* ---- RESPONSIVE ---- */
 @media(max-width:900px){
-  .pj-hero__grid{ grid-template-columns:1fr; align-items:start; gap:1.4rem; }
   .work{ grid-template-columns:repeat(2,1fr); }
   .pj-close__grid{ grid-template-columns:1fr; gap:2rem; }
   .pj-close__photo{ max-width:420px; }
@@ -225,7 +215,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
     <li><a href="/contacto">Contacto</a></li>
   </ul>
   <div class="nav__right">
-    <a href="https://pay.hotmart.com/L102711072Y?off=q5ahpkm3" target="_blank" rel="noopener" class="nav-cta">Inscríbete <span class="arrow">→</span></a>
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -234,17 +223,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
 <!-- ============ HERO ============ -->
 <header class="pj-hero">
-  <div class="pj-hero__top">
-    <span class="kicker">Portafolio — darqdis</span>
-    <span class="pj-hero__idx tnum">Índice · 11 espacios · 2024—2026</span>
-  </div>
-  <div class="pj-hero__grid">
-    <h1 class="pj-hero__title">Proyectos<em>.</em></h1>
-    <div>
-      <p class="pj-hero__lead">Un espacio debería vender solo.</p>
-      <p class="pj-hero__meta">Interiorismo comercial, F&amp;B y experiencia de marca entre Quito y Barcelona. Cada proyecto trabaja marca, espacio y cliente como un solo sistema.</p>
-    </div>
-  </div>
+  <h1 class="pj-hero__title">Proyectos<em>.</em></h1>
 </header>
 
 <!-- ============ GRILLA MODULAR ============ -->
