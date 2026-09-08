@@ -229,5 +229,27 @@
     "fuente": "Bonaldo",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 22,
+    "nombre": "Tao Outdoor",
+    "url": "https://3dwarehouse.sketchup.com/model/6cb15ccc-0c08-48e9-9f96-e99dc1038d4c/Tao-Outdoor-Ditre-Italia",
+    "imagen": "/img/biblioteca/022-tao-outdoor.jpg",
+    "categoria": "exterior",
+    "tipo": "warehouse",
+    "fuente": "Ditre Italia",
+    "fuente_url": "",
+    "tip": ""
+  },
+  {
+    "numero": 23,
+    "nombre": "Michelangelo Dinner Table",
+    "url": "https://3dwarehouse.sketchup.com/model/fd8acb9e-157d-4912-968f-2927442d4248/Michelangelo-Dinner-Table-EXTETA",
+    "imagen": "/img/biblioteca/023-michelangelo-dinner-table.jpg",
+    "categoria": "mesas",
+    "tipo": "warehouse",
+    "fuente": "EXTETA",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
