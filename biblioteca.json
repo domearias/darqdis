@@ -251,5 +251,38 @@
     "fuente": "EXTETA",
     "fuente_url": "",
     "tip": ""
+  },
+  {
+    "numero": 24,
+    "nombre": "Panarea Low Tables",
+    "url": "https://3dwarehouse.sketchup.com/model/d8ad601c-013f-409a-8664-23aed61c8872/Panarea-Low-Tables-ATMOSPHERA-ITALY",
+    "imagen": "/img/biblioteca/024-panarea-low-tables.jpg",
+    "categoria": "mesas",
+    "tipo": "warehouse",
+    "fuente": "Atmosphera",
+    "fuente_url": "",
+    "tip": ""
+  },
+  {
+    "numero": 25,
+    "nombre": "Kube Vef",
+    "url": "https://3dwarehouse.sketchup.com/model/678de02d-a205-4fd7-a415-50b265181c1c/Kube-Vef-ATEMPORAL",
+    "imagen": "/img/biblioteca/025-kube-vef.jpg",
+    "categoria": "asientos",
+    "tipo": "warehouse",
+    "fuente": "Atemporal",
+    "fuente_url": "",
+    "tip": ""
+  },
+  {
+    "numero": 26,
+    "nombre": "Volute Floor",
+    "url": "https://3dwarehouse.sketchup.com/model/1757d1cc-86a5-47dc-bc37-6c17cfca0f48/Volute-Floor-RAKUMBA",
+    "imagen": "/img/biblioteca/026-volute-floor.jpg",
+    "categoria": "iluminacion",
+    "tipo": "warehouse",
+    "fuente": "Rakumba",
+    "fuente_url": "",
+    "tip": ""
   }
 ]
