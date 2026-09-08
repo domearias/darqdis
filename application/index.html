@@ -218,7 +218,7 @@ body {
   font-size: clamp(1.55rem, 2.6vw, 2.15rem); line-height: 1.32; color: var(--ink);
   max-width: 24ch;
 }
-.heroGrid__body { font-size: 0.95rem; color: var(--ink); max-width: 46ch; line-height: 1.7; opacity: 0.86; }
+.heroGrid__body { font-size: clamp(1.02rem, 1.4vw, 1.15rem); color: var(--ink); max-width: 40ch; line-height: 1.6; margin-top: 0.4rem; }
 .heroGrid__cta { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 0.4rem; }
 
 /* ============================================================
@@ -403,7 +403,7 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
      bottom of the lilac section, with the text and buttons floating over it. */
   .heroGrid { grid-template-columns: 1fr; position: relative; }
   .heroGrid__media { position: absolute; inset: 0; min-height: 0; z-index: 0; }
-  .heroGrid__media img { object-fit: contain; object-position: bottom center; }
+  .heroGrid__media img { object-fit: contain; object-position: bottom center; transform: translateX(9%); }
   .heroGrid__media .heroGrid__handle { display: none; }
   /* soft lilac scrims keep the text legible where it overlaps the figure */
   .heroGrid::before, .heroGrid::after {
@@ -413,8 +413,8 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
   .heroGrid::after  { bottom: 0; height: 26%; background: linear-gradient(to top, var(--lilac) 16%, rgba(202,204,251,0)); }
   .heroGrid__panel {
     position: relative; z-index: 2; background: transparent;
-    min-height: 92vh; justify-content: flex-start;
-    padding-top: clamp(1.6rem, 6vw, 3rem); padding-bottom: clamp(1.6rem, 6vw, 2.6rem);
+    min-height: 74vh; justify-content: flex-start;
+    padding-top: clamp(1.4rem, 5vw, 2.6rem); padding-bottom: clamp(1.6rem, 6vw, 2.6rem);
   }
   .heroGrid__cta { margin-top: auto; }
   .video__grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -476,7 +476,6 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
     <div class="heroGrid__panel">
       <p class="heroGrid__eyebrow">Spatial &amp; Interior Designer · Application</p>
       <h1 class="heroGrid__title">Architect &amp;<br>Interior Designer</h1>
-      <p class="heroGrid__lead">that makes a brand feel like a place.</p>
       <p class="heroGrid__body">I turn concepts into spatial experiences, and I'd like to do it for your team.</p>
       <div class="heroGrid__cta">
         <a href="#contact" class="btn btn--solid">Get in touch <span class="arrow">→</span></a>
