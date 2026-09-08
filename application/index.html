@@ -35,32 +35,39 @@
    (grain, reveal, sticky nav, mobile menu).
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap');
+@font-face {
+  font-family: 'Frunchy Sage';
+  src: url('/fonts/frunchysage.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
 
 :root {
-  /* darqdis neutral base (kept) */
+  /* darqdis neutral base — blanco hueso */
   --cream:     #FAFAF7;
-  --cream-2:   #F1F0FB;   /* faint lilac-tinted alt band */
+  --cream-2:   #F2EFE9;   /* banda alterna, neutro cálido */
   --paper:     #FFFFFF;   /* White */
-  --ink:       #161618;   /* Background Black */
+  --ink:       #161618;   /* casi negro — texto */
   --ink-2:     #000000;   /* Black */
-  --ink-soft:  #47454F;   /* cool grey for secondary text */
+  --ink-soft:  #55504A;   /* gris cálido para texto secundario */
 
-  /* brand palette */
-  --lilac:      #CACCFB;  /* Light Purple: signature block */
-  --lilac-soft: #E7E8FD;  /* lighter tint */
-  --purple:     #A7AAF8;  /* Mid Purple */
-  --purple-deep:#9539F2;  /* Accent Purple */
-  --blue:       #1326FD;  /* Deep Blue: primary accent */
-  --blue-mid:   #6FA0FF;  /* Mid Blue */
-  --lime:       #BFFF37;  /* Lime: tiny pop */
+  /* paleta mid-century — oxblood + neutros cálidos
+     (nombres heredados, repuntados al nuevo acento) */
+  --oxblood:    #5C2E26;  /* único acento */
+  --lilac:      #ECE6DC;  /* bloque claro (firma/hero) — texto oscuro encima */
+  --lilac-soft: #F3EFE8;  /* tinte más claro */
+  --purple:     #5C2E26;  /* → oxblood */
+  --purple-deep:#5C2E26;  /* → oxblood */
+  --blue:       #5C2E26;  /* acento primario → oxblood */
+  --blue-mid:   #8A5A44;  /* nogal claro */
+  --lime:       #5C2E26;  /* pop → oxblood */
 
   --line:    rgba(22, 22, 24, 0.12);
   --line-2:  rgba(22, 22, 24, 0.06);
 
-  --serif:   'Playfair Display', Georgia, 'Times New Roman', serif;
-  --display: 'Space Grotesk', 'Archivo', system-ui, sans-serif;
-  --sans:    'Archivo', system-ui, -apple-system, sans-serif;
+  --serif:   'Frunchy Sage', Georgia, 'Times New Roman', serif;   /* display de marca */
+  --display: 'Poppins', system-ui, -apple-system, sans-serif;     /* títulos/labels */
+  --sans:    'Poppins', system-ui, -apple-system, sans-serif;     /* texto */
 
   --sheet-w: 1340px;
   --inset: clamp(22px, 5vw, 80px);
@@ -133,7 +140,7 @@ body {
 .nav__links { display: flex; gap: clamp(1.1rem, 2.4vw, 2.4rem); list-style: none; align-items: center; }
 .nav__links a {
   font-family: var(--sans); font-size: 0.74rem; font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  letter-spacing: 0.12em; text-transform: lowercase; text-decoration: none;
   color: var(--ink); position: relative; padding: 0.3rem 0;
 }
 .nav__links a::after {
@@ -193,7 +200,7 @@ body {
 .heroGrid__media .heroGrid__handle {
   position: absolute; top: 1.4rem; left: 1.4rem; z-index: 3;
   font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--ink); background: rgba(250,250,247,0.7);
+  text-transform: lowercase; color: var(--ink); background: rgba(250,250,247,0.7);
   padding: 0.4rem 0.75rem; border-radius: 100px; backdrop-filter: blur(6px);
 }
 .heroGrid__panel {
@@ -304,6 +311,7 @@ body {
 .ph__tag {
   font-family: ui-monospace, 'SFMono-Regular', 'Menlo', monospace;
   font-size: 0.6rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink);
+  text-decoration: none;
   border: 1px dashed rgba(22,22,24,0.3); background: rgba(250,250,247,0.4); padding: 0.35rem 0.65rem;
 }
 
