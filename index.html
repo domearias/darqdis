@@ -163,7 +163,7 @@ input:focus-visible,
   font-size: 0.74rem;
   font-weight: 400;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-decoration: none;
   color: var(--ink);
   position: relative;
@@ -250,7 +250,7 @@ input:focus-visible,
   justify-content: center; align-items: flex-start;
   padding: 0 var(--inset);
   pointer-events: none; user-select: none;
-  line-height: 0.85;
+  line-height: 0.72;
 }
 .heroA__wordmark span {
   font-family: var(--serif); font-weight: 400;
@@ -266,7 +266,7 @@ input:focus-visible,
 
 /* Foto — PNG con fondo transparente, directo sobre el texto */
 .heroA__portrait {
-  position: absolute; bottom: 0; left: 50%;
+  position: absolute; bottom: 0; left: 58%;
   transform: translateX(-50%);
   width: 50%; height: 100%; z-index: 2;
   display: flex; align-items: flex-end; justify-content: center;
@@ -301,6 +301,7 @@ input:focus-visible,
   letter-spacing: 0.2em; text-transform: uppercase;
   color: rgba(17,16,9,0.5);
 }
+.heroA__handle { text-transform: lowercase; }
 
 /* Descripción — flotante abajo sin franja blanca */
 .heroA__overlay-bottom {
@@ -311,9 +312,9 @@ input:focus-visible,
   position: relative; z-index: 5;
 }
 .heroA__name {
-  font-family: var(--serif); font-weight: 400;
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-  line-height: 1.2; color: var(--ink);
+  font-family: var(--sans); font-weight: 400;
+  font-size: clamp(1.55rem, 3vw, 2.5rem);
+  line-height: 1.25; color: var(--ink);
 }
 .heroA__name em { font-style: italic; font-weight: 400; color: var(--oxblood); }
 .heroA__sub {
