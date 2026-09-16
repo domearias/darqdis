@@ -45,7 +45,7 @@ import pathlib
 import sys
 
 CATEGORIAS = [
-    "asientos", "mesas", "almacenaje", "iluminacion",
+    "asientos", "camas", "mesas", "almacenaje", "iluminacion",
     "cocina", "baño", "exterior", "decoracion", "celosias",
 ]
 
