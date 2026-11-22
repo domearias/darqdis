@@ -6,9 +6,8 @@
 <title>darqdis — Brand Book v1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:'Frunchy Sage';src:url('/fonts/frunchysage.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
 
 :root{
   --bone:#FAFAF7; --beige:#F0EDE6; --espresso:#1A1714;
@@ -17,7 +16,7 @@
   --terracotta:#B96A43; --brass:#B0894C; --walnut:#6B4A31;
   --burgundy:#7A2E33; --plaster:#E7DECF;
   --line:rgba(17,16,9,0.12); --line-2:rgba(17,16,9,0.06);
-  --serif: 'Frunchy Sage', Georgia, serif; --sans: 'Poppins', system-ui, -apple-system, sans-serif;
+  --serif: 'Poppins', system-ui, -apple-system, sans-serif; --sans: 'Poppins', system-ui, -apple-system, sans-serif;
   --inset:clamp(22px,5vw,90px); --ease:cubic-bezier(0.22,1,0.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -28,9 +27,9 @@ section{padding:clamp(3rem,7vw,6rem) var(--inset);border-bottom:1px solid var(--
 .band-beige{background:var(--beige);}
 .eyebrow{font-family:var(--sans);font-weight:500;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--olive);display:block;margin-bottom:1rem;}
 .band-dark .eyebrow{color:rgba(247,244,238,0.55);}
-h1{font-family:var(--serif);font-weight:500;line-height:0.98;}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4vw,3rem);line-height:1.05;margin-bottom:0.6rem;}
-h2 em{font-style:italic;font-weight:400;color:var(--ink-soft);}
+h1{font-family:var(--serif);font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;line-height:0.98;}
+h2{font-family:var(--serif);font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;font-size:clamp(1.9rem,4vw,3rem);line-height:1.02;margin-bottom:0.6rem;}
+h2 em{font-style:normal;font-weight:700;color:var(--oxblood);}
 .band-dark h2 em{color:rgba(247,244,238,0.6);}
 .lead{font-size:1.05rem;color:var(--ink-soft);max-width:60ch;line-height:1.7;}
 .band-dark .lead{color:rgba(247,244,238,0.7);}
@@ -42,7 +41,7 @@ small{font-size:0.78rem;}
 .cover{background:var(--espresso);color:var(--bone);min-height:88vh;display:flex;flex-direction:column;justify-content:center;border-bottom:none;}
 .cover__word{font-family:var(--sans);font-weight:700;font-size:clamp(3rem,11vw,9rem);letter-spacing:-0.02em;line-height:0.9;}
 .cover__word .dot{color:var(--olive);}
-.cover__sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,2.2rem);color:rgba(247,244,238,0.75);margin-top:1.2rem;}
+.cover__sub{font-family:var(--sans);font-weight:300;font-size:clamp(1.3rem,3vw,2.2rem);color:rgba(247,244,238,0.75);margin-top:1.2rem;}
 .cover__meta{margin-top:2.5rem;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(247,244,238,0.5);}
 .toc{margin-top:3rem;display:flex;flex-wrap:wrap;gap:0.8rem 1.6rem;}
 .toc a{color:rgba(247,244,238,0.7);text-decoration:none;font-size:0.85rem;border-bottom:1px solid transparent;}
@@ -181,24 +180,25 @@ small{font-size:0.78rem;}
 <!-- 03 TIPOGRAFÍA -->
 <section id="tipo">
   <span class="eyebrow">03 · Tipografía</span>
-  <h2>Frunchy Sage + <em>Poppins</em>.</h2>
-  <p class="lead">La tipografía oficial de la marca (v3). <b>Frunchy Sage</b> es la serif de display — la misma del logo <b>darq</b> — para títulos y palabras clave. <b>Poppins</b> es la sans para todo lo demás: navegación, textos, etiquetas y botones. Frunchy Sage se hospeda en el repo (<code>/fonts/frunchysage.ttf</code>, <code>@font-face</code>); Poppins carga de Google Fonts.</p>
+  <h2>Una sola familia: <em>Poppins</em>.</h2>
+  <p class="lead">La tipografía oficial de la marca (v4, desde el 2026-11-22). <b>Poppins</b> para todo: títulos en <b>700 mayúsculas</b> (tracking −0.02em), frases de apoyo en <b>300</b>, texto en 400, etiquetas en 500. Carga de Google Fonts. <b>La Frunchy Sage está retirada</b>: no se usa en ninguna página ni pieza de la marca.</p>
 
   <div class="spec">
-    <div class="spec__label">Frunchy Sage — display / títulos (la del logo darq)</div>
-    <div style="font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.02;">proyectos<span style="color:var(--oxblood);">.</span></div>
-    <p class="note" style="margin-top:0.9rem;">↑ Solo tiene un peso (Regular). <b>No lleva itálica</b> (no la tiene): para acentos usa el punto/detalle en <b style="color:var(--oxblood);">oxblood</b>, no cursiva.</p>
+    <div class="spec__label">Poppins 700 — títulos (mayúsculas)</div>
+    <div style="font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.02;">proyectos<span style="color:var(--oxblood);">.</span></div>
+    <p class="note" style="margin-top:0.9rem;">↑ Sin cursiva en los títulos: para acentos usa el punto o la palabra en <b style="color:var(--oxblood);">oxblood</b>.</p>
   </div>
   <div class="spec">
     <div class="spec__label">Poppins — texto / UI / etiquetas</div>
-    <p style="font-size:1.05rem;max-width:60ch;font-family:var(--sans);">Poppins es la voz del cuerpo: párrafos, botones, navegación, kickers y el logotipo <b>doménica.arqdis</b>. Pesos 400–700. Base del sitio: 17px.</p>
+    <p style="font-size:1.05rem;max-width:60ch;font-family:var(--sans);">Poppins es la voz del cuerpo: párrafos, botones, navegación, kickers y el logotipo <b>doménica.arqdis</b>. Pesos 300–700. Base del sitio: 17px.</p>
   </div>
 
   <div class="spec">
     <div class="spec__label">Escala tipográfica</div>
     <div class="type-scale">
-      <div><span style="font-family:var(--serif);font-size:3rem;font-weight:500;">Título display</span><small>Frunchy Sage · clamp(2.4–4.4rem)</small></div>
-      <div><span style="font-family:var(--serif);font-size:1.8rem;font-weight:500;">Título de sección</span><small>Frunchy Sage · ~2–3rem</small></div>
+      <div><span style="font-family:var(--sans);font-size:3rem;font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;">Título display</span><small>Poppins 700 · UPPER · clamp(2.4–4.4rem)</small></div>
+      <div><span style="font-family:var(--sans);font-size:1.8rem;font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;">Título de sección</span><small>Poppins 700 · UPPER · ~2–3rem</small></div>
+      <div><span style="font-family:var(--sans);font-size:1.3rem;font-weight:300;">Frase de apoyo</span><small>Poppins 300 · 1.15–1.45rem</small></div>
       <div><span style="font-family:var(--sans);font-size:1.05rem;">Cuerpo de texto</span><small>Poppins 400 · 1–1.1rem</small></div>
       <div><span style="font-family:var(--sans);font-weight:500;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--olive);">Kicker / etiqueta</span><small>Poppins 500 · 0.72rem · tracking 0.28em · UPPER</small></div>
     </div>
@@ -357,7 +357,7 @@ small{font-size:0.78rem;}
     <div class="voice__col yes" style="background:rgba(247,244,238,0.05);border-color:rgba(247,244,238,0.14);">
       <h4 style="color:var(--brass);">Mantener</h4>
       <ul style="color:rgba(247,244,238,0.75);">
-        <li style="border-color:rgba(247,244,238,0.12);">Frunchy Sage (display) + Poppins (base 17px)</li>
+        <li style="border-color:rgba(247,244,238,0.12);">Solo Poppins: 700 mayúsculas en títulos, 300 en frases (base 17px)</li>
         <li style="border-color:rgba(247,244,238,0.12);">Oxblood como color de marca y de dinero</li>
         <li style="border-color:rgba(247,244,238,0.12);">Verde olivo como contrapunto</li>
         <li style="border-color:rgba(247,244,238,0.12);">Nav uniforme y estructura editorial</li>
