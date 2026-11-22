@@ -3,7 +3,7 @@
 > **Para Claude:** lee este archivo al iniciar cada sesión en vez de releer el chat (ahorra créditos). **Actualízalo al final de cada avance.**
 > **Para Doménica:** este es el estado real del sitio, las decisiones y lo pendiente.
 >
-> **Última actualización:** 2026-09-07
+> **Última actualización:** 2026-11-22
 >
 > 📘 **Brand Book visual:** abre `BRANDBOOK.html` (en esta misma carpeta) — logo, color, tipografía, componentes, voz, y **plantillas de carrusel**. Es la referencia de diseño para el sitio Y para las redes.
 
@@ -31,7 +31,7 @@
 
 ## 3. SISTEMA VISUAL (reglas duras)
 
-- **Tipografía:** Playfair Display (títulos serif) + **Archivo peso 400** (texto). Base **17px** (`html { font-size: 106.25% }`). NO usar Archivo 300 (se ve delgada/pequeña).
+- **Tipografía (desde 2026-11-22, sistema de /application/):** títulos **Poppins 700 en MAYÚSCULAS** (tracking -0.02em); frases de apoyo en **Frunchy Sage itálica** (`/fonts/frunchysage.ttf`); texto **Poppins 300**; labels Poppins 500 espaciado. Botones **píldora**, tarjetas con **radio 22px**, hero partido con panel beige `#ECE6DC` + banda oscura con el wordmark DOMÉNICA ARIAS. Referencia viva: `application/index.html` y la home `index.html`. (Playfair + Archivo ya no se usan.)
 - **Ritmo de fondos** (todas las páginas menos /proyectos que es todo oscuro):
   - **Blanco `#FAFAF7`** = fondo por defecto (dominante) — token `--bone`
   - **Beige `#F0EDE6`** = acento, solo algunas bandas — token `--beige`
@@ -110,3 +110,6 @@ Doménica envía inspo + info → Claude genera carruseles on-brand (ver plantil
 - **2026-07-22 (fin de sesión):** creado este RESUMEN.md + **BRANDBOOK.html** (brand book visual v1) en la carpeta `_RESUMEN_DARQDIS`. Tipografía marcada como provisional. Definido el flujo de generación de carruseles.
 - **2026-07-22:** regla de **oxblood ampliada** (acento de marca, no solo dinero). Aplicado al sitio: itálicas de títulos en secciones claras pasan de gris a oxblood (las oscuras se quedan claras). Guardrail: botón sólido oxblood sigue reservado a CTAs de compra. Publicado.
 - **2026-09-07:** **Biblioteca** pasada a **un solo idioma (español)** — quitadas las traducciones al inglés del hero, cierre de ArquiLab y footer. **Proyectos** rediseñado: de work-row (filas grandes con descripción larga) a **galería en grid** (3 col escritorio / 2 tablet / **1 col en móvil**), con solo **nombre + ubicación**; el detalle queda al abrir cada proyecto. **Rendimiento:** `loading="lazy"` + `decoding="async"` en las imágenes; portadas Sisters Kitchen / Piza / Holy Cow recomprimidas de ~2 MB a ~220 KB (JPEG q82, mismas dimensiones). Publicado (PR #35 y #36).
+- **2026-11-13:** Dome quiere **reactivar @domenica.arqdis con una comunidad/foro de hacks de SketchUp** ("tips, no quejas") y monetizarla. Prioridad definida = **monetizar + ArquiLab**. Estrategia completa en Claude Doc: https://claude.ai/artifact/HGYaUpd1KWxN6UnsCds661 — embudo Redes→Comunidad→ArquiLab/plugins, cadencia de contenido, monetización por fases y plan de 90 días. **IMPORTANTE: el curso ya está en Hotmart y NO se migra**; la comunidad es una capa aparte que manda tráfico al link de Hotmart. Plataforma: empezar GRATIS (Discord recomendado para Fase 0); Skool (~$99/mes) solo cuando lance una membresía premium de pago. Pendiente: decidir plataforma de comunidad y empezar la semilla de 20-30 hacks.
+- **2026-07-26:** Domenica pidió cambiar tipografía/estilo del home (referencias sitio "row" + wireframe). Se probó rediseño de index.html (Poppins, nav transparente + iconos sociales, hero estilo row, cards de estudiantes, bloque preséntate). **NO le gustó nada → revertido con git checkout (nunca publicado).** La marca se queda en **Playfair + Archivo**. Se creó **`_meta/CANVA_BRAND_KIT.html`** + **`_meta/logo/`** (logo wordmark oscuro/claro PNG transparente) para armar el Brand Kit en Canva (colores HEX, fuentes, logo, voz, formato 4:5). Nota: la fuente en BRANDBOOK.html sigue marcada "provisional" pero por ahora Playfair+Archivo es lo confirmado. Pinterest de Domenica: pinterest.com/domearias.
+- **2026-11-22:** **Home rehecha con el estilo de /application/** (pedido de Domenica): hero partido (foto + panel beige), banda DOMÉNICA ARIAS, títulos Poppins 700 mayúsculas + leads en Frunchy itálica, botones píldora, tarjetas redondeadas. Mismo contenido y enlaces. Arreglados 2 fallos de móvil: scroll horizontal y menú hamburguesa atrapado en la barra (el `backdrop-filter` del nav). Rama `claude/home-estilo-application`. Pendiente: aplicar el mismo sistema a /arquilab, /proyectos, /biblioteca y /contacto si le gusta.
