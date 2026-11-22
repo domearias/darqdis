@@ -36,11 +36,7 @@
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap');
-@font-face {
-  font-family: 'Frunchy Sage';
-  src: url('/fonts/frunchysage.ttf') format('truetype');
-  font-weight: 400; font-style: normal; font-display: swap;
-}
+
 
 :root {
   /* darqdis neutral base — blanco hueso */
@@ -65,7 +61,7 @@
   --line:    rgba(22, 22, 24, 0.12);
   --line-2:  rgba(22, 22, 24, 0.06);
 
-  --serif:   'Frunchy Sage', Georgia, 'Times New Roman', serif;   /* display de marca */
+  --serif:   'Poppins', system-ui, -apple-system, sans-serif;   /* display de marca */
   --display: 'Poppins', system-ui, -apple-system, sans-serif;     /* títulos/labels */
   --sans:    'Poppins', system-ui, -apple-system, sans-serif;     /* texto */
 
@@ -100,7 +96,7 @@ body {
    TYPE PRIMITIVES
    ============================================================ */
 .serif { font-family: var(--serif); font-weight: 500; line-height: 1.02; }
-.serif-it { font-family: var(--serif); font-style: italic; font-weight: 400; }
+.serif-it { font-family: var(--serif); font-style: normal; font-weight: 400; }
 .display { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; line-height: 0.95; }
 
 .kicker {
@@ -214,7 +210,7 @@ body {
   letter-spacing: -0.02em; text-transform: uppercase; color: var(--ink);
 }
 .heroGrid__lead {
-  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-family: var(--serif); font-style: normal; font-weight: 400;
   font-size: clamp(1.55rem, 2.6vw, 2.15rem); line-height: 1.32; color: var(--ink);
   max-width: 24ch;
 }
@@ -244,7 +240,7 @@ body {
 .video__grid { display: grid; grid-template-columns: 1fr 0.75fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
 .video__eyebrow { font-family: var(--display); font-weight: 500; font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--lilac); margin-bottom: 1.2rem; }
 .video__title { font-family: var(--display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase; }
-.video__lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 2.2vw, 1.75rem); color: rgba(250,250,247,0.82); margin: 1.4rem 0 1.6rem; max-width: 34ch; line-height: 1.4; }
+.video__lead { font-family: var(--serif); font-style: normal; font-size: clamp(1.4rem, 2.2vw, 1.75rem); color: rgba(250,250,247,0.82); margin: 1.4rem 0 1.6rem; max-width: 34ch; line-height: 1.4; }
 .video__note { font-size: 0.9rem; color: rgba(250,250,247,0.6); max-width: 40ch; margin-bottom: 1.8rem; }
 .video__frame {
   position: relative; width: 100%; max-width: 360px; aspect-ratio: 9 / 16;
@@ -270,7 +266,7 @@ body {
 .pitch__marker { font-size: 1.4rem; color: var(--purple-deep); line-height: 1; }
 .pitch__label { font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); writing-mode: vertical-rl; transform: rotate(180deg); }
 .pitch__headline { font-family: var(--display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase; color: var(--ink); margin-bottom: 1.4rem; }
-.pitch__body .lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.5rem, 3vw, 2.1rem); color: var(--ink); line-height: 1.35; margin-bottom: 1.6rem; }
+.pitch__body .lead { font-family: var(--serif); font-style: normal; font-size: clamp(1.5rem, 3vw, 2.1rem); color: var(--ink); line-height: 1.35; margin-bottom: 1.6rem; }
 .pitch__body p { font-size: 1.08rem; max-width: 60ch; margin-bottom: 1.3rem; line-height: 1.8; color: var(--ink-soft); }
 .pitch__body p b { color: var(--ink); font-weight: 600; }
 
@@ -307,7 +303,7 @@ body {
 }
 .wcell__num { font-family: var(--display); font-weight: 500; font-size: 0.68rem; letter-spacing: 0.16em; color: rgba(247,244,238,0.72); text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
 .wcell__name { font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2.3rem); line-height: 1.02; letter-spacing: -0.01em; text-transform: uppercase; color: var(--cream); text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
-.wcell__lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 1.5vw, 1.4rem); line-height: 1.25; color: rgba(250,250,247,0.95); text-shadow: 0 1px 10px rgba(0,0,0,0.6); max-width: 34ch; margin-top: 0.1rem; }
+.wcell__lead { font-family: var(--serif); font-style: normal; font-size: clamp(1.15rem, 1.5vw, 1.4rem); line-height: 1.25; color: rgba(250,250,247,0.95); text-shadow: 0 1px 10px rgba(0,0,0,0.6); max-width: 34ch; margin-top: 0.1rem; }
 .wcell__meta { font-family: var(--sans); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,238,0.82); text-shadow: 0 1px 4px rgba(0,0,0,0.45); margin-top: 0.35rem; }
 @media (max-width: 760px) {
   .work__list { grid-template-columns: 1fr; }
@@ -321,7 +317,7 @@ body {
 .manifesto { background: var(--lilac); color: var(--ink); padding: clamp(4rem, 9vw, 8rem) var(--inset); }
 .manifesto__inner { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 .manifesto__quote { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 5.2vw, 4.2rem); line-height: 1.08; max-width: 20ch; text-wrap: balance; }
-.manifesto__quote em { font-style: italic; }
+.manifesto__quote em { font-style: normal; }
 .manifesto__sub { font-family: var(--sans); font-weight: 300; font-size: 0.98rem; max-width: 46ch; color: var(--ink); opacity: 0.8; justify-self: end; }
 
 /* ============================================================
@@ -358,7 +354,7 @@ body {
 .contact__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: end; }
 .contact__title { font-family: var(--display); font-weight: 700; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; }
 .contact__title em { font-style: normal; color: var(--blue); }
-.contact__lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.35rem, 2.4vw, 1.7rem); color: var(--ink-soft); margin-top: 1.4rem; max-width: 34ch; line-height: 1.5; }
+.contact__lead { font-family: var(--serif); font-style: normal; font-size: clamp(1.35rem, 2.4vw, 1.7rem); color: var(--ink-soft); margin-top: 1.4rem; max-width: 34ch; line-height: 1.5; }
 .contact__list { display: flex; flex-direction: column; }
 .contact__row { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; padding: 1.15rem 0; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: color 0.35s var(--ease), padding-left 0.35s var(--ease); }
 .contact__row:last-child { border-bottom: 1px solid var(--line); }
@@ -373,13 +369,13 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
    ============================================================ */
 .footer { background: var(--ink); color: var(--cream); padding: var(--bandY) var(--inset) 2rem; }
 .footer__cta { font-family: var(--serif); font-weight: 500; font-size: clamp(2.6rem, 8vw, 6.5rem); line-height: 0.95; margin-bottom: 2.6rem; }
-.footer__cta em { font-style: italic; font-weight: 400; color: var(--lilac); }
+.footer__cta em { font-style: normal; font-weight: 400; color: var(--lilac); }
 .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; padding-top: 2.4rem; border-top: 1px solid rgba(250,250,247,0.16); }
 .footer__col h4 { font-family: var(--display); font-weight: 500; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,250,247,0.6); margin-bottom: 1.1rem; }
 .footer__col a { display: block; color: var(--cream); text-decoration: none; font-size: 0.95rem; margin-bottom: 0.55rem; width: fit-content; transition: color 0.3s var(--ease); }
 .footer__col a:hover { color: var(--blue-mid); }
 .footer__avail { font-size: 0.98rem; line-height: 1.6; max-width: 32ch; }
-.footer__avail .en { display: block; font-family: var(--serif); font-style: italic; font-size: 0.9rem; color: rgba(250,250,247,0.55); margin-top: 0.4rem; }
+.footer__avail .en { display: block; font-family: var(--serif); font-style: normal; font-size: 0.9rem; color: rgba(250,250,247,0.55); margin-top: 0.4rem; }
 .footer__avail .pulse { display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.9rem; font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lime); }
 .footer__avail .pulse i { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 0 rgba(191,255,55,0.6); animation: pulse 2.4s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(191,255,55,0.5); } 70% { box-shadow: 0 0 0 8px rgba(191,255,55,0); } 100% { box-shadow: 0 0 0 0 rgba(191,255,55,0); } }
@@ -445,6 +441,20 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
   .cv-meta { grid-template-columns: 1fr; }
   .manifesto__sub { justify-self: start; }
 }
+
+/* ---- Sin Frunchy (2026-11-22): frases de apoyo en Poppins, tamaños recalibrados ---- */
+.heroGrid__lead { font-weight: 400; font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1.35; }
+.video__lead { font-weight: 300; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.55; }
+.pitch__body .lead { font-weight: 300; font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.5; }
+.wcell__lead { font-weight: 300; font-size: clamp(0.9rem, 1.1vw, 1.05rem); line-height: 1.4; }
+.manifesto__quote { font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; font-size: clamp(1.8rem, 4vw, 3.2rem); line-height: 1; }
+.manifesto__quote em { opacity: 0.55; }
+.contact__lead { font-weight: 300; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.6; }
+.contact__row .v { font-weight: 400; font-size: clamp(1rem, 1.8vw, 1.3rem); }
+.footer__cta { font-weight: 700; text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.92; }
+.footer__cta em { font-weight: 700; color: inherit; opacity: 0.5; }
+.footer__avail .en { font-size: 0.85rem; font-weight: 300; }
+.serif, .serif-it { font-weight: 400; }
 </style>
 </head>
 <body>

@@ -2,12 +2,12 @@
    darqdis · sistema de marca común (estilo /application/)
    Se enlaza DESPUÉS del <style> de cada página para imponerse.
    · Títulos (h1, h2, h3): Poppins 700 en MAYÚSCULAS
-   · <em> dentro de un título: Frunchy Sage itálica (frase de apoyo)
+   · <em> dentro de un título: mismo Poppins 700 mayúsculas, atenuado (como "arias" en la banda)
+   · Una sola familia: Poppins. La Frunchy Sage se retiró el 2026-11-22
    · Texto: Poppins 300 · botones píldora · acento único oxblood
    La home (index.html) y /application/ ya lo llevan dentro.
    ============================================================ */
 
-@font-face { font-family: 'Frunchy Sage'; src: url('/fonts/frunchysage.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
 
 :root {
   --bone:     #FAFAF7;
@@ -21,7 +21,7 @@
   --accent:   #5C2E26;
   --line:     rgba(22, 22, 24, 0.12);
   --line-2:   rgba(22, 22, 24, 0.06);
-  --serif:    'Frunchy Sage', Georgia, 'Times New Roman', serif;
+  --serif:    'Poppins', system-ui, -apple-system, sans-serif;
   --sans:     'Poppins', system-ui, -apple-system, sans-serif;
   --display:  'Poppins', system-ui, -apple-system, sans-serif;
   --radius:   22px;
@@ -42,11 +42,11 @@ h1, h2, h3 {
   line-height: 1.02;
 }
 h1 em, h2 em, h3 em {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
+  font-family: var(--display) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: inherit !important;
 }
 
 /* ---- Nav ---- */

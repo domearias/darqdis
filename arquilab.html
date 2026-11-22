@@ -21,7 +21,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
-@font-face{font-family:'Frunchy Sage';src:url('/fonts/frunchysage.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
 
 
 /* Poppins se carga con <link> en el <head> (el @import aquí lo ignora el navegador por ir tras @font-face) */
@@ -38,7 +37,7 @@
   --accent:    #6E6A4D;   /* alias de olive (uso interno de esta página) */
   --line:      rgba(17, 16, 9, 0.12);
   --line-2:    rgba(17, 16, 9, 0.06);
-  --serif: 'Frunchy Sage', Georgia, serif;
+  --serif: 'Poppins', system-ui, -apple-system, sans-serif;
   --sans: 'Poppins', system-ui, -apple-system, sans-serif;
   --ease:      cubic-bezier(0.22, 1, 0.36, 1);
   --inset:     clamp(22px, 5vw, 80px);
@@ -144,7 +143,7 @@ body {
   color: var(--ink); letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
-.al-hero__title em { font-style: italic; font-weight: 400; color: var(--oxblood); }
+.al-hero__title em { font-style: normal; font-weight: 400; color: var(--oxblood); }
 .al-hero__sub {
   font-size: 1.05rem; color: var(--ink); line-height: 1.65;
   margin-bottom: 2rem; max-width: 48ch;
@@ -196,7 +195,7 @@ body {
   color: var(--ink); letter-spacing: -0.01em;
   margin-bottom: 1rem;
 }
-.al-request__title em { font-style: italic; font-weight: 400; }
+.al-request__title em { font-style: normal; font-weight: 400; }
 .al-request__sub {
   font-size: 1.05rem; color: var(--ink-soft);
   max-width: 56ch; margin: 0 auto;
@@ -230,7 +229,7 @@ body {
   letter-spacing: 0.06em; color: var(--ink-soft);
   text-transform: uppercase;
 }
-.al-msg__text { font-style: italic; }
+.al-msg__text { font-style: normal; }
 .al-msg__text::before { content: '"'; font-family: var(--serif); font-size: 2rem; color: var(--accent); float: left; line-height: 1; margin-right: 0.3rem; margin-top: -0.2rem; }
 
 /* ============================================================
@@ -249,7 +248,7 @@ body {
   letter-spacing: -0.01em;
   max-width: 22ch; margin: 0 auto 1.5rem;
 }
-.al-problem__title em { font-style: italic; color: rgba(247,244,238,0.6); }
+.al-problem__title em { font-style: normal; color: rgba(247,244,238,0.6); }
 .al-problem__list {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1rem; margin-top: 3rem;
@@ -285,7 +284,7 @@ body {
   font-weight: 500; line-height: 1.05;
   letter-spacing: -0.01em;
 }
-.al-solution__title em { font-style: italic; font-weight: 400; color: var(--oxblood); }
+.al-solution__title em { font-style: normal; font-weight: 400; color: var(--oxblood); }
 .al-solution__lead {
   font-size: 1rem; color: var(--ink-soft); line-height: 1.7;
   max-width: 50ch;
@@ -325,7 +324,7 @@ body {
   font-size: clamp(2.4rem, 5vw, 4rem);
   font-weight: 500; line-height: 1.05;
 }
-.al-results__title em { font-style: italic; font-weight: 400; color: var(--oxblood); }
+.al-results__title em { font-style: normal; font-weight: 400; color: var(--oxblood); }
 .al-compare {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 1.5rem; max-width: 1000px; margin: 0 auto;
@@ -379,7 +378,7 @@ body {
   font-size: clamp(2.2rem, 4.5vw, 3.4rem);
   font-weight: 500; line-height: 1.1; margin-bottom: 0.8rem;
 }
-.al-testimonials__title em { font-style: italic; font-weight: 400; }
+.al-testimonials__title em { font-style: normal; font-weight: 400; }
 .al-testimonials__sub {
   font-size: 0.95rem; color: var(--ink-soft);
   max-width: 50ch; margin: 0 auto;
@@ -395,7 +394,7 @@ body {
 }
 .al-quote__text {
   font-family: var(--serif); font-size: 1.05rem;
-  font-style: italic; color: var(--ink);
+  font-style: normal; color: var(--ink);
   line-height: 1.55; margin-bottom: 0.9rem;
 }
 .al-quote__author {
@@ -436,12 +435,12 @@ body {
   font-weight: 500; line-height: 1.1;
   margin-bottom: 1.5rem;
 }
-.al-about__title em { font-style: italic; }
+.al-about__title em { font-style: normal; }
 .al-about__body p {
   font-size: 0.98rem; color: var(--ink); line-height: 1.75;
   margin-bottom: 1rem;
 }
-.al-about__body p:last-child { color: var(--ink-soft); font-style: italic; }
+.al-about__body p:last-child { color: var(--ink-soft); font-style: normal; }
 .al-about__creds {
   margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem;
 }
@@ -475,7 +474,7 @@ body {
   max-width: 18ch; margin: 0 auto 1.5rem;
   letter-spacing: -0.01em;
 }
-.al-offer__title em { font-style: italic; color: rgba(247,244,238,0.6); }
+.al-offer__title em { font-style: normal; color: rgba(247,244,238,0.6); }
 .al-offer__sub {
   font-size: 1rem; color: rgba(247,244,238,0.72);
   max-width: 50ch; margin: 0 auto 2.5rem; line-height: 1.7;
@@ -556,7 +555,7 @@ body {
 }
 .al-offer__discount-label {
   font-family: var(--serif); font-size: 1.15rem;
-  font-weight: 500; font-style: italic; color: var(--bone);
+  font-weight: 500; font-style: normal; color: var(--bone);
   margin-bottom: 0.8rem;
 }
 .al-offer__discount-text {
@@ -577,7 +576,7 @@ body {
 .al-offer__discount-final strong { color: var(--bone); }
 .al-offer__discount-warn {
   font-size: 0.72rem; color: rgba(247,244,238,0.45);
-  font-style: italic;
+  font-style: normal;
 }
 
 @media (max-width: 700px) {
@@ -594,7 +593,7 @@ body {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 500;
 }
-.al-faq__title em { font-style: italic; font-weight: 400; color: var(--oxblood); }
+.al-faq__title em { font-style: normal; font-weight: 400; color: var(--oxblood); }
 .al-faq__list { max-width: 800px; margin: 0 auto; }
 .al-faq__item {
   border-bottom: 1px solid var(--line);
@@ -672,15 +671,15 @@ body {
 .al-method { background: var(--beige); padding: var(--bandY) var(--inset); }
 .al-method__head { text-align: center; max-width: 60ch; margin: 0 auto clamp(2.5rem, 5vw, 4rem); }
 .al-method__title { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.02; color: var(--ink); margin: 1rem 0; }
-.al-method__title em { font-style: italic; color: var(--olive); }
+.al-method__title em { font-style: normal; color: var(--olive); }
 .al-method__sub { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.7; }
 .al-method__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 2.2rem); max-width: 1040px; margin: 0 auto; }
 .al-method__step { background: rgba(250, 250, 247, 0.7); border: 1px solid var(--line); padding: clamp(1.6rem, 2.5vw, 2.2rem); }
 .al-method__num { font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em; color: var(--olive); }
 .al-method__step-title { font-family: var(--serif); font-weight: 500; font-size: 1.7rem; color: var(--ink); margin: 0.6rem 0 0.9rem; }
 .al-method__step p { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.65; }
-.al-method__step p em { font-style: italic; color: var(--ink); font-weight: 500; }
-.al-method__foot { text-align: center; font-family: var(--serif); font-style: italic; font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--ink-soft); max-width: 52ch; margin: clamp(2.5rem, 5vw, 4rem) auto 0; line-height: 1.5; }
+.al-method__step p em { font-style: normal; color: var(--ink); font-weight: 500; }
+.al-method__foot { text-align: center; font-family: var(--serif); font-style: normal; font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--ink-soft); max-width: 52ch; margin: clamp(2.5rem, 5vw, 4rem) auto 0; line-height: 1.5; }
 @media (max-width: 760px) { .al-method__grid { grid-template-columns: 1fr; } }
 
 /* Galería de mockups (Passion Project) */
@@ -711,7 +710,7 @@ body {
 /* Masterclass gratis */
 .al-master { background: var(--beige); padding: var(--bandY) var(--inset); text-align: center; }
 .al-master__title { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.05; color: var(--ink); margin: 1rem auto; max-width: 22ch; }
-.al-master__title em { font-style: italic; color: var(--olive); }
+.al-master__title em { font-style: normal; color: var(--olive); }
 .al-master__sub { font-size: 1.02rem; color: var(--ink-soft); max-width: 58ch; margin: 0 auto 2rem; line-height: 1.7; }
 .al-master__cta { display: inline-flex; align-items: center; gap: 0.7rem; font-family: var(--sans); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; color: var(--ink); background: transparent; border: 1.5px solid var(--ink); padding: 1.1rem 2rem; transition: background 0.4s var(--ease), color 0.4s var(--ease); }
 .al-master__cta:hover { background: var(--ink); color: var(--bone); }
@@ -966,7 +965,7 @@ body {
     <div style="text-align: center; margin-bottom: 2.5rem;">
       <span style="font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);">— Esto es lo que vas a crear</span>
       <h2 style="font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 500; line-height: 1.1; margin-top: 0.8rem;">
-        Así se ven los proyectos del <em style="font-style:italic; font-weight:400; color:var(--ink-soft);">ArquiLab</em>.
+        Así se ven los proyectos del <em style="font-style: normal; font-weight:400; color:var(--ink-soft);">ArquiLab</em>.
       </h2>
       <p style="font-size: 0.95rem; color: var(--ink-soft); max-width: 50ch; margin: 0.8rem auto 0;">
         Presentaciones profesionales, planos técnicos con identidad visual — todo hecho en SketchUp + Layout. Sin Photoshop. Sin Canva.
@@ -988,7 +987,7 @@ body {
       </div>
     </div>
 
-    <p style="text-align: center; font-size: 0.8rem; color: var(--ink-soft); margin-top: 1.6rem; font-style: italic;">
+    <p style="text-align: center; font-size: 0.8rem; color: var(--ink-soft); margin-top: 1.6rem; font-style: normal;">
       Mi Passion Project, creado 100% en SketchUp + Layout — el mismo flujo que aprendes en ArquiLab.
     </p>
   </section>
@@ -1029,7 +1028,7 @@ body {
     <div style="text-align: center; margin-bottom: 3rem;">
       <span class="al-hero__kicker" style="color: rgba(247,244,238,0.5);">— Resultados reales de alumnas ArquiLab</span>
       <h2 style="font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 500; line-height: 1.1; margin-top: 0.8rem;">
-        Así presentan <em style="font-style:italic; font-weight:400; color:rgba(247,244,238,0.6);">después de ArquiLab</em>.
+        Así presentan <em style="font-style: normal; font-weight:400; color:rgba(247,244,238,0.6);">después de ArquiLab</em>.
       </h2>
       <p style="font-size: 1rem; color: rgba(247,244,238,0.6); max-width: 50ch; margin: 1rem auto 0;">
         Estos son Passion Projects reales de alumnas que terminaron el curso. Sus presentaciones hablan por sí solas.
@@ -1066,12 +1065,12 @@ body {
       </div>
 
       <div style="border: 1px solid rgba(247,244,238,0.12); padding: 1.6rem; display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <p style="font-family: var(--serif); font-style: italic; font-size: 1.25rem; line-height: 1.45; color: rgba(247,244,238,0.85); max-width: 30ch; margin: 0 auto 1rem;">"Tu Passion Project puede ser el siguiente en esta pared."</p>
+        <p style="font-family: var(--serif); font-style: normal; font-size: 1.25rem; line-height: 1.45; color: rgba(247,244,238,0.85); max-width: 30ch; margin: 0 auto 1rem;">"Tu Passion Project puede ser el siguiente en esta pared."</p>
         <p style="font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,238,0.5);">— Doménica</p>
       </div>
     </div>
 
-    <p style="text-align: center; font-size: 0.82rem; color: rgba(247,244,238,0.45); margin-top: 2rem; font-style: italic;">
+    <p style="text-align: center; font-size: 0.82rem; color: rgba(247,244,238,0.45); margin-top: 2rem; font-style: normal;">
       + Carelis Granizo · Katherine Pasquel · Sofía Tapia · Valeria Ceballos · Jannet Flores · Fernanda Sánchez · Anahí Gallardo — y contando.
     </p>
   </section>

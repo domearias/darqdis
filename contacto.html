@@ -20,7 +20,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
-@font-face{font-family:'Frunchy Sage';src:url('/fonts/frunchysage.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
 
 /* Poppins se carga con <link> en el <head> (el @import aquí lo ignora el navegador por ir tras @font-face) */
 
@@ -34,7 +33,7 @@
   --oxblood:   #5C2E26;
   --line:      rgba(17, 16, 9, 0.12);
   --line-2:    rgba(17, 16, 9, 0.06);
-  --serif: 'Frunchy Sage', Georgia, serif;
+  --serif: 'Poppins', system-ui, -apple-system, sans-serif;
   --sans: 'Poppins', system-ui, -apple-system, sans-serif;
   --inset: clamp(22px, 5vw, 80px);
   --bandY: clamp(4rem, 8vw, 7.5rem);
@@ -109,7 +108,7 @@ a:focus-visible, button:focus-visible {
 .contact__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
 .contact__kicker { font-family: var(--sans); font-weight: 500; font-size: 0.68rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--olive); }
 .contact__title { font-family: var(--serif); font-weight: 500; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.98; margin-top: 0.8rem; }
-.contact__lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2.4vw, 1.8rem); color: var(--ink-soft); max-width: 34ch; margin-top: 1.4rem; line-height: 1.4; }
+.contact__lead { font-family: var(--serif); font-style: normal; font-size: clamp(1.2rem, 2.4vw, 1.8rem); color: var(--ink-soft); max-width: 34ch; margin-top: 1.4rem; line-height: 1.4; }
 .contact__list { margin-top: clamp(2.5rem, 5vw, 4rem); border-top: 1px solid var(--line); }
 .contact__row { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
 .contact__row dt { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
@@ -122,7 +121,7 @@ a:focus-visible, button:focus-visible {
 /* ---- FOOTER ---- */
 .footer { background: var(--espresso); color: var(--bone); padding: var(--bandY) var(--inset) 2rem; }
 .footer__cta { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 6vw, 4rem); line-height: 0.98; margin-bottom: 2rem; }
-.footer__cta em { font-style: italic; font-weight: 400; }
+.footer__cta em { font-style: normal; font-weight: 400; }
 .footer__cta a { color: var(--bone); text-decoration: none; border-bottom: 2px solid var(--oxblood); }
 .footer__base { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding-top: 1.6rem; border-top: 1px solid rgba(247,244,238,0.14); font-family: var(--sans); font-size: 0.72rem; color: rgba(247,244,238,0.45); }
 .footer__base a { color: rgba(247,244,238,0.6); text-decoration: none; }
@@ -139,6 +138,11 @@ a:focus-visible, button:focus-visible {
   .nav__links a { font-size: 1rem; }
   .nav__toggle { display: flex; z-index: 76; }
 }
+
+/* ---- Sin Frunchy (2026-11-22): tamaños recalibrados para Poppins ---- */
+.contact__lead { font-weight: 300; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.6; }
+.contact__row dd { font-weight: 400; font-size: clamp(1rem, 1.8vw, 1.3rem); }
+.footer__cta em a { border-bottom-width: 2px; }
 </style>
 <link rel="stylesheet" href="/css/marca.css">
 </head>

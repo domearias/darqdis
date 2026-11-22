@@ -21,13 +21,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
-@font-face{font-family:'Frunchy Sage';src:url('/fonts/frunchysage.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+
 
 /* ============================================================
    DOMENICA ARIAS — darqdis · home
    Mismo sistema visual que /application/:
    · Títulos: Poppins 700 en mayúsculas, tracking cerrado
-   · Frases de apoyo: Frunchy Sage itálica
+   · Frases de apoyo: Poppins 300 (una sola familia, sin Frunchy)
    · Texto: Poppins 300 · labels: Poppins 500 espaciado
    · Botones píldora · tarjetas redondeadas · hero partido beige
    Acento único: oxblood. Botón sólido oxblood = comprar (Hotmart).
@@ -42,7 +42,7 @@
   --oxblood:   #5C2E26;   /* acento de marca + dinero */
   --line:      rgba(22, 22, 24, 0.12);
   --line-2:    rgba(22, 22, 24, 0.06);
-  --serif:   'Frunchy Sage', Georgia, 'Times New Roman', serif;
+  --serif:   'Poppins', system-ui, -apple-system, sans-serif;
   --display: 'Poppins', system-ui, -apple-system, sans-serif;
   --sans:    'Poppins', system-ui, -apple-system, sans-serif;
   --inset: clamp(22px, 5vw, 80px);
@@ -91,7 +91,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   letter-spacing: -0.02em; text-transform: uppercase;
 }
 .lead-serif {
-  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-family: var(--serif); font-style: normal; font-weight: 400;
   font-size: clamp(1.45rem, 2.6vw, 2rem); line-height: 1.35;
 }
 .band-head { margin-bottom: clamp(2rem, 4vw, 3.2rem); }
@@ -183,7 +183,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   letter-spacing: -0.02em; text-transform: uppercase; color: var(--ink);
 }
 .heroGrid__lead {
-  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-family: var(--serif); font-style: normal; font-weight: 400;
   font-size: clamp(1.6rem, 2.8vw, 2.3rem); line-height: 1.2; color: var(--oxblood);
 }
 .heroGrid__body { font-size: clamp(1.02rem, 1.4vw, 1.15rem); color: var(--ink); max-width: 40ch; line-height: 1.6; }
@@ -276,7 +276,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .results-card__title { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: clamp(1.25rem, 2vw, 1.6rem); letter-spacing: -0.01em; line-height: 1.05; margin-bottom: 0.5rem; }
 .results-card__desc { font-size: 0.9rem; color: rgba(250,250,247,0.65); margin-bottom: 0.9rem; }
 .results-card__author { font-family: var(--display); font-weight: 500; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,250,247,0.85); }
-.results__names { text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.3rem; line-height: 1.6; color: rgba(250,250,247,0.55); margin-top: 2.2rem; }
+.results__names { text-align: center; font-family: var(--serif); font-style: normal; font-size: 1.3rem; line-height: 1.6; color: rgba(250,250,247,0.55); margin-top: 2.2rem; }
 
 /* ============================================================
    04 · BIBLIOTECA
@@ -292,7 +292,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .contact { background: var(--beige); padding: var(--bandY) var(--inset); }
 .contact__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: end; }
 .contact__title { font-family: var(--display); font-weight: 700; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; margin-top: 0.9rem; }
-.contact__lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.35rem, 2.4vw, 1.7rem); color: var(--ink-soft); margin-top: 1.2rem; max-width: 30ch; line-height: 1.45; }
+.contact__lead { font-family: var(--serif); font-style: normal; font-size: clamp(1.35rem, 2.4vw, 1.7rem); color: var(--ink-soft); margin-top: 1.2rem; max-width: 30ch; line-height: 1.45; }
 .contact__list { display: flex; flex-direction: column; }
 .contact__row { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; padding: 1.15rem 0; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: color 0.35s var(--ease), padding-left 0.35s var(--ease); }
 .contact__row:last-child { border-bottom: 1px solid var(--line); }
@@ -307,13 +307,13 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
    ============================================================ */
 .footer { background: var(--ink); color: var(--bone); padding: var(--bandY) var(--inset) 2rem; }
 .footer__cta { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: clamp(2.6rem, 8vw, 6.5rem); line-height: 0.92; letter-spacing: -0.03em; margin-bottom: 2.6rem; }
-.footer__cta em { font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--panel); }
+.footer__cta em { font-family: var(--serif); font-style: normal; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--panel); }
 .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; padding-top: 2.4rem; border-top: 1px solid rgba(250,250,247,0.16); }
 .footer__col h4 { font-family: var(--display); font-weight: 500; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,250,247,0.6); margin-bottom: 1.1rem; }
 .footer__col a { display: block; color: var(--bone); text-decoration: none; font-size: 0.95rem; margin-bottom: 0.55rem; width: fit-content; transition: color 0.3s var(--ease); }
 .footer__col a:hover { color: var(--panel); opacity: 0.75; }
 .footer__avail { font-size: 0.98rem; line-height: 1.6; max-width: 32ch; }
-.footer__avail .en { display: block; font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: rgba(250,250,247,0.55); margin-top: 0.4rem; }
+.footer__avail .en { display: block; font-family: var(--serif); font-style: normal; font-size: 1.15rem; color: rgba(250,250,247,0.55); margin-top: 0.4rem; }
 .footer__avail .pulse { display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.9rem; font-family: var(--display); font-weight: 500; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--panel); }
 .footer__avail .pulse i { width: 7px; height: 7px; border-radius: 50%; background: var(--panel); box-shadow: 0 0 0 0 rgba(236,230,220,0.6); animation: pulse 2.4s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(236,230,220,0.5); } 70% { box-shadow: 0 0 0 8px rgba(236,230,220,0); } 100% { box-shadow: 0 0 0 0 rgba(236,230,220,0); } }
@@ -376,6 +376,15 @@ a.contact__row:hover .v .arrow { transform: translateX(5px); }
   .footer__grid { grid-template-columns: 1fr; }
   .heroGrid__cta .btn { padding: 0.95rem 1.4rem; }
 }
+
+/* ---- Sin Frunchy (2026-11-22): frases de apoyo en Poppins, tamaños recalibrados ---- */
+.lead-serif { font-weight: 300; font-size: clamp(1.15rem, 1.8vw, 1.45rem); line-height: 1.55; }
+.heroGrid__lead { font-weight: 400; font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1.35; }
+.results__names { font-size: 0.95rem; font-weight: 300; }
+.contact__lead { font-weight: 300; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.6; }
+.contact__row .v { font-weight: 400; font-size: clamp(1rem, 1.8vw, 1.3rem); }
+.footer__cta em { font-weight: 700; text-transform: uppercase; letter-spacing: inherit; color: inherit; opacity: 0.5; }
+.footer__avail .en { font-size: 0.85rem; font-weight: 300; }
 </style>
 </head>
 <body>
