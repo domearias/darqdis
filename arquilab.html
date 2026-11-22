@@ -19,7 +19,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
 @font-face{font-family:'Frunchy Sage';src:url('/fonts/frunchysage.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
 
@@ -766,7 +766,21 @@ body {
 @media (max-width: 860px) { .al-shots { columns: 2; } }
 @media (max-width: 560px) { .al-shots { columns: 1; max-width: 440px; } }
 
+
+/* ---- Estilo /application/ (2026-11-22): esquinas redondeadas en cajas e imágenes ---- */
+.al-hero__visual, .al-hero__visual img,
+.al-method__step, .al-mockups__item, .al-mockups__item img, .al-shot,
+.al-compare__col, .al-quote, .al-about__photo, .al-about__photo img,
+.al-offer__includes, .al-offer__price-box, .al-offer__discount,
+.al-amb, .al-amb__media, .al-amb__media img, .al-master, .al-module, .al-msg {
+  border-radius: var(--radius);
+}
+.al-hero__visual, .al-mockups__item, .al-about__photo, .al-amb__media, .al-compare, .al-compare__col { overflow: hidden; }
+.al-compare { border-radius: var(--radius); gap: clamp(0.8rem, 1.6vw, 1.4rem); }
+.al-mod { border-radius: 16px; }
+.al-method__foot { font-size: clamp(1.3rem, 2.2vw, 1.65rem) !important; line-height: 1.4; }
 </style>
+<link rel="stylesheet" href="/css/marca.css">
 </head>
 
 <body>
